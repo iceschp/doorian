@@ -11,8 +11,9 @@
 		4809247029669F3C009EB501 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809246F29669F3C009EB501 /* ContentView.swift */; };
 		4809247229669F3D009EB501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4809247129669F3D009EB501 /* Assets.xcassets */; };
 		4809247529669F3D009EB501 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4809247429669F3D009EB501 /* Preview Assets.xcassets */; };
-		484DCF512966A0D0001991AE /* scanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484DCF502966A0D0001991AE /* scanningView.swift */; };
-		48DDFD56296C37F300EF17FF /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DDFD55296C37F300EF17FF /* CustomTabBar.swift */; };
+		484DCF512966A0D0001991AE /* ScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484DCF502966A0D0001991AE /* ScanningView.swift */; };
+		48966CE7296E7A1D00C85696 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48966CE6296E7A1D00C85696 /* ProfileView.swift */; };
+		48DDFD56296C37F300EF17FF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DDFD55296C37F300EF17FF /* HomeView.swift */; };
 		65736C2F49198F81752F87AE /* Pods_doorian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A330CFAD0A354EE45591F07F /* Pods_doorian.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,8 +23,9 @@
 		4809246F29669F3C009EB501 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4809247129669F3D009EB501 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4809247429669F3D009EB501 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		484DCF502966A0D0001991AE /* scanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scanningView.swift; sourceTree = "<group>"; };
-		48DDFD55296C37F300EF17FF /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		484DCF502966A0D0001991AE /* ScanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningView.swift; sourceTree = "<group>"; };
+		48966CE6296E7A1D00C85696 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		48DDFD55296C37F300EF17FF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		51157146CEB249DDBF3742A8 /* Pods-doorian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doorian.debug.xcconfig"; path = "Target Support Files/Pods-doorian/Pods-doorian.debug.xcconfig"; sourceTree = "<group>"; };
 		A330CFAD0A354EE45591F07F /* Pods_doorian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_doorian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2621024C4B6C3EA1DAAF9CC /* Pods-doorian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doorian.release.xcconfig"; path = "Target Support Files/Pods-doorian/Pods-doorian.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,9 +65,10 @@
 			isa = PBXGroup;
 			children = (
 				4809246D29669F3C009EB501 /* doorianApp.swift */,
-				484DCF502966A0D0001991AE /* scanningView.swift */,
 				4809246F29669F3C009EB501 /* ContentView.swift */,
-				48DDFD55296C37F300EF17FF /* CustomTabBar.swift */,
+				48DDFD55296C37F300EF17FF /* HomeView.swift */,
+				484DCF502966A0D0001991AE /* ScanningView.swift */,
+				48966CE6296E7A1D00C85696 /* ProfileView.swift */,
 				4809247129669F3D009EB501 /* Assets.xcassets */,
 				4809247329669F3D009EB501 /* Preview Content */,
 			);
@@ -193,8 +196,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48DDFD56296C37F300EF17FF /* CustomTabBar.swift in Sources */,
-				484DCF512966A0D0001991AE /* scanningView.swift in Sources */,
+				48DDFD56296C37F300EF17FF /* HomeView.swift in Sources */,
+				484DCF512966A0D0001991AE /* ScanningView.swift in Sources */,
+				48966CE7296E7A1D00C85696 /* ProfileView.swift in Sources */,
 				4809247029669F3C009EB501 /* ContentView.swift in Sources */,
 				4809246E29669F3C009EB501 /* doorianApp.swift in Sources */,
 			);

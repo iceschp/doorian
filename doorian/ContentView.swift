@@ -8,36 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var tabSelected: Tab = .house
-        
-        init() {
-            UITabBar.appearance().isHidden = true
-        }
-        
-        var body: some View {
-            ZStack {
-                VStack {
-                    TabView(selection: $tabSelected) {
-                        ForEach(Tab.allCases, id: \.rawValue) { tab in
-                            HStack {
-//                                Image(systemName: tab.rawValue)
-//                                Text("\(tab.rawValue.capitalized)")
-                                Text("หน้า Home")
-                                    .bold()
-                                    
-                                    .animation(nil, value: tabSelected)
-                            }
-                            .tag(tab)
-                            
-                        }
-                    }
+    var body: some View {
+        TabView {
+            HomeView()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("หน้าแรก")
                 }
-                VStack {
-                    Spacer()
-                    CustomTabBar(selectedTab: $tabSelected)
+            ScanningView()
+                .tabItem {
+                    Image(systemName: "viewfinder")
+                    Color.red
                 }
-            }
+            ProfileView()
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("โปรไฟล์")
+                }
         }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
