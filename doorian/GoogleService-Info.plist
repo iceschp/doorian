@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>838746405686-eekiothouije8pfjg8nlr2hc068q3mdh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.838746405686-eekiothouije8pfjg8nlr2hc068q3mdh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCcbPTURAv8rlPuJ1KjGx5hknPRy5U7oRI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>838746405686</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>icce.doorian</string>
+	<key>PROJECT_ID</key>
+	<string>doorian-d542e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>doorian-d542e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:838746405686:ios:7cb302bf98dc8244529197</string>
+</dict>
+</plist>
