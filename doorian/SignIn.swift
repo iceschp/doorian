@@ -79,12 +79,6 @@ struct SignIn: View {
     }
 
 
-struct SignIn_Previews: PreviewProvider {
-    static var previews: some View {
-        SignIn()
-    }
-}
-
 struct SignInDetail: View {
     @State var email = ""
     @State var password = ""
@@ -246,5 +240,11 @@ struct SignUpView: View {
             .background(Color.white)
             .cornerRadius(25.0)
         }
+    }
+}
+
+struct SignIn_Previews: PreviewProvider {
+    static var previews: some View {
+        SignUpView()
     }
 }
