@@ -5,6 +5,7 @@
 //  Created by Warunya on 5/1/2566 BE.
 //
 
+import GoogleSignIn
 import SwiftUI
 import Firebase
 
@@ -21,7 +22,7 @@ struct doorianApp: App {
     }
 }
 
-class AppDelegate: NSObject, UIApplicationDelegate{
+class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         FirebaseApp.configure()

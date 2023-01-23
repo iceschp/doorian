@@ -148,6 +148,16 @@ struct SignInDetail: View {
                     Text("คุณยังไม่ได้สมัครสมาชิกหรือไม่")
                     NavigationLink("สมัครสมาชิก",destination: SignUpView())
                 }
+                HStack{
+                    Spacer()
+                    Button(action: {
+                        
+                    }){
+                        Text("Forget password")
+                            .fontWeight(.bold)
+                            .foregroundColor(Color("textbut"))
+                    }
+                }
 
             }
             .padding()
