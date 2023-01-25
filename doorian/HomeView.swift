@@ -14,26 +14,32 @@ struct HomeView: View {
             ScrollView (.vertical, showsIndicators: true) {
                 Header()
                     .padding(.bottom, 23)
-                Location()
+    
+                ContentDisplay()
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color("bright-green"))
         }
     }
 }
 
 struct Header: View {
     var body: some View {
-        VStack {
-            Text("สวัสดี! คุณวรัญญา")
-                .bold()
-                .font(.system(size: 24))
-                .padding(.bottom, 5)
+        ZStack (alignment: .top){
+            VStack {
+                Text("สวัสดี! คุณวรัญญา")
+                    .bold()
+                    .font(.system(size: 24))
+                    .padding(.bottom, 5)
+                
+                Text("อัปเดตข่าวสารทุเรียนวันที่ 1 มกราคม 2566")
+                    .font(.system(size: 14))
+            }
+            .foregroundColor(.white)
+            .frame(maxWidth: .infinity, minHeight: 150)
+            .background(Color("bright-green"))
             
-            Text("อัปเดตข่าวสารทุเรียนวันที่ 1 มกราคม 2566")
-                .font(.system(size: 14))
+            Location()
+                .padding(.top, 135)
         }
-        .foregroundColor(.white)
     }
 }
 
@@ -49,6 +55,24 @@ struct Location: View {
         .frame(width: 360, height: 30)
         .background(.white)
         .cornerRadius(100)
+        .shadow(radius: 4, x: 0, y: 2)
+    }
+}
+
+struct ContentDisplay: View {
+    var body: some View {
+        VStack (alignment: .leading){
+            Text("ประกาศทั่วไป")
+                .bold()
+                .font(.system(size: 18))
+            
+            Spacer()
+            
+            Text("ข่าววันนี้")
+                .bold()
+                .font(.system(size: 18))
+        }
+        .background(.white)
     }
 }
 
