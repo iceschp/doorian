@@ -7,6 +7,9 @@
 
 import SwiftUI
 import FirebaseAuth
+import GoogleSignIn
+import Firebase
+
 
 class AppViewModel: ObservableObject{
     let auth  = Auth.auth()
@@ -56,17 +59,17 @@ struct SignIn: View {
                 
             if viewModel.isSignedIn {
                 VStack {
-                                    Text("You are signed in")
-                                    Button(action: {
-                                        viewModel.signOut()
-                                    }, label: {
-                                        Text("ออกจากระบบ")
-                                            .frame(width: 200, height: 50)
-                                            .background(Color.green)
-                                            .foregroundColor(Color.blue)
-                                            .padding()
-                                    })
-                                }
+                        Text("You are signed in")
+                        Button(action: {
+                            viewModel.signOut()
+                        }, label: {
+                            Text("ออกจากระบบ")
+                            .frame(width: 200, height: 50)
+                            .background(Color.green)
+                            .foregroundColor(Color.blue)
+                            .padding()
+                        })
+                }
             }
             else{
                     SignInDetail()
@@ -143,8 +146,10 @@ struct SignInDetail: View {
                 }
                 Text("หรือ")
                     .padding()
-                GoogleSigninBtn {
-                    
+                GoogleSigninBtn { //ที่คอมเม้นท์ที่เหลืออีกส่วนจะอยู่ในไฟล์ชื่อ FireAuth น้า 
+//                    FireAuth.share.signinWithGoogle(presenting: getRootViewController()) { errror in
+//                        print("ERROR: \(error)")
+//                    }
                 }
 
             }
@@ -153,6 +158,7 @@ struct SignInDetail: View {
             .cornerRadius(25.0)
         }
     }
+    
     func reset(){
         
         if self.email != ""{

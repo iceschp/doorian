@@ -8,5 +8,5 @@ target 'doorian' do
  pod 'Firebase/Core'
  pod 'Firebase/Auth'
  pod 'GoogleSignIn'
-
+ pod 'GoogleSignInSwift'
 end

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		26337C642976731800DA8F41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26337C632976731800DA8F41 /* GoogleService-Info.plist */; };
 		264EDA752980DEB2004C40DB /* GoogleSigninBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264EDA742980DEB2004C40DB /* GoogleSigninBtn.swift */; };
+		264EDA7B298108DF004C40DB /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264EDA7A298108DF004C40DB /* View.swift */; };
+		26590B7429811BAF0021AE56 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 26590B7329811BAF0021AE56 /* GoogleSignIn */; };
+		26590B7629811BAF0021AE56 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 26590B7529811BAF0021AE56 /* GoogleSignInSwift */; };
+		26590B7A2981360D0021AE56 /* FireAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26590B792981360D0021AE56 /* FireAuth.swift */; };
 		26BD0D1C29763B9F004754A7 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BD0D1B29763B9F004754A7 /* SignIn.swift */; };
 		4809246E29669F3C009EB501 /* doorianApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809246D29669F3C009EB501 /* doorianApp.swift */; };
 		4809247029669F3C009EB501 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809246F29669F3C009EB501 /* ContentView.swift */; };
@@ -24,6 +28,8 @@
 		2629276B297E950F0050F555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		26337C632976731800DA8F41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		264EDA742980DEB2004C40DB /* GoogleSigninBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSigninBtn.swift; sourceTree = "<group>"; };
+		264EDA7A298108DF004C40DB /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		26590B792981360D0021AE56 /* FireAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAuth.swift; sourceTree = "<group>"; };
 		26BD0D1B29763B9F004754A7 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		4809246A29669F3C009EB501 /* doorian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = doorian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4809246D29669F3C009EB501 /* doorianApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doorianApp.swift; sourceTree = "<group>"; };
@@ -43,13 +49,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26590B7629811BAF0021AE56 /* GoogleSignInSwift in Frameworks */,
 				65736C2F49198F81752F87AE /* Pods_doorian.framework in Frameworks */,
+				26590B7429811BAF0021AE56 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26590B7B298139D90021AE56 /* Firebase  */ = {
+			isa = PBXGroup;
+			children = (
+				26BD0D1B29763B9F004754A7 /* SignIn.swift */,
+				264EDA742980DEB2004C40DB /* GoogleSigninBtn.swift */,
+				264EDA7A298108DF004C40DB /* View.swift */,
+				26590B792981360D0021AE56 /* FireAuth.swift */,
+			);
+			path = "Firebase ";
+			sourceTree = "<group>";
+		};
 		4809246129669F3C009EB501 = {
 			isa = PBXGroup;
 			children = (
@@ -71,14 +90,13 @@
 		4809246C29669F3C009EB501 /* doorian */ = {
 			isa = PBXGroup;
 			children = (
-				2629276B297E950F0050F555 /* Info.plist */,
+				26590B7B298139D90021AE56 /* Firebase  */,
 				4809246D29669F3C009EB501 /* doorianApp.swift */,
 				4809246F29669F3C009EB501 /* ContentView.swift */,
 				48DDFD55296C37F300EF17FF /* HomeView.swift */,
 				484DCF502966A0D0001991AE /* ScanningView.swift */,
 				48966CE6296E7A1D00C85696 /* ProfileView.swift */,
-				26BD0D1B29763B9F004754A7 /* SignIn.swift */,
-				264EDA742980DEB2004C40DB /* GoogleSigninBtn.swift */,
+				2629276B297E950F0050F555 /* Info.plist */,
 				4809247129669F3D009EB501 /* Assets.xcassets */,
 				26337C632976731800DA8F41 /* GoogleService-Info.plist */,
 				4809247329669F3D009EB501 /* Preview Content */,
@@ -129,6 +147,10 @@
 			dependencies = (
 			);
 			name = doorian;
+			packageProductDependencies = (
+				26590B7329811BAF0021AE56 /* GoogleSignIn */,
+				26590B7529811BAF0021AE56 /* GoogleSignInSwift */,
+			);
 			productName = doorian;
 			productReference = 4809246A29669F3C009EB501 /* doorian.app */;
 			productType = "com.apple.product-type.application";
@@ -157,6 +179,9 @@
 				Base,
 			);
 			mainGroup = 4809246129669F3C009EB501;
+			packageReferences = (
+				26590B7229811BAF0021AE56 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = 4809246B29669F3C009EB501 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -226,11 +251,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264EDA7B298108DF004C40DB /* View.swift in Sources */,
 				48DDFD56296C37F300EF17FF /* HomeView.swift in Sources */,
 				26BD0D1C29763B9F004754A7 /* SignIn.swift in Sources */,
 				264EDA752980DEB2004C40DB /* GoogleSigninBtn.swift in Sources */,
 				484DCF512966A0D0001991AE /* ScanningView.swift in Sources */,
 				48966CE7296E7A1D00C85696 /* ProfileView.swift in Sources */,
+				26590B7A2981360D0021AE56 /* FireAuth.swift in Sources */,
 				4809247029669F3C009EB501 /* ContentView.swift in Sources */,
 				4809246E29669F3C009EB501 /* doorianApp.swift in Sources */,
 			);
@@ -437,6 +464,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		26590B7229811BAF0021AE56 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		26590B7329811BAF0021AE56 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26590B7229811BAF0021AE56 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		26590B7529811BAF0021AE56 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26590B7229811BAF0021AE56 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4809246229669F3C009EB501 /* Project object */;
 }

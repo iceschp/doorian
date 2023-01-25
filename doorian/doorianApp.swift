@@ -13,7 +13,8 @@ import FirebaseCore
 @main
 
 struct doorianApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate 
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @AppStorage("signIn") var isSignIn = false
     var body: some Scene {
         WindowGroup {
             let viewModel = AppViewModel()
@@ -30,5 +31,11 @@ class AppDelegate: NSObject, UIApplicationDelegate{
         
         
         return true
+    }
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey: Any])
+      -> Bool {
+      return GIDSignIn.sharedInstance.handle(url)
     }
 }
