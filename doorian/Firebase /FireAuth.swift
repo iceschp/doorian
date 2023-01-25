@@ -23,6 +23,8 @@ struct FireAuth {
         // Create Google Sign In configuration object.
         let config = GIDConfiguration(clientID: clientID)
         
+        GIDSignIn.sharedInstance.configuration = config
+        
         guard let presentingVC = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.rootViewController else {return}
         
         // Start the sign in flow!
@@ -30,7 +32,6 @@ struct FireAuth {
 
             if let error = error {
                 completion(error)
-                print("น่าจะ bug ตรงนี้มั้ง")
                 return
             }
             
