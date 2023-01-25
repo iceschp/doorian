@@ -56,17 +56,17 @@ struct SignIn: View {
                 
             if viewModel.isSignedIn {
                 VStack {
-                    Text("You are signed in")
-                    Button(action: {
-                        viewModel.signOut()
-                    }, label: {
-                        Text("ออกจากระบบ")
-                            .frame(width: 200, height: 50)
-                            .background(Color.green)
-                            .foregroundColor(Color.blue)
-                            .padding()
-                    })
-                }
+                                    Text("You are signed in")
+                                    Button(action: {
+                                        viewModel.signOut()
+                                    }, label: {
+                                        Text("ออกจากระบบ")
+                                            .frame(width: 200, height: 50)
+                                            .background(Color.green)
+                                            .foregroundColor(Color.blue)
+                                            .padding()
+                                    })
+                                }
             }
             else{
                     SignInDetail()
@@ -110,8 +110,8 @@ struct SignInDetail: View {
                     Button(action: {
                         self.reset()
                     }){
-                        Text("Forget password")
-                            .fontWeight(.bold)
+                        Text("ลืมรหัสผ่าน ?")
+                            .fontWeight(.medium)
                             .foregroundColor(Color("textbut"))
                     }
                 }
@@ -129,12 +129,11 @@ struct SignInDetail: View {
                         
                     } , label: {
                         Text("เข้าสู่ระบบ")
-                            .font(.title3)
                             .fontWeight(.bold)
-                            .foregroundColor(Color.yellow)
-                            .frame(width: 300, height: 50)
+                            .foregroundColor(Color.white)
+                            .frame(width: 350, height: 50)
                             .background(Color("button"))
-                            .cornerRadius(50)
+                            .cornerRadius(20)
                         
                     })
                 .padding()
@@ -142,19 +141,13 @@ struct SignInDetail: View {
                     Text("คุณยังไม่ได้สมัครสมาชิกหรือไม่")
                     NavigationLink("สมัครสมาชิก",destination: SignUpView())
                 }
-                HStack{
-                    Spacer()
-                    Button(action: {
-                        
-                    }){
-                        Text("Forget password")
-                            .fontWeight(.bold)
-                            .foregroundColor(Color("textbut"))
-                    }
+                Text("หรือ")
+                    .padding()
+                GoogleSigninBtn {
+                    
                 }
 
             }
-            .padding()
             .padding()
             .background(Color.white)
             .cornerRadius(25.0)
@@ -221,7 +214,6 @@ struct SignUpView: View {
                     
                 } , label: {
                     Text("สมัครสมาชิก")
-                        .font(.title3)
                         .fontWeight(.bold)
                         .foregroundColor(Color.yellow)
                         .frame(width: 300, height: 50)
@@ -235,7 +227,6 @@ struct SignUpView: View {
                     NavigationLink("เข้าสู่ระบบ",destination: SignIn())
                 }
             }
-            .padding()
             .padding()
             .background(Color.white)
             .cornerRadius(25.0)

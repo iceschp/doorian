@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26337C642976731800DA8F41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26337C632976731800DA8F41 /* GoogleService-Info.plist */; };
+		264EDA752980DEB2004C40DB /* GoogleSigninBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264EDA742980DEB2004C40DB /* GoogleSigninBtn.swift */; };
 		26BD0D1C29763B9F004754A7 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BD0D1B29763B9F004754A7 /* SignIn.swift */; };
 		4809246E29669F3C009EB501 /* doorianApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809246D29669F3C009EB501 /* doorianApp.swift */; };
 		4809247029669F3C009EB501 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809246F29669F3C009EB501 /* ContentView.swift */; };
@@ -20,7 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2629276B297E950F0050F555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		26337C632976731800DA8F41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		264EDA742980DEB2004C40DB /* GoogleSigninBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSigninBtn.swift; sourceTree = "<group>"; };
 		26BD0D1B29763B9F004754A7 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		4809246A29669F3C009EB501 /* doorian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = doorian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4809246D29669F3C009EB501 /* doorianApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doorianApp.swift; sourceTree = "<group>"; };
@@ -68,12 +71,14 @@
 		4809246C29669F3C009EB501 /* doorian */ = {
 			isa = PBXGroup;
 			children = (
+				2629276B297E950F0050F555 /* Info.plist */,
 				4809246D29669F3C009EB501 /* doorianApp.swift */,
 				4809246F29669F3C009EB501 /* ContentView.swift */,
 				48DDFD55296C37F300EF17FF /* HomeView.swift */,
 				484DCF502966A0D0001991AE /* ScanningView.swift */,
 				48966CE6296E7A1D00C85696 /* ProfileView.swift */,
 				26BD0D1B29763B9F004754A7 /* SignIn.swift */,
+				264EDA742980DEB2004C40DB /* GoogleSigninBtn.swift */,
 				4809247129669F3D009EB501 /* Assets.xcassets */,
 				26337C632976731800DA8F41 /* GoogleService-Info.plist */,
 				4809247329669F3D009EB501 /* Preview Content */,
@@ -223,6 +228,7 @@
 			files = (
 				48DDFD56296C37F300EF17FF /* HomeView.swift in Sources */,
 				26BD0D1C29763B9F004754A7 /* SignIn.swift in Sources */,
+				264EDA752980DEB2004C40DB /* GoogleSigninBtn.swift in Sources */,
 				484DCF512966A0D0001991AE /* ScanningView.swift in Sources */,
 				48966CE7296E7A1D00C85696 /* ProfileView.swift in Sources */,
 				4809247029669F3C009EB501 /* ContentView.swift in Sources */,
@@ -356,9 +362,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"doorian/Preview Content\"";
-				DEVELOPMENT_TEAM = MFUV2GQ954;
+				DEVELOPMENT_TEAM = 64427W7HNS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = doorian/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -386,9 +393,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"doorian/Preview Content\"";
-				DEVELOPMENT_TEAM = MFUV2GQ954;
+				DEVELOPMENT_TEAM = 64427W7HNS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = doorian/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
