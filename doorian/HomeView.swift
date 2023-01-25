@@ -13,6 +13,8 @@ struct HomeView: View {
         NavigationView {
             ScrollView (.vertical, showsIndicators: true) {
                 Header()
+                    .padding(.bottom, 23)
+                Location()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("bright-green"))
@@ -32,6 +34,21 @@ struct Header: View {
                 .font(.system(size: 14))
         }
         .foregroundColor(.white)
+    }
+}
+
+struct Location: View {
+    var body: some View {
+        HStack {
+            Image(systemName: "mappin.and.ellipse")
+                .foregroundColor(Color("bright-green"))
+            Text("กรุงเทพมหานคร")
+                .bold()
+                .font(.system(size: 14))
+        }
+        .frame(width: 360, height: 30)
+        .background(.white)
+        .cornerRadius(100)
     }
 }
 
