@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        
         TabView {
             HomeView()
                 .tabItem {
@@ -18,7 +19,6 @@ struct ContentView: View {
             ScanningView()
                 .tabItem {
                     Image(systemName: "viewfinder")
-                    Color.red
                 }
             ProfileView()
                 .tabItem {
