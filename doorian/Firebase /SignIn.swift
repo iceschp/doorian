@@ -147,9 +147,9 @@ struct SignInDetail: View {
                 Text("หรือ")
                     .padding()
                 GoogleSigninBtn { //ที่คอมเม้นท์ที่เหลืออีกส่วนจะอยู่ในไฟล์ชื่อ FireAuth น้า 
-//                    FireAuth.share.signinWithGoogle(presenting: getRootViewController()) { errror in
-//                        print("ERROR: \(error)")
-//                    }
+                    FireAuth.share.signinWithGoogle(presenting: getRootViewController()) { errror in
+                        print("ERROR: \(error)")
+                    }
                 }
 
             }
