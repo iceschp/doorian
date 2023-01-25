@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var viewModel: AppViewModel
     var body: some View {
-        Text("หน้าโปรไฟล์")
+        VStack {
+                Text("You are signed in")
+                Button(action: {
+                    viewModel.signOut()
+                }, label: {
+                    Text("ออกจากระบบ")
+                    .frame(width: 200, height: 50)
+                    .background(Color.green)
+                    .foregroundColor(Color.blue)
+                    .padding()
+                })
+        }
     }
 }
 
