@@ -14,7 +14,6 @@ struct HomeView: View {
             ScrollView (.vertical, showsIndicators: true) {
                 Header()
                     .padding(.bottom, 23)
-    
                 ContentDisplay()
             }
         }
@@ -34,7 +33,7 @@ struct Header: View {
                     .font(.system(size: 14))
             }
             .foregroundColor(.white)
-            .frame(maxWidth: .infinity, minHeight: 150)
+            .frame(maxWidth: .infinity, maxHeight: 150)
             .background(Color("bright-green"))
             
             Location()
@@ -72,7 +71,8 @@ struct ContentDisplay: View {
                 .bold()
                 .font(.system(size: 18))
         }
-        .background(.white)
+        
+        .background(.blue)
     }
 }
 
