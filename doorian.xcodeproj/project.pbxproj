@@ -13,7 +13,12 @@
 		26590B7429811BAF0021AE56 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 26590B7329811BAF0021AE56 /* GoogleSignIn */; };
 		26590B7629811BAF0021AE56 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 26590B7529811BAF0021AE56 /* GoogleSignInSwift */; };
 		26590B7A2981360D0021AE56 /* FireAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26590B792981360D0021AE56 /* FireAuth.swift */; };
-		26BD0D1C29763B9F004754A7 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BD0D1B29763B9F004754A7 /* SignIn.swift */; };
+		26A67CD22982591800E6D735 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A67CD12982591800E6D735 /* LoginView.swift */; };
+		26A67CFD2982694900E6D735 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26A67CFC2982694900E6D735 /* NotoSans-Bold.ttf */; };
+		26A67D01298275F600E6D735 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A67D00298275F600E6D735 /* String.swift */; };
+		26A67D0529827CA800E6D735 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A67D0429827CA800E6D735 /* SignupView.swift */; };
+		26A67D0729827F9D00E6D735 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A67D0629827F9D00E6D735 /* AuthView.swift */; };
+		26A67D09298289DA00E6D735 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A67D08298289DA00E6D735 /* UserView.swift */; };
 		4809246E29669F3C009EB501 /* doorianApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809246D29669F3C009EB501 /* doorianApp.swift */; };
 		4809247029669F3C009EB501 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809246F29669F3C009EB501 /* ContentView.swift */; };
 		4809247229669F3D009EB501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4809247129669F3D009EB501 /* Assets.xcassets */; };
@@ -30,7 +35,12 @@
 		264EDA742980DEB2004C40DB /* GoogleSigninBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSigninBtn.swift; sourceTree = "<group>"; };
 		264EDA7A298108DF004C40DB /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		26590B792981360D0021AE56 /* FireAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAuth.swift; sourceTree = "<group>"; };
-		26BD0D1B29763B9F004754A7 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		26A67CD12982591800E6D735 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		26A67CFC2982694900E6D735 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		26A67D00298275F600E6D735 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		26A67D0429827CA800E6D735 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		26A67D0629827F9D00E6D735 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		26A67D08298289DA00E6D735 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		4809246A29669F3C009EB501 /* doorian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = doorian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4809246D29669F3C009EB501 /* doorianApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doorianApp.swift; sourceTree = "<group>"; };
 		4809246F29669F3C009EB501 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,15 +68,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		26590B7B298139D90021AE56 /* Firebase  */ = {
+		26590B7B298139D90021AE56 /* Google Firebase  */ = {
 			isa = PBXGroup;
 			children = (
-				26BD0D1B29763B9F004754A7 /* SignIn.swift */,
 				264EDA742980DEB2004C40DB /* GoogleSigninBtn.swift */,
 				264EDA7A298108DF004C40DB /* View.swift */,
 				26590B792981360D0021AE56 /* FireAuth.swift */,
 			);
-			path = "Firebase ";
+			path = "Google Firebase ";
+			sourceTree = "<group>";
+		};
+		26A67CD32982617400E6D735 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				26A67CFC2982694900E6D735 /* NotoSans-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		26A67D0A29828D5E00E6D735 /* Firebase+ */ = {
+			isa = PBXGroup;
+			children = (
+				26A67D0629827F9D00E6D735 /* AuthView.swift */,
+				26A67CD12982591800E6D735 /* LoginView.swift */,
+				26A67D0429827CA800E6D735 /* SignupView.swift */,
+				26A67D00298275F600E6D735 /* String.swift */,
+				26A67D08298289DA00E6D735 /* UserView.swift */,
+			);
+			path = "Firebase+";
 			sourceTree = "<group>";
 		};
 		4809246129669F3C009EB501 = {
@@ -90,7 +119,9 @@
 		4809246C29669F3C009EB501 /* doorian */ = {
 			isa = PBXGroup;
 			children = (
-				26590B7B298139D90021AE56 /* Firebase  */,
+				26A67D0A29828D5E00E6D735 /* Firebase+ */,
+				26A67CD32982617400E6D735 /* Fonts */,
+				26590B7B298139D90021AE56 /* Google Firebase  */,
 				4809246D29669F3C009EB501 /* doorianApp.swift */,
 				4809246F29669F3C009EB501 /* ContentView.swift */,
 				48DDFD55296C37F300EF17FF /* HomeView.swift */,
@@ -196,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26A67CFD2982694900E6D735 /* NotoSans-Bold.ttf in Resources */,
 				4809247529669F3D009EB501 /* Preview Assets.xcassets in Resources */,
 				4809247229669F3D009EB501 /* Assets.xcassets in Resources */,
 				26337C642976731800DA8F41 /* GoogleService-Info.plist in Resources */,
@@ -251,15 +283,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26A67D0529827CA800E6D735 /* SignupView.swift in Sources */,
 				264EDA7B298108DF004C40DB /* View.swift in Sources */,
+				26A67D01298275F600E6D735 /* String.swift in Sources */,
+				26A67D0729827F9D00E6D735 /* AuthView.swift in Sources */,
 				48DDFD56296C37F300EF17FF /* HomeView.swift in Sources */,
-				26BD0D1C29763B9F004754A7 /* SignIn.swift in Sources */,
 				264EDA752980DEB2004C40DB /* GoogleSigninBtn.swift in Sources */,
 				484DCF512966A0D0001991AE /* ScanningView.swift in Sources */,
 				48966CE7296E7A1D00C85696 /* ProfileView.swift in Sources */,
 				26590B7A2981360D0021AE56 /* FireAuth.swift in Sources */,
 				4809247029669F3C009EB501 /* ContentView.swift in Sources */,
+				26A67CD22982591800E6D735 /* LoginView.swift in Sources */,
 				4809246E29669F3C009EB501 /* doorianApp.swift in Sources */,
+				26A67D09298289DA00E6D735 /* UserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +456,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"doorian/Preview Content\"";
-				DEVELOPMENT_TEAM = 64427W7HNS;
+				DEVELOPMENT_TEAM = MFUV2GQ954;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = doorian/Info.plist;

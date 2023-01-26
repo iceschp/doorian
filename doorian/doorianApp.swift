@@ -14,12 +14,12 @@ import FirebaseCore
 
 struct doorianApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @AppStorage("signIn") var isSignIn = false
+    
     var body: some Scene {
         WindowGroup {
-            let viewModel = AppViewModel()
-            SignIn()
-                .environmentObject(viewModel)
+
+           UserView()
+
         }
     }
 }
