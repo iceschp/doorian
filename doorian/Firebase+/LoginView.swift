@@ -159,14 +159,21 @@ struct LoginView: View {
                         fixedSize: 14))
                     .padding()
                 
+            }
+            
+            VStack {
+                Text("ลืมรหัสผ่าน")
+            }
+            
+            VStack {
                 GoogleSigninBtn {
                     
                     FireAuth.share.signinWithGoogle(presenting: getRootViewController()) { errror in
                         print("ERROR: \(error)")
                     }
                 }
-                
             }
+            
         }
     }
 }
