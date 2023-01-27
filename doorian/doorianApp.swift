@@ -18,8 +18,8 @@ struct doorianApp: App {
     var body: some Scene {
         WindowGroup {
 
-//           AuthView()
-            OpeningView()
+           AuthView()
+      
 
         }
     }
