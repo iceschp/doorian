@@ -8,25 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    init() {
+        UITabBar.appearance().backgroundColor = .white
+    }
+    
     var body: some View {
-        TabView {
-            HomeView()
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("หน้าแรก")
-                }
-            ScanningView()
-                .tabItem {
-                    Image(systemName: "viewfinder")
-                    Color.red
-                }
-            ProfileView()
-                .tabItem {
-                    Image(systemName: "person")
-                    Text("โปรไฟล์")
-                }
+        VStack {
+            TabView {
+                HomeView()
+                    .tabItem {
+                        Image(systemName: "house")
+                        Text("หน้าแรก")
+                    }
+                ScanningView()
+                    .tabItem {
+                        Image(systemName: "viewfinder")
+                    }
+                ProfileView()
+                    .tabItem {
+                        Image(systemName: "person")
+                        Text("โปรไฟล์")
+                    }
+            }
+            .accentColor(Color("button"))
         }
-        .accentColor(Color("button"))
     }
 }
 
