@@ -147,21 +147,22 @@ struct SignupView: View {
                 }
                 
             }
+            .padding()
+            Text("")
             Text("หรือ")
                 .font(.custom(
                     "NotoSans-Bold",
                     fixedSize: 14))
                 .padding()
-            
-            GoogleSigninBtn {
-                
-                FireAuth.share.signinWithGoogle(presenting: getRootViewController()) { errror in
-                    print("ERROR: \(error)")
-                }
+           
             }
-        }
-    }
-    }
+            GoogleSigninBtn {
+
+            FireAuth.share.signinWithGoogle(presenting: getRootViewController()) { errror in
+                print("ERROR: \(error)")
+            }
+         }
+     }
+  }
+
 }
-
-

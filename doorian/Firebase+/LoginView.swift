@@ -44,8 +44,8 @@ struct LoginView: View {
                 HStack{
                     Text("ยินดีต้อนรับสู่ Doorian!")
                         .font(.custom(
-                                "NotoSans-Bold",
-                                fixedSize: 24))
+                            "NotoSans-Bold",
+                            fixedSize: 24))
                 }
                 HStack{
                     Image(systemName: "mail")
@@ -64,8 +64,8 @@ struct LoginView: View {
                 }
                 .padding()
                 .background(
-                        RoundedRectangle(cornerRadius: 50)
-                            .fill(Color("textfield"))
+                    RoundedRectangle(cornerRadius: 50)
+                        .fill(Color("textfield"))
                 )
                 .padding()
                 
@@ -74,7 +74,7 @@ struct LoginView: View {
                     SecureField("รหัสผ่าน", text: $password)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
-                   
+                    
                     
                     Spacer()
                     
@@ -83,29 +83,29 @@ struct LoginView: View {
                         Image(systemName: isValidPassword(password) ? "checkmark" : "xmark")
                             .foregroundColor(isValidPassword(password) ? .green : .red)
                     }
-        
+                    
                 }
                 .padding()
                 .background(
-                        RoundedRectangle(cornerRadius: 50)
-                            .fill(Color("textfield"))
+                    RoundedRectangle(cornerRadius: 50)
+                        .fill(Color("textfield"))
                 )
                 .padding()
                 
                 Button{
                     Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-                    if let error = error {
-                        print(error)
-                        return
-                    }
-                    
-                    if let authResult = authResult {
-                        print(authResult.user.uid)
-                        withAnimation {
-                            userID = authResult.user.uid
+                        if let error = error {
+                            print(error)
+                            return
+                        }
+                        
+                        if let authResult = authResult {
+                            print(authResult.user.uid)
+                            withAnimation {
+                                userID = authResult.user.uid
+                            }
                         }
                     }
-                }
                     
                 } label: {
                     Text("เข้าสู่ระบบ")
@@ -125,7 +125,7 @@ struct LoginView: View {
                 
                 Spacer()
                 Spacer()
-               
+                
                 
                 Button(action: {
                     withAnimation {
@@ -146,24 +146,25 @@ struct LoginView: View {
                                 "NotoSans-Bold",
                                 fixedSize: 14))
                     }
-            
                     
                 }
+                
                 .padding()
-            
+               
                 Text("หรือ")
                     .font(.custom(
                         "NotoSans-Bold",
                         fixedSize: 14))
                     .padding()
+                }
+            
                 GoogleSigninBtn {
-
+                    
                     FireAuth.share.signinWithGoogle(presenting: getRootViewController()) { errror in
                         print("ERROR: \(error)")
                     }
                 }
-            }
-        }
+          }
     }
    
 }
