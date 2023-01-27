@@ -32,8 +32,8 @@ struct LoginView: View {
     var body: some View {
         ZStack {
             Color("bg").edgesIgnoringSafeArea(.all)
-            VStack{
-                HStack{
+            VStack {
+                HStack {
                     Image("logo")
                         .resizable()
                         .scaledToFit()
@@ -41,12 +41,14 @@ struct LoginView: View {
                         .padding()
                 }
                 .padding(.top)
-                HStack{
+                
+                HStack {
                     Text("ยินดีต้อนรับสู่ Doorian!")
                         .font(.custom(
                             "NotoSans-Bold",
                             fixedSize: 24))
                 }
+                
                 HStack{
                     Image(systemName: "mail")
                     TextField("อีเมล", text: $email)
@@ -69,7 +71,7 @@ struct LoginView: View {
                 )
                 .padding()
                 
-                HStack{
+                HStack {
                     Image(systemName: "lock")
                     SecureField("รหัสผ่าน", text: $password)
                         .disableAutocorrection(true)
@@ -92,7 +94,7 @@ struct LoginView: View {
                 )
                 .padding()
                 
-                Button{
+                Button {
                     Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                         if let error = error {
                             print(error)
@@ -150,23 +152,23 @@ struct LoginView: View {
                 }
                 
                 .padding()
-               
+                
                 Text("หรือ")
                     .font(.custom(
                         "NotoSans-Bold",
                         fixedSize: 14))
                     .padding()
-                }
-            
+                
                 GoogleSigninBtn {
                     
                     FireAuth.share.signinWithGoogle(presenting: getRootViewController()) { errror in
                         print("ERROR: \(error)")
                     }
                 }
-          }
+                
+            }
+        }
     }
-   
 }
 
 
