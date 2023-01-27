@@ -31,7 +31,7 @@ struct SignupView: View {
     
     var body: some View {
         ZStack {
-            Color("textbg").edgesIgnoringSafeArea(.all)
+            Color("bg").edgesIgnoringSafeArea(.all)
             VStack{
                 HStack{
                     Image("logo")
@@ -46,6 +46,8 @@ struct SignupView: View {
                         .font(.custom(
                             "NotoSans-Bold",
                             fixedSize: 24))
+                      
+                        
                 }
                 HStack{
                     Image(systemName: "mail")
@@ -63,11 +65,9 @@ struct SignupView: View {
                     }
                 }
                 .padding()
-                .overlay(
-                    RoundedRectangle(cornerRadius: 50)
-                        .stroke(lineWidth: 2)
-                        .foregroundColor(.black)
-                    
+                .background(
+                        RoundedRectangle(cornerRadius: 50)
+                            .fill(Color("textfield"))
                 )
                 .padding()
                 
@@ -88,12 +88,12 @@ struct SignupView: View {
                     
                 }
                 .padding()
-                .overlay(
-                    RoundedRectangle(cornerRadius: 50)
-                        .stroke(lineWidth: 2)
-                        .foregroundColor(.black)
-                    
+                .background(
+                        RoundedRectangle(cornerRadius: 50)
+                            .fill(Color("textfield"))
                 )
+                    
+                
                 .padding()
                 
                 Button{Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
@@ -121,7 +121,7 @@ struct SignupView: View {
                     
                         .background(
                             RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.black)
+                                .fill(Color("button"))
                         )
                         .padding(.horizontal)
                 }
@@ -134,11 +134,23 @@ struct SignupView: View {
                         self.currentShowingView = "login"
                     }
                 }) {
-                    Text("คุณมีบัญชีผู้ใช้แล้วใช่หรือไม่")
-                        .foregroundColor(.black.opacity(0.7))
-                    
+                    HStack{
+                        Text("คุณมีบัญชีผู้ใช้แล้วใช่หรือไม่")
+                            .foregroundColor(.black.opacity(0.7))
+                            .font(.custom(
+                                "NotoSans-Bold",
+                                fixedSize: 14))
+                        Text("เข้าสู่ระบบ!")
+                            .font(.custom(
+                                "NotoSans-Bold",
+                                fixedSize: 14))
+                    }
+            
                 }
                 Text("หรือ")
+                    .font(.custom(
+                        "NotoSans-Bold",
+                        fixedSize: 14))
                     .padding()
                 GoogleSigninBtn {
                     

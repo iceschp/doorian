@@ -31,7 +31,7 @@ struct LoginView: View {
     
     var body: some View {
         ZStack {
-            Color("textbg").edgesIgnoringSafeArea(.all)
+            Color("bg").edgesIgnoringSafeArea(.all)
             VStack{
                 HStack{
                     Image("logo")
@@ -63,12 +63,10 @@ struct LoginView: View {
                     }
                 }
                 .padding()
-                .overlay(
-                    RoundedRectangle(cornerRadius: 50)
-                        .stroke(lineWidth: 2)
-                        .foregroundColor(.black)
-                       
-                    )
+                .background(
+                        RoundedRectangle(cornerRadius: 50)
+                            .fill(Color("textfield"))
+                )
                 .padding()
                 
                 HStack{
@@ -88,12 +86,10 @@ struct LoginView: View {
         
                 }
                 .padding()
-                .overlay(
-                    RoundedRectangle(cornerRadius: 50)
-                        .stroke(lineWidth: 2)
-                        .foregroundColor(.black)
-                       
-                    )
+                .background(
+                        RoundedRectangle(cornerRadius: 50)
+                            .fill(Color("textfield"))
+                )
                 .padding()
                 
                 Button{
@@ -124,7 +120,7 @@ struct LoginView: View {
                     
                         .background(
                             RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.black)
+                                .fill(Color("button"))
                         )
                         .padding(.horizontal)
                 }
@@ -139,11 +135,25 @@ struct LoginView: View {
                     
                     
                 }) {
-                    Text("คุณยังไม่ได้สมัครสมาชิกหรือไม่")
-                        .foregroundColor(.black.opacity(0.7))
+                    
+                    HStack{
+                        Text("คุณยังไม่ได้สมัครสมาชิกหรือไม่")
+                            .foregroundColor(.black.opacity(0.7))
+                            .font(.custom(
+                                "NotoSans-Bold",
+                                fixedSize: 14))
+                        Text("สมัครสมาชิก!")
+                            .font(.custom(
+                                "NotoSans-Bold",
+                                fixedSize: 14))
+                    }
+            
                     
                 }
                 Text("หรือ")
+                    .font(.custom(
+                        "NotoSans-Bold",
+                        fixedSize: 14))
                     .padding()
                 GoogleSigninBtn {
                     
