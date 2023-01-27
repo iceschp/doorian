@@ -46,8 +46,8 @@ struct SignupView: View {
                         .font(.custom(
                             "NotoSans-Bold",
                             fixedSize: 24))
-                      
-                        
+                    
+                    
                 }
                 HStack{
                     Image(systemName: "mail")
@@ -66,8 +66,8 @@ struct SignupView: View {
                 }
                 .padding()
                 .background(
-                        RoundedRectangle(cornerRadius: 50)
-                            .fill(Color("textfield"))
+                    RoundedRectangle(cornerRadius: 50)
+                        .fill(Color("textfield"))
                 )
                 .padding()
                 
@@ -89,76 +89,79 @@ struct SignupView: View {
                 }
                 .padding()
                 .background(
-                        RoundedRectangle(cornerRadius: 50)
-                            .fill(Color("textfield"))
+                    RoundedRectangle(cornerRadius: 50)
+                        .fill(Color("textfield"))
                 )
-                    
                 
                 .padding()
                 
-                Button{Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                    
-                    if let error = error {
-                        print(error)
-                        return
-                    }
-                    
-                    if let authResult = authResult {
-                        print(authResult.user.uid)
-                        userID = authResult.user.uid
-                        
-                    }
-                }
-                    
-                } label: {
-                    Text("Sign In")
-                        .foregroundColor(.white)
-                        .font(.title3)
-                        .bold()
-                    
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                    
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color("button"))
-                        )
-                        .padding(.horizontal)
-                }
-                
-                Spacer()
-                Spacer()
-                
-                Button(action: {
-                    withAnimation {
-                        self.currentShowingView = "login"
-                    }
-                }) {
-                    HStack{
-                        Text("คุณมีบัญชีผู้ใช้แล้วใช่หรือไม่")
-                            .foregroundColor(.black.opacity(0.7))
-                            .font(.custom(
-                                "NotoSans-Bold",
-                                fixedSize: 14))
-                        Text("เข้าสู่ระบบ!")
-                            .font(.custom(
-                                "NotoSans-Bold",
-                                fixedSize: 14))
-                    }
             
+            Button{Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                
+                if let error = error {
+                    print(error)
+                    return
                 }
-                Text("หรือ")
-                    .font(.custom(
-                        "NotoSans-Bold",
-                        fixedSize: 14))
-                    .padding()
-                GoogleSigninBtn {
+                
+                if let authResult = authResult {
+                    print(authResult.user.uid)
+                    userID = authResult.user.uid
                     
-                    FireAuth.share.signinWithGoogle(presenting: getRootViewController()) { errror in
-                        print("ERROR: \(error)")
-                    }
+                }
+            }
+                
+            } label: {
+                Text("สมัครสมาชิก")
+                    .foregroundColor(.white)
+                    .font(.title3)
+                    .bold()
+                
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color("button"))
+                    )
+                    .padding(.horizontal)
+            }
+            
+            Spacer()
+            Spacer()
+            
+            Button(action: {
+                withAnimation {
+                    self.currentShowingView = "login"
+                }
+            }) {
+                HStack{
+                    Text("คุณมีบัญชีผู้ใช้แล้วใช่หรือไม่")
+                        .foregroundColor(.black.opacity(0.7))
+                        .font(.custom(
+                            "NotoSans-Bold",
+                            fixedSize: 14))
+                    Text("เข้าสู่ระบบ!")
+                        .font(.custom(
+                            "NotoSans-Bold",
+                            fixedSize: 14))
+                }
+                
+            }
+            Text("หรือ")
+                .font(.custom(
+                    "NotoSans-Bold",
+                    fixedSize: 14))
+                .padding()
+            
+            GoogleSigninBtn {
+                
+                FireAuth.share.signinWithGoogle(presenting: getRootViewController()) { errror in
+                    print("ERROR: \(error)")
                 }
             }
         }
     }
+    }
 }
+
+

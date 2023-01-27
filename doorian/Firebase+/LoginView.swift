@@ -105,12 +105,10 @@ struct LoginView: View {
                             userID = authResult.user.uid
                         }
                     }
-                    
-                    
                 }
                     
                 } label: {
-                    Text("Sign In")
+                    Text("เข้าสู่ระบบ")
                         .foregroundColor(.white)
                         .font(.title3)
                         .bold()
@@ -119,7 +117,7 @@ struct LoginView: View {
                         .padding()
                     
                         .background(
-                            RoundedRectangle(cornerRadius: 10)
+                            RoundedRectangle(cornerRadius: 20)
                                 .fill(Color("button"))
                         )
                         .padding(.horizontal)
@@ -127,6 +125,7 @@ struct LoginView: View {
                 
                 Spacer()
                 Spacer()
+               
                 
                 Button(action: {
                     withAnimation {
@@ -150,13 +149,15 @@ struct LoginView: View {
             
                     
                 }
+                .padding()
+            
                 Text("หรือ")
                     .font(.custom(
                         "NotoSans-Bold",
                         fixedSize: 14))
                     .padding()
                 GoogleSigninBtn {
-                    
+
                     FireAuth.share.signinWithGoogle(presenting: getRootViewController()) { errror in
                         print("ERROR: \(error)")
                     }
