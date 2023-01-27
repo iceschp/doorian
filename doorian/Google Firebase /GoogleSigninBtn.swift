@@ -15,12 +15,26 @@ struct GoogleSigninBtn: View {
             action()
         } label: {
             ZStack{
-                Image("google")
-                    .resizable()
-                    .scaledToFit()
+                HStack{
+                    Image("googleicon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 40, height: 30)
+                        
+                    Text("Google")
+                        .foregroundColor(.white)
+                        .font(.title3)
+                        .bold()
+                }
+                .frame(width: 150, height: 40)
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                    .fill(Color.red)
+                )
             }
         }
-        .frame(width: 200, height: 50)
+      
     }
 }
 
