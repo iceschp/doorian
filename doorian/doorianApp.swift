@@ -19,9 +19,7 @@ struct doorianApp: App {
         WindowGroup {
 
            AuthView()
-          
-      
-
+         
         }
     }
 }
