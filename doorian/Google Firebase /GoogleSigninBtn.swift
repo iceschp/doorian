@@ -27,7 +27,7 @@ struct GoogleSigninBtn: View {
                         .bold()
                 }
                 .frame(width: 150, height: 35)
-                .padding()
+                .padding(10)
                 .background(
                     RoundedRectangle(cornerRadius: 20)
                     .fill(Color.red)
