@@ -11,6 +11,7 @@ import FirebaseAuth
 
 struct ResetPasswordView: View {
     @State private var email: String = ""
+    @AppStorage("uid") var userID: String = ""
     
     var body: some View {
         ZStack{
@@ -52,7 +53,12 @@ struct ResetPasswordView: View {
                     
                     
                     Spacer()
-                    
+                    if(email.count != 0) {
+                        
+                        Image(systemName: email.isValidEmail() ? "checkmark" : "xmark")
+                            .foregroundColor(email.isValidEmail() ? .green : .red)
+                    }
+                
                 }
                 .padding()
                 .background(
@@ -61,7 +67,12 @@ struct ResetPasswordView: View {
                 )
                 .padding()
                 
-                Button{
+                Button{Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+                    if let error = error {
+                        print(error)
+                        return
+                    }
+                 }
                     
                 } label:{
                     Text("ยืนยัน")

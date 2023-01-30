@@ -126,7 +126,7 @@ struct LoginView: View {
                 }
                 
                 Spacer()
-                Spacer()
+                
                 
                 
                 Button(action: {
@@ -137,17 +137,16 @@ struct LoginView: View {
                     
                 }) {
                     
-                    HStack{
-                        Text("คุณยังไม่ได้สมัครสมาชิกหรือไม่")
-                            .foregroundColor(.black.opacity(0.7))
-                            .font(.custom(
-                                "NotoSans-Bold",
-                                fixedSize: 14))
-                        Text("สมัครสมาชิก!")
-                            .font(.custom(
-                                "NotoSans-Bold",
-                                fixedSize: 14))
-                    }
+                    
+                    Text("คุณยังไม่ได้สมัครสมาชิกหรือไม่")
+                        .foregroundColor(.black.opacity(0.7))
+                        .font(.custom(
+                            "NotoSans-Bold",
+                            fixedSize: 14))
+                    Text("สมัครสมาชิก!")
+                        .font(.custom(
+                            "NotoSans-Bold",
+                            fixedSize: 14))
                     
                 }
                 
@@ -158,24 +157,22 @@ struct LoginView: View {
                         "NotoSans-Bold",
                         fixedSize: 14))
                     .padding()
+                Button{
+                } label: {
+                    Text("ลืมรหัสผ่าน")
+                }
+                
+                    GoogleSigninBtn {
+                        
+                        FireAuth.share.signinWithGoogle(presenting: getRootViewController()) { errror in
+                            print("ERROR: \(error)")
+                        }
+                    }
+                
                 
             }
-            
-            VStack {
-                Text("ลืมรหัสผ่าน")
-            }
-            
-            VStack {
-                GoogleSigninBtn {
-                    
-                    FireAuth.share.signinWithGoogle(presenting: getRootViewController()) { errror in
-                        print("ERROR: \(error)")
-                    }
-                }
-            }
-            
         }
     }
+    
+    
 }
-
-
