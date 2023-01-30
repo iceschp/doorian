@@ -26,7 +26,7 @@ struct GoogleSigninBtn: View {
                         .font(.title3)
                         .bold()
                 }
-                .frame(width: 150, height: 40)
+                .frame(width: 150, height: 35)
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 20)
