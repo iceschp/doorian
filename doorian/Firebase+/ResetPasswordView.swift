@@ -54,7 +54,6 @@ struct ResetPasswordView: View {
                     
                     Spacer()
                     if(email.count != 0) {
-                        
                         Image(systemName: email.isValidEmail() ? "checkmark" : "xmark")
                             .foregroundColor(email.isValidEmail() ? .green : .red)
                     }

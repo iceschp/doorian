@@ -16,10 +16,8 @@ struct UserView: View {
         NavigationView {
             if userID == "" {
                 AuthView()
-                
             } else {
                 ContentView()
-                
             }
         }
     }
