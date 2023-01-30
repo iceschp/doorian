@@ -63,6 +63,7 @@ struct SignupView: View {
                             .foregroundColor(email.isValidEmail() ? .green : .red)
                     }
                 }
+                .foregroundColor(Color("bright-green"))
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 50)
@@ -85,6 +86,7 @@ struct SignupView: View {
                             .foregroundColor(isValidPassword(password) ? .green : .red)
                     }
                 }
+                .foregroundColor(Color("bright-green"))
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 50)
@@ -118,7 +120,7 @@ struct SignupView: View {
                     
                         .background(
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(Color("button"))
+                                .fill(Color("dark-green"))
                         )
                         .padding(.horizontal)
                 }
@@ -152,6 +154,7 @@ struct SignupView: View {
                             .font(.custom(
                                 "NotoSans-Bold",
                                 fixedSize: 14))
+                            .foregroundColor(Color("dark-green"))
                     }
                 }
                 .padding(.bottom, 20)

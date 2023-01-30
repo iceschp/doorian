@@ -111,7 +111,7 @@ struct LoginView: View {
                         }
                     }
                     .font(.system(size: 14))
-                    .foregroundColor(Color("bright-green"))
+                    .foregroundColor(Color("dark-green"))
                     .padding(.horizontal)
                     .padding(.bottom, 20)
                     
@@ -141,7 +141,7 @@ struct LoginView: View {
                         
                             .background(
                                 RoundedRectangle(cornerRadius: 50)
-                                    .fill(Color("button"))
+                                    .fill(Color("dark-green"))
                             )
                             .padding(.horizontal)
                     }
@@ -173,6 +173,7 @@ struct LoginView: View {
                                 .font(.custom(
                                     "NotoSans-Bold",
                                     fixedSize: 14))
+                                .foregroundColor(Color("dark-green"))
                         }
                         .padding(.bottom, 20)
                     

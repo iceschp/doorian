@@ -85,7 +85,7 @@ struct ResetPasswordView: View {
                     
                         .background(
                             RoundedRectangle(cornerRadius: 50)
-                                .fill(Color("button"))
+                                .fill(Color("dark-green"))
                         )
                         .padding(.horizontal)
                 }

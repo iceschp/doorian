@@ -31,7 +31,7 @@ struct ContentView: View {
                         Text("โปรไฟล์")
                     }
             }
-            .accentColor(Color("button"))
+            .accentColor(Color("dark-green"))
         }
     }
 }
