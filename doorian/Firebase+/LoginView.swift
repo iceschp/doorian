@@ -145,7 +145,8 @@ struct LoginView: View {
                             )
                             .padding(.horizontal)
                     }
-                    .padding(.bottom, 20)
+//                    .padding(.bottom, 20)
+                    
                     
                     Text("หรือ")
                         .font(.custom(
