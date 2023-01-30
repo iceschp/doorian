@@ -13,7 +13,7 @@ struct OpeningView: View {
             Color("bg").edgesIgnoringSafeArea(.all)
             VStack{
                 HStack{
-                    Image("logo")
+                    Image("doorian_logo")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 250, height: 250)

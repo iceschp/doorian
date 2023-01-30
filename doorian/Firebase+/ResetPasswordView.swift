@@ -18,7 +18,7 @@ struct ResetPasswordView: View {
             Color("bg").edgesIgnoringSafeArea(.all)
             VStack{
                 HStack{
-                    Image("logo")
+                    Image("doorian_logo")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 200, height: 200)
