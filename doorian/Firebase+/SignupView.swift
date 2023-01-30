@@ -31,9 +31,9 @@ struct SignupView: View {
     
     var body: some View {
         ZStack {
-            Color("bg").edgesIgnoringSafeArea(.all)
-            VStack{
-                HStack{
+            Color(.white).edgesIgnoringSafeArea(.all)
+            VStack {
+                HStack {
                     Image("doorian_logo")
                         .resizable()
                         .scaledToFit()
@@ -49,12 +49,11 @@ struct SignupView: View {
                     
                     
                 }
-                HStack{
-                    Image(systemName: "mail")
+                HStack {
+                    Image(systemName: "envelope.fill")
                     TextField("อีเมล", text: $email)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
-                    
                     
                     Spacer()
                     
@@ -69,14 +68,14 @@ struct SignupView: View {
                     RoundedRectangle(cornerRadius: 50)
                         .fill(Color("textfield"))
                 )
-                .padding()
+                .padding(.horizontal)
+                .padding(.bottom, 20)
                 
-                HStack{
-                    Image(systemName: "lock")
+                HStack {
+                    Image(systemName: "lock.fill")
                     SecureField("รหัสผ่าน", text: $password)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
-                    
                     
                     Spacer()
                     
@@ -85,84 +84,86 @@ struct SignupView: View {
                         Image(systemName: isValidPassword(password) ? "checkmark" : "xmark")
                             .foregroundColor(isValidPassword(password) ? .green : .red)
                     }
-                    
                 }
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 50)
                         .fill(Color("textfield"))
                 )
+                .padding(.horizontal)
+                .padding(.bottom, 20)
                 
-                .padding()
                 
-            
-            Button{Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                
-                if let error = error {
-                    print(error)
-                    return
-                }
-                
-                if let authResult = authResult {
-                    print(authResult.user.uid)
-                    userID = authResult.user.uid
+                Button { Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                     
+                    if let error = error {
+                        print(error)
+                        return
+                    }
+                    
+                    if let authResult = authResult {
+                        print(authResult.user.uid)
+                        userID = authResult.user.uid
+                    }
                 }
-            }
-                
-            } label: {
-                Text("สมัครสมาชิก")
-                    .foregroundColor(.white)
-                    .font(.title3)
-                    .bold()
-                
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                
-                    .background(
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color("button"))
-                    )
-                    .padding(.horizontal)
-            }
-            
-            Spacer()
-            Spacer()
-            
-            Button(action: {
-                withAnimation {
-                    self.currentShowingView = "login"
+                    
+                } label: {
+                    Text("สมัครสมาชิก")
+                        .foregroundColor(.white)
+                        .font(.title3)
+                        .bold()
+                    
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                    
+                        .background(
+                            RoundedRectangle(cornerRadius: 20)
+                                .fill(Color("button"))
+                        )
+                        .padding(.horizontal)
                 }
-            }) {
-                HStack{
-                    Text("คุณมีบัญชีผู้ใช้แล้วใช่หรือไม่")
-                        .foregroundColor(.black.opacity(0.7))
-                        .font(.custom(
-                            "NotoSans-Bold",
-                            fixedSize: 14))
-                    Text("เข้าสู่ระบบ!")
-                        .font(.custom(
-                            "NotoSans-Bold",
-                            fixedSize: 14))
+                .padding(.bottom, 20)
+                
+                Text("หรือ")
+                    .font(.custom(
+                        "NotoSans-Bold",
+                        fixedSize: 14))
+                    .padding(.bottom, 20)
+                
+                GoogleSigninBtn {
+                    FireAuth.share.signinWithGoogle(presenting: getRootViewController()) { errror in
+                        print("ERROR: \(error)")
+                    }
                 }
+                .padding(.bottom, 20)
+                
+                Button(action: {
+                    withAnimation {
+                        self.currentShowingView = "login"
+                    }
+                }) {
+                    HStack {
+                        Text("คุณมีบัญชีผู้ใช้แล้วใช่หรือไม่")
+                            .foregroundColor(.black.opacity(0.7))
+                            .font(.custom(
+                                "NotoSans-Bold",
+                                fixedSize: 14))
+                        Text("เข้าสู่ระบบ!")
+                            .font(.custom(
+                                "NotoSans-Bold",
+                                fixedSize: 14))
+                    }
+                }
+                .padding(.bottom, 20)
+                
                 
             }
-            .padding()
-            Text("")
-            Text("หรือ")
-                .font(.custom(
-                    "NotoSans-Bold",
-                    fixedSize: 14))
-                .padding()
-           
-            }
-            GoogleSigninBtn {
+        }
+    }
+}
 
-            FireAuth.share.signinWithGoogle(presenting: getRootViewController()) { errror in
-                print("ERROR: \(error)")
-            }
-         }
-     }
-  }
-
+struct SignupView_Previews: PreviewProvider {
+    static var previews: some View {
+        SignupView(currentShowingView: .constant("true"))
+    }
 }
