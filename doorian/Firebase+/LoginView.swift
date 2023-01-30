@@ -31,10 +31,10 @@ struct LoginView: View {
     
     var body: some View {
         ZStack {
-            Color("bg").edgesIgnoringSafeArea(.all)
+            Color(.white).edgesIgnoringSafeArea(.all)
             VStack {
                 HStack {
-                    Image("logo")
+                    Image("doorian_logo")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 200, height: 200)
@@ -49,12 +49,11 @@ struct LoginView: View {
                             fixedSize: 24))
                 }
                 
-                HStack{
-                    Image(systemName: "mail")
+                HStack {
+                    Image(systemName: "envelope.fill")
                     TextField("อีเมล", text: $email)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
-                    
                     
                     Spacer()
                     
@@ -64,35 +63,54 @@ struct LoginView: View {
                             .foregroundColor(email.isValidEmail() ? .green : .red)
                     }
                 }
+                .foregroundColor(Color("bright-green"))
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 50)
                         .fill(Color("textfield"))
                 )
-                .padding()
+                .padding(.horizontal)
+                .padding(.bottom, 20)
                 
                 HStack {
-                    Image(systemName: "lock")
+                    Image(systemName: "lock.fill")
                     SecureField("รหัสผ่าน", text: $password)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                     
-                    
                     Spacer()
                     
-                    if(password.count != 0) {
+                    if (password.count != 0) {
                         
                         Image(systemName: isValidPassword(password) ? "checkmark" : "xmark")
                             .foregroundColor(isValidPassword(password) ? .green : .red)
                     }
                     
                 }
+                .foregroundColor(Color("bright-green"))
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 50)
                         .fill(Color("textfield"))
                 )
-                .padding()
+                .padding(.horizontal)
+                .padding(.bottom, 20)
+                
+                HStack {
+                    Image(systemName: "checkmark.square")
+                    Text("จดจำรหัสผ่าน")
+                        .bold()
+                    Spacer()
+                    Button {
+                    } label: {
+                        Text("ลืมรหัสผ่าน ?")
+                            .bold()
+                    }
+                }
+                .font(.system(size: 14))
+                .foregroundColor(Color("bright-green"))
+                .padding(.horizontal)
+                .padding(.bottom, 20)
                 
                 Button {
                     Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
@@ -119,25 +137,30 @@ struct LoginView: View {
                         .padding()
                     
                         .background(
-                            RoundedRectangle(cornerRadius: 20)
+                            RoundedRectangle(cornerRadius: 50)
                                 .fill(Color("button"))
                         )
                         .padding(.horizontal)
                 }
+                .padding(.bottom, 20)
                 
-                Spacer()
+                Text("หรือ")
+                    .font(.custom(
+                        "NotoSans-Bold",
+                        fixedSize: 14))
+                    .padding(.bottom, 20)
                 
-                
+                GoogleSigninBtn {
+                    FireAuth.share.signinWithGoogle(presenting: getRootViewController()) { errror in
+                        print("ERROR: \(error)")
+                    }
+                }
+                .padding(.bottom, 20)
                 
                 Button(action: {
                     withAnimation {
                         self.currentShowingView = "signup"
-                    }
-                    
-                    
-                }) {
-                    
-                    
+                    }}) {
                     Text("คุณยังไม่ได้สมัครสมาชิกหรือไม่")
                         .foregroundColor(.black.opacity(0.7))
                         .font(.custom(
@@ -147,32 +170,16 @@ struct LoginView: View {
                         .font(.custom(
                             "NotoSans-Bold",
                             fixedSize: 14))
-                    
                 }
-                
-                .padding()
-                
-                Text("หรือ")
-                    .font(.custom(
-                        "NotoSans-Bold",
-                        fixedSize: 14))
-                    .padding()
-                Button{
-                } label: {
-                    Text("ลืมรหัสผ่าน")
-                }
-                
-                    GoogleSigninBtn {
-                        
-                        FireAuth.share.signinWithGoogle(presenting: getRootViewController()) { errror in
-                            print("ERROR: \(error)")
-                        }
-                    }
-                
+                    .padding(.bottom, 20)
                 
             }
         }
     }
-    
-    
+}
+
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView(currentShowingView: .constant("true"))
+    }
 }
