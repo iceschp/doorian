@@ -67,13 +67,12 @@ struct LoginView: View {
                         }
                     }
                     .foregroundColor(Color("bright-green"))
-                    .padding()
-                    .frame(width: 300, height: 35)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 18)
                     .background(
                         RoundedRectangle(cornerRadius: 50)
                             .fill(Color("textfield"))
                     )
-                    .padding(.horizontal)
                     .padding(.bottom, 20)
                     
                     HStack {
@@ -93,13 +92,12 @@ struct LoginView: View {
                         
                     }
                     .foregroundColor(Color("bright-green"))
-                    .padding()
-                    .frame(width: 300, height: 35)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 18)
                     .background(
                         RoundedRectangle(cornerRadius: 50)
                             .fill(Color("textfield"))
                     )
-                    .padding(.horizontal)
                     .padding(.bottom, 20)
                     
                     HStack {
@@ -116,7 +114,6 @@ struct LoginView: View {
                     }
                     .font(.system(size: 14))
                     .foregroundColor(Color("dark-green"))
-                    .padding(.horizontal)
                     .padding(.bottom, 20)
                     
                     Button {
@@ -141,15 +138,14 @@ struct LoginView: View {
                             .bold()
                         
                             .frame(maxWidth: .infinity)
-                            .padding()
+                            .padding(.vertical, 10)
                         
                             .background(
                                 RoundedRectangle(cornerRadius: 50)
                                     .fill(Color("dark-green"))
                             )
-                            .padding(.horizontal)
                     }
-//                    .padding(.bottom, 20)
+                    .padding(.bottom, 20)
                     
                     
                     Text("หรือ")
@@ -183,6 +179,7 @@ struct LoginView: View {
                         .padding(.bottom, 20)
                     
                 }
+                .frame(width: 300, height: 35)
             }
         }
     }
