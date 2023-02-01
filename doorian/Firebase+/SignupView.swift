@@ -17,6 +17,8 @@ struct SignupView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     
+    @Environment(\.dismiss) var dismiss
+    
     @State var error = ""
     
     private func isValidPassword(_ password: String) -> Bool {
@@ -160,9 +162,10 @@ struct SignupView: View {
                 .padding(.bottom, 20)
                 
                 Button(action: {
-                    withAnimation {
-                        self.currentShowingView = "login"
-                    }
+                    dismiss()
+//                    withAnimation {
+//                        self.currentShowingView = "login"
+//                    }
                 }) {
                     HStack {
                         Text("คุณมีบัญชีผู้ใช้แล้วใช่หรือไม่")

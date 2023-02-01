@@ -18,6 +18,8 @@ struct LoginView: View {
     @State private var password: String = ""
     @State var error = ""
     
+    @State private var showingSheet = false
+    
     private func isValidPassword(_ password: String) -> Bool {
         // minimum 8 characters long
         // 1 uppercase character
@@ -30,8 +32,8 @@ struct LoginView: View {
     }
     
     var body: some View {
-    
-        NavigationView{
+        
+        NavigationView {
             ZStack {
                 Color(.white).edgesIgnoringSafeArea(.all)
                 VStack {
@@ -108,7 +110,7 @@ struct LoginView: View {
                         VStack{
                             NavigationLink(destination: ResetPasswordView()) {
                                 Text("ลืมรหัสผ่าน ?")
-                                .bold()
+                                    .bold()
                             }
                         }
                     }
@@ -162,28 +164,37 @@ struct LoginView: View {
                     .padding(.bottom, 20)
                     
                     Button(action: {
-                        withAnimation {
-                            self.currentShowingView = "signup"
-                        }}) {
-                            Text("คุณยังไม่ได้สมัครสมาชิกหรือไม่")
-                                .foregroundColor(.black.opacity(0.7))
-                                .font(.custom(
-                                    "NotoSans-Bold",
-                                    fixedSize: 14))
-                            Text("สมัครสมาชิก!")
-                                .font(.custom(
-                                    "NotoSans-Bold",
-                                    fixedSize: 14))
-                                .foregroundColor(Color("dark-green"))
-                        }
-                        .padding(.bottom, 20)
+                        showingSheet.toggle()
+                        //                        withAnimation {
+                        //                            self.currentShowingView = "signup"
+                        //                        }
+                        
+                    }
+                    ) {
+                        Text("คุณยังไม่ได้สมัครสมาชิกหรือไม่")
+                            .foregroundColor(.black.opacity(0.7))
+                            .font(.custom(
+                                "NotoSans-Bold",
+                                fixedSize: 14))
+                        Text("สมัครสมาชิก!")
+                            .font(.custom(
+                                "NotoSans-Bold",
+                                fixedSize: 14))
+                            .foregroundColor(Color("dark-green"))
+                    }
+                    .padding(.bottom, 20)
                     
                 }
                 .frame(width: 300, height: 35)
             }
-            .onTapGesture {
-                self.hideKeyboard()
+            .sheet(isPresented: $showingSheet) {
+                SignupView(currentShowingView: .constant("true"))
+                    .presentationDetents([.large])
+                    .presentationDragIndicator(.visible)
             }
+        }
+        .onTapGesture {
+            self.hideKeyboard()
         }
     }
 }

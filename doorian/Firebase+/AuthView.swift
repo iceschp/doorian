@@ -16,7 +16,7 @@ struct AuthView: View {
               
         } else {
             SignupView(currentShowingView: $currentViewShowing)
-            .transition(.move(edge: .bottom))
+//            .transition(.move(edge: .bottom))
         }
   
     }
