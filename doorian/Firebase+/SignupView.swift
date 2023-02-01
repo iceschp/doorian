@@ -16,6 +16,8 @@ struct SignupView: View {
     @State private var name: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var showHidePswd = false
+    @State var visible = false
     
     @Environment(\.dismiss) var dismiss
     
@@ -27,7 +29,7 @@ struct SignupView: View {
         // 1 lowerrcase character
         // 1 special char
         
-        let passwordRegex = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*-?_&#])[A-Za-z\\dd$@$!%*-?_&#]{8,}")
+        let passwordRegex = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$#$%&'()*+,-./:;<=>?@\\[\\\\\\]^_`{|}~])[A-Za-z\\dd$#$%&'()*+,-./:;<=>?@\\[\\\\\\]^_`{|}~]{8,}")
         
         return passwordRegex.evaluate(with: password)
     }
@@ -72,7 +74,7 @@ struct SignupView: View {
                 
                 HStack {
                     Image(systemName: "envelope.fill")
-                    TextField("อีเมล", text: $email)
+                    TextField("อีเมล", text: self.$email)
                         .font(.system(size: 14))
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
@@ -95,19 +97,36 @@ struct SignupView: View {
                 .padding(.bottom, 20)
                 
                 HStack {
+                    
                     Image(systemName: "lock.fill")
                     SecureField("รหัสผ่าน", text: $password)
-                        .font(.system(size: 14))
-                        .disableAutocorrection(true)
-                        .autocapitalization(.none)
-                    
-                    Spacer()
+                    VStack{
+                        
+                        if self.visible{
+                            TextField("รหัสผ่าน", text: self.$password)
+                                .font(.system(size: 14))
+                                .disableAutocorrection(true)
+                                .autocapitalization(.none)
+                        }
+                        else{
+                            SecureField("รหัสผ่าน", text: self.$password)
+                                .disableAutocorrection(true)
+                                .autocapitalization(.none)
+                        }
+                    }
                     
                     if(password.count != 0) {
                         
                         Image(systemName: isValidPassword(password) ? "checkmark" : "xmark")
                             .foregroundColor(isValidPassword(password) ? .green : .red)
                     }
+                    Button(action: {
+                        self.visible.toggle()
+                    }) {
+                        Image(systemName: self.visible ? "eye" : "eye.slash" )
+                            .foregroundColor(.black)
+                    }
+                    
                 }
                 .foregroundColor(Color("bright-green"))
                 .padding(.vertical, 10)
