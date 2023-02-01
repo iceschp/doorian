@@ -134,7 +134,7 @@ struct LoginView: View {
                     } label: {
                         Text("เข้าสู่ระบบ")
                             .foregroundColor(.white)
-                            .font(.title3)
+                            .font(.system(size: 14))
                             .bold()
                         
                             .frame(maxWidth: .infinity)
