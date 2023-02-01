@@ -17,6 +17,9 @@ struct SignupView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State var visible = false
+    
+    @Environment(\.dismiss) var dismiss
+    
     @State var error = ""
     
     private func isValidPassword(_ password: String) -> Bool {
@@ -53,23 +56,25 @@ struct SignupView: View {
                 HStack{
                     Image(systemName: "person.fill")
                     TextField("ชื่อผู้ใช้", text: $name)
+                        .font(.system(size: 14))
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                     
                     Spacer()
                 }
                 .foregroundColor(Color("bright-green"))
-                .padding()
+                .padding(.vertical, 10)
+                .padding(.horizontal, 18)
                 .background(
                     RoundedRectangle(cornerRadius: 50)
                         .fill(Color("textfield"))
                 )
-                .padding(.horizontal)
                 .padding(.bottom, 20)
                 
                 HStack {
                     Image(systemName: "envelope.fill")
                     TextField("อีเมล", text: self.$email)
+                        .font(.system(size: 14))
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                     
@@ -82,21 +87,23 @@ struct SignupView: View {
                     }
                 }
                 .foregroundColor(Color("bright-green"))
-                .padding()
+                .padding(.vertical, 10)
+                .padding(.horizontal, 18)
                 .background(
                     RoundedRectangle(cornerRadius: 50)
                         .fill(Color("textfield"))
                 )
-                .padding(.horizontal)
                 .padding(.bottom, 20)
                 
                 HStack {
                     
                     Image(systemName: "lock.fill")
+                    SecureField("รหัสผ่าน", text: $password)
                     VStack{
                         
                         if self.visible{
                             TextField("รหัสผ่าน", text: self.$password)
+                                .font(.system(size: 14))
                                 .disableAutocorrection(true)
                                 .autocapitalization(.none)
                         }
@@ -106,7 +113,6 @@ struct SignupView: View {
                                 .autocapitalization(.none)
                         }
                     }
-                    Spacer()
                     
                     if(password.count != 0) {
                         
@@ -122,12 +128,12 @@ struct SignupView: View {
                     
                 }
                 .foregroundColor(Color("bright-green"))
-                .padding()
+                .padding(.vertical, 10)
+                .padding(.horizontal, 18)
                 .background(
                     RoundedRectangle(cornerRadius: 50)
                         .fill(Color("textfield"))
                 )
-                .padding(.horizontal)
                 .padding(.bottom, 20)
                 
                 
@@ -147,17 +153,16 @@ struct SignupView: View {
                 } label: {
                     Text("สมัครสมาชิก")
                         .foregroundColor(.white)
-                        .font(.title3)
+                        .font(.system(size: 14))
                         .bold()
                     
                         .frame(maxWidth: .infinity)
-                        .padding()
+                        .padding(.vertical, 10)
                     
                         .background(
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(Color("dark-green"))
                         )
-                        .padding(.horizontal)
                 }
                 .padding(.bottom, 20)
                 
@@ -175,9 +180,10 @@ struct SignupView: View {
                 .padding(.bottom, 20)
                 
                 Button(action: {
-                    withAnimation {
-                        self.currentShowingView = "login"
-                    }
+                    dismiss()
+//                    withAnimation {
+//                        self.currentShowingView = "login"
+//                    }
                 }) {
                     HStack {
                         Text("คุณมีบัญชีผู้ใช้แล้วใช่หรือไม่")
@@ -196,6 +202,10 @@ struct SignupView: View {
                 
                 
             }
+            .frame(width: 300, height: 35)
+        }
+        .onTapGesture {
+            self.hideKeyboard()
         }
     }
 }
