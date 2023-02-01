@@ -16,6 +16,7 @@ struct LoginView: View {
     
     @State private var email: String = ""
     @State private var password: String = ""
+    @State var visible = false
     @State var error = ""
     
     private func isValidPassword(_ password: String) -> Bool {
@@ -78,17 +79,32 @@ struct LoginView: View {
                     
                     HStack {
                         Image(systemName: "lock.fill")
-                        SecureField("รหัสผ่าน", text: $password)
-                            .font(.system(size: 14))
-                            .disableAutocorrection(true)
-                            .autocapitalization(.none)
-                        
+                        VStack{
+                            if self.visible{
+                                TextField("รหัสผ่าน", text: $password)
+                                    .font(.system(size: 14))
+                                    .disableAutocorrection(true)
+                                    .autocapitalization(.none)
+                            }
+                            else{
+                                SecureField("รหัสผ่าน", text: $password)
+                                    .font(.system(size: 14))
+                                    .disableAutocorrection(true)
+                                    .autocapitalization(.none)
+                            }
+                        }
                         Spacer()
                         
                         if (password.count != 0) {
                             
                             Image(systemName: isValidPassword(password) ? "checkmark" : "xmark")
                                 .foregroundColor(isValidPassword(password) ? .green : .red)
+                        }
+                        Button(action: {
+                            self.visible.toggle()
+                        }) {
+                            Image(systemName: self.visible ? "eye" : "eye.slash" )
+                                .font(.system(size: 14))
                         }
                         
                     }

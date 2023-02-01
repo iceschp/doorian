@@ -16,7 +16,6 @@ struct SignupView: View {
     @State private var name: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
-    @State private var showHidePswd = false
     @State var visible = false
     @State var error = ""
     
@@ -118,7 +117,7 @@ struct SignupView: View {
                         self.visible.toggle()
                     }) {
                         Image(systemName: self.visible ? "eye" : "eye.slash" )
-                            .foregroundColor(.black)
+                            
                     }
                     
                 }
