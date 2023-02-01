@@ -181,6 +181,9 @@ struct LoginView: View {
                 }
                 .frame(width: 300, height: 35)
             }
+            .onTapGesture {
+                self.hideKeyboard()
+            }
         }
     }
 }
