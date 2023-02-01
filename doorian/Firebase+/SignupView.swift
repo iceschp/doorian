@@ -13,6 +13,7 @@ import GoogleSignIn
 struct SignupView: View {
     @Binding var currentShowingView: String
     @AppStorage("uid") var userID: String = ""
+    @State private var name: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
     
@@ -49,6 +50,23 @@ struct SignupView: View {
                     
                     
                 }
+                HStack{
+                    Image(systemName: "person.fill")
+                    TextField("ชื่อผู้ใช้", text: $name)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
+                    
+                    Spacer()
+                }
+                .foregroundColor(Color("bright-green"))
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 50)
+                        .fill(Color("textfield"))
+                )
+                .padding(.horizontal)
+                .padding(.bottom, 20)
+                
                 HStack {
                     Image(systemName: "envelope.fill")
                     TextField("อีเมล", text: $email)
