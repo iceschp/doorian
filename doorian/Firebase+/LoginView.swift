@@ -208,9 +208,10 @@ struct LoginView: View {
                     .presentationDetents([.large])
                     .presentationDragIndicator(.visible)
             }
-        }
-        .onTapGesture {
-            self.hideKeyboard()
+            
+            .onTapGesture {
+                self.hideKeyboard()
+            }
         }
     }
 }
