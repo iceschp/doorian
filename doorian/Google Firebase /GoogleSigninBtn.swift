@@ -27,11 +27,12 @@ struct GoogleSigninBtn: View {
                         .font(.title3)
                         .bold()
                 }
-                .frame(width: 150, height: 35)
-                .padding(10)
+                .frame(width: 130, height: 35)
+                .padding(.vertical, 7)
+                .padding(.horizontal, 10)
                 .background(
-                    RoundedRectangle(cornerRadius: 20)
-                    .fill(Color.red)
+                    RoundedRectangle(cornerRadius: 10)
+                    .fill(Color("red-button"))
                 )
             }
         }
