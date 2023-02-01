@@ -54,6 +54,7 @@ struct LoginView: View {
                     HStack {
                         Image(systemName: "envelope.fill")
                         TextField("อีเมล", text: $email)
+                            .font(.system(size: 14))
                             .disableAutocorrection(true)
                             .autocapitalization(.none)
                         
@@ -67,6 +68,7 @@ struct LoginView: View {
                     }
                     .foregroundColor(Color("bright-green"))
                     .padding()
+                    .frame(width: 300, height: 35)
                     .background(
                         RoundedRectangle(cornerRadius: 50)
                             .fill(Color("textfield"))
@@ -77,6 +79,7 @@ struct LoginView: View {
                     HStack {
                         Image(systemName: "lock.fill")
                         SecureField("รหัสผ่าน", text: $password)
+                            .font(.system(size: 14))
                             .disableAutocorrection(true)
                             .autocapitalization(.none)
                         
@@ -91,6 +94,7 @@ struct LoginView: View {
                     }
                     .foregroundColor(Color("bright-green"))
                     .padding()
+                    .frame(width: 300, height: 35)
                     .background(
                         RoundedRectangle(cornerRadius: 50)
                             .fill(Color("textfield"))
