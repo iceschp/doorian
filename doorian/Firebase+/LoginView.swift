@@ -24,7 +24,7 @@ struct LoginView: View {
         // 1 lowerrcase character
         // 1 special char
         
-        let passwordRegex = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#])[A-Za-z\\dd$@$!%*?&#]{8,}")
+        let passwordRegex = NSPredicate(format: "SELF MATCHES %@", "^[A-Za-z0-9 !\"#$%&'()*+,-./:;<=>?@\\[\\\\\\]^_`{|}~].{8,}$")
         
         return passwordRegex.evaluate(with: password)
     }
