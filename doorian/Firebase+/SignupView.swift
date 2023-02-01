@@ -53,23 +53,25 @@ struct SignupView: View {
                 HStack{
                     Image(systemName: "person.fill")
                     TextField("ชื่อผู้ใช้", text: $name)
+                        .font(.system(size: 14))
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                     
                     Spacer()
                 }
                 .foregroundColor(Color("bright-green"))
-                .padding()
+                .padding(.vertical, 10)
+                .padding(.horizontal, 18)
                 .background(
                     RoundedRectangle(cornerRadius: 50)
                         .fill(Color("textfield"))
                 )
-                .padding(.horizontal)
                 .padding(.bottom, 20)
                 
                 HStack {
                     Image(systemName: "envelope.fill")
                     TextField("อีเมล", text: $email)
+                        .font(.system(size: 14))
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                     
@@ -82,17 +84,18 @@ struct SignupView: View {
                     }
                 }
                 .foregroundColor(Color("bright-green"))
-                .padding()
+                .padding(.vertical, 10)
+                .padding(.horizontal, 18)
                 .background(
                     RoundedRectangle(cornerRadius: 50)
                         .fill(Color("textfield"))
                 )
-                .padding(.horizontal)
                 .padding(.bottom, 20)
                 
                 HStack {
                     Image(systemName: "lock.fill")
                     SecureField("รหัสผ่าน", text: $password)
+                        .font(.system(size: 14))
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                     
@@ -105,12 +108,12 @@ struct SignupView: View {
                     }
                 }
                 .foregroundColor(Color("bright-green"))
-                .padding()
+                .padding(.vertical, 10)
+                .padding(.horizontal, 18)
                 .background(
                     RoundedRectangle(cornerRadius: 50)
                         .fill(Color("textfield"))
                 )
-                .padding(.horizontal)
                 .padding(.bottom, 20)
                 
                 
@@ -130,17 +133,16 @@ struct SignupView: View {
                 } label: {
                     Text("สมัครสมาชิก")
                         .foregroundColor(.white)
-                        .font(.title3)
+                        .font(.system(size: 14))
                         .bold()
                     
                         .frame(maxWidth: .infinity)
-                        .padding()
+                        .padding(.vertical, 10)
                     
                         .background(
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(Color("dark-green"))
                         )
-                        .padding(.horizontal)
                 }
                 .padding(.bottom, 20)
                 
@@ -179,6 +181,7 @@ struct SignupView: View {
                 
                 
             }
+            .frame(width: 300, height: 35)
         }
     }
 }
