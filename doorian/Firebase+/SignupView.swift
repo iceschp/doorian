@@ -8,6 +8,7 @@
 import SwiftUI
 import Firebase
 import FirebaseAuth
+import FirebaseFirestore
 import GoogleSignIn
 
 struct SignupView: View {
@@ -32,6 +33,21 @@ struct SignupView: View {
         
         return passwordRegex.evaluate(with: password)
     }
+    
+    private func storeUserInformation(){
+          guard let uid = Auth.auth().currentUser?.uid else { return }
+          let userData = ["name": self.name, "email": self.email, "uid": uid]
+          Firestore.firestore().collection("users")
+              .document(uid).setData(userData) { error in
+                
+                  if let error = error {
+                      print(error)
+                      return
+                  }
+                  print("success")
+              }
+      }
+
     
     var body: some View {
         ZStack {
@@ -144,7 +160,7 @@ struct SignupView: View {
                         print(error)
                         return
                     }
-                    
+                    self.storeUserInformation()
                     if let authResult = authResult {
                         print(authResult.user.uid)
                         userID = authResult.user.uid
