@@ -16,7 +16,7 @@ struct SignupView: View {
     @State private var name: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
-    
+    @State private var showHidePswd = false
     @State var error = ""
     
     private func isValidPassword(_ password: String) -> Bool {
@@ -91,6 +91,7 @@ struct SignupView: View {
                 .padding(.bottom, 20)
                 
                 HStack {
+                    
                     Image(systemName: "lock.fill")
                     SecureField("รหัสผ่าน", text: $password)
                         .disableAutocorrection(true)
@@ -103,6 +104,12 @@ struct SignupView: View {
                         Image(systemName: isValidPassword(password) ? "checkmark" : "xmark")
                             .foregroundColor(isValidPassword(password) ? .green : .red)
                     }
+                    Button(action: {
+                        self.showHidePswd.toggle()
+                    }) {
+                        Image(systemName: showHidePswd ? "eye" : "eye.slash" )
+                    }
+                    
                 }
                 .foregroundColor(Color("bright-green"))
                 .padding()
