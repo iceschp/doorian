@@ -17,6 +17,7 @@ struct SignupView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var showHidePswd = false
+    @State var visible = false
     @State var error = ""
     
     private func isValidPassword(_ password: String) -> Bool {
@@ -69,7 +70,7 @@ struct SignupView: View {
                 
                 HStack {
                     Image(systemName: "envelope.fill")
-                    TextField("อีเมล", text: $email)
+                    TextField("อีเมล", text: self.$email)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                     
@@ -93,10 +94,19 @@ struct SignupView: View {
                 HStack {
                     
                     Image(systemName: "lock.fill")
-                    SecureField("รหัสผ่าน", text: $password)
-                        .disableAutocorrection(true)
-                        .autocapitalization(.none)
-                    
+                    VStack{
+                        
+                        if self.visible{
+                            TextField("รหัสผ่าน", text: self.$password)
+                                .disableAutocorrection(true)
+                                .autocapitalization(.none)
+                        }
+                        else{
+                            SecureField("รหัสผ่าน", text: self.$password)
+                                .disableAutocorrection(true)
+                                .autocapitalization(.none)
+                        }
+                    }
                     Spacer()
                     
                     if(password.count != 0) {
@@ -105,9 +115,10 @@ struct SignupView: View {
                             .foregroundColor(isValidPassword(password) ? .green : .red)
                     }
                     Button(action: {
-                        self.showHidePswd.toggle()
+                        self.visible.toggle()
                     }) {
-                        Image(systemName: showHidePswd ? "eye" : "eye.slash" )
+                        Image(systemName: self.visible ? "eye" : "eye.slash" )
+                            .foregroundColor(.black)
                     }
                     
                 }
