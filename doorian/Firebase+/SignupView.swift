@@ -98,7 +98,7 @@ struct SignupView: View {
                 HStack {
                     
                     Image(systemName: "lock.fill")
-                    SecureField("รหัสผ่าน", text: $password)
+                   
                     VStack{
                         
                         if self.visible{
@@ -108,7 +108,8 @@ struct SignupView: View {
                                 .autocapitalization(.none)
                         }
                         else{
-                            SecureField("รหัสผ่าน", text: self.$password)
+                            SecureField("รหัสผ่าน",text: self.$password)
+                                .font(.system(size: 14))
                                 .disableAutocorrection(true)
                                 .autocapitalization(.none)
                         }
