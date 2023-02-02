@@ -18,17 +18,15 @@ struct ContentView: View {
             TabView {
                 HomeView()
                     .tabItem {
-                        Image(systemName: "house")
-                        Text("หน้าแรก")
+                        Label("หน้าแรก", systemImage: "house")
                     }
                 ScanningView()
                     .tabItem {
-                        Image(systemName: "viewfinder")
+                        Label("", systemImage: "viewfinder")
                     }
                 ProfileView()
                     .tabItem {
-                        Image(systemName: "person")
-                        Text("โปรไฟล์")
+                        Label("โปรไฟล์", systemImage: "person")
                     }
             }
             .accentColor(Color("dark-green"))
