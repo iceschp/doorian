@@ -15,7 +15,7 @@ struct ProfileView: View {
         
         NavigationView{
             
-            ScrollView(.vertical, showsIndicators: false) {
+            VStack{
                 
                 VStack{
                     
@@ -24,31 +24,141 @@ struct ProfileView: View {
                         Image("profile")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 60, height: 60)
+                            .frame(width: 100, height: 100)
                             .clipShape(Circle())
-                        Text("น้องดูเรียน หิวจัง")
+                        Text("อริสา มีสุข")
                             .font(.custom(
                                 "NotoSans-Bold",
                                 fixedSize: 18))
                             .fontWeight(.semibold)
+                        
+                        HStack(alignment: .top, spacing: 10){
+                            
+                            Text("@alisa_meesuk")
+                                .font(.custom(
+                                    "NotoSans-Regular",
+                                    fixedSize: 14))
+                        }
+                     
+                      
                     }
+                    
+                    .padding(.horizontal,30)
+                    .padding(.vertical,10)
                 }
-                .padding()
+                .frame(width: getRect().height / 3.5)
+                .padding(.vertical,10)
+                
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    Spacer()
+                    VStack{
+                        CustomNavigationLink(title: "บัญชีผู้ใช้"){
+                           
+                            Text("")
+                                .navigationTitle("บัญชีผู้ใช้")
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .background(Color("bg").ignoresSafeArea())
+                            
+                        }
+                        CustomNavigationLink(title: "รหัสผ่าน"){
+                            
+                            Text("")
+                                .navigationTitle("รหัสผ่าน")
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .background(Color("bg").ignoresSafeArea())
+                            
+                        }
+                        CustomNavigationLink(title: "สิ่งที่ฉันถูกใจ"){
+                            
+                            Text("")
+                                .navigationTitle("สิ่งที่ฉันถูกใจ")
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .background(Color("bg").ignoresSafeArea())
+                            
+                        }
+                        CustomNavigationLink(title: "ประวัติการบันทึกโรค"){
+                            
+                            Text("")
+                                .navigationTitle("ประวัติการบันทึกโรค")
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .background(Color("bg").ignoresSafeArea())
+                            
+                        }
+                    }
+                    Spacer()
+                    
+                    VStack{
+                        Button(action: {
+                            let firebaseAuth = Auth.auth()
+                            do {
+                                try firebaseAuth.signOut()
+                                withAnimation {
+                                    userID = ""
+                                }
+                            } catch let signOutError as NSError {
+                                print("Error signing out: %@", signOutError)
+                            }
+                        }) {
+                            Text("ออกจากระบบ")
+                        }
+                    }
+                    .padding(.vertical,30)
+                    
+                }
+                .navigationBarHidden(true)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(
+                    Color.white
+                        .clipShape(CustomCorner(corners: [.topLeft,.topRight], radius: 30))
+                        .ignoresSafeArea()
+                )
+                
             }
-            .navigationBarHidden(true)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("bguser"))
+        }
+    }
+    
+    @ViewBuilder
+    func CustomNavigationLink<Detail: View>(title: String, @ViewBuilder content: @escaping ()->Detail)->some View{
+        
+        NavigationLink{
+            content()
+        } label: {
+            
+            HStack{
+                
+                Text(title)
+                    .font(.custom("NotoSans-Regular", size: 18))
+                    
+                Spacer()
+                
+                Image(systemName: "chevron.right")
+            }
+            .foregroundColor(.black)
+            .padding()
             .background(
             
                 Color("bg")
-                    .ignoresSafeArea()
+                    .cornerRadius(12)
             )
+            .padding(.horizontal)
+            .padding(.top,25)
+           
             
         }
     }
 }
-//
+
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+    }
+}
+
+extension View{
+    func getRect()->CGRect{
+        return UIScreen.main.bounds
     }
 }
