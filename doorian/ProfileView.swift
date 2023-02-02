@@ -13,20 +13,37 @@ struct ProfileView: View {
     
     var body: some View {
         
-        Button(action: {
-            let firebaseAuth = Auth.auth()
-            do {
-                try firebaseAuth.signOut()
-                withAnimation {
-                    userID = ""
+        NavigationView{
+            
+            ScrollView(.vertical, showsIndicators: false) {
+                
+                VStack{
+                    
+                    VStack(spacing: 15){
+                        
+                        Image("profile")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 60, height: 60)
+                            .clipShape(Circle())
+                        Text("น้องดูเรียน หิวจัง")
+                            .font(.custom(
+                                "NotoSans-Bold",
+                                fixedSize: 18))
+                            .fontWeight(.semibold)
+                    }
                 }
-            } catch let signOutError as NSError {
-                print("Error signing out: %@", signOutError)
+                .padding()
             }
-        }) {
-            Text("Sign Out")
+            .navigationBarHidden(true)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(
+            
+                Color("bg")
+                    .ignoresSafeArea()
+            )
+            
         }
-        
     }
 }
 //
