@@ -198,14 +198,14 @@ struct ProfileView: View {
 //                        }
 //                    }
 //                    .padding(.vertical,30)
-//
-//                }
-//                .navigationBarHidden(true)
-//                .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                .background(
-//                    Color("bg")
-//                        .ignoresSafeArea()
-//                )
+                    
+                }
+                .navigationBarHidden(true)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(
+                    Color("bg")
+                        .ignoresSafeArea()
+                )
                 
            
         }
