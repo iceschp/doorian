@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct AuthView: View {
-    @State private var currentViewShowing: String = "login" // login or signup
-    
+//    @State private var currentViewShowing: String = "login" // login or signup
+    @State private var isUserCurrentlyLoggedOut : Bool = false
     var body: some View {
-        if(currentViewShowing == "login") {
-            LoginView(currentShowingView: $currentViewShowing)
-              
-        } else {
-            SignupView(currentShowingView: $currentViewShowing)
-//            .transition(.move(edge: .bottom))
+        
+        NavigationView{
+            if self.isUserCurrentlyLoggedOut {
+                ContentView()
+            }else{
+                LoginView(isUserCurrentlyLoggedOut:  $isUserCurrentlyLoggedOut)
+            }
         }
-  
+        //        if(currentViewShowing == "login") {
+        //            LoginView(currentShowingView: $currentViewShowing)
+        //
+        //        } else {
+        //            SignupView(currentShowingView: $currentViewShowing)
+        ////            .transition(.move(edge: .bottom))
+        //        }
+        //
+        //    }
     }
 }
 

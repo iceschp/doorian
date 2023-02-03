@@ -12,7 +12,7 @@ import FirebaseFirestore
 import GoogleSignIn
 
 struct SignupView: View {
-    @Binding var currentShowingView: String
+    @Binding var isUserCurrentlyLoggedOut  : Bool
     @AppStorage("uid") var userID: String = ""
     @State private var name: String = ""
     @State private var email: String = ""
@@ -22,6 +22,7 @@ struct SignupView: View {
     @Environment(\.dismiss) var dismiss
     
     @State var error = ""
+    
     
     private func isValidPassword(_ password: String) -> Bool {
         // minimum 8 characters long
@@ -165,6 +166,7 @@ struct SignupView: View {
                         print(authResult.user.uid)
                         userID = authResult.user.uid
                     }
+                    self.isUserCurrentlyLoggedOut = true
                 }
                     
                 } label: {
@@ -228,7 +230,8 @@ struct SignupView: View {
 }
 
 struct SignupView_Previews: PreviewProvider {
+    @State static var isUserCurrentlyLoggedOut = false
     static var previews: some View {
-        SignupView(currentShowingView: .constant("true"))
+        SignupView(isUserCurrentlyLoggedOut: $isUserCurrentlyLoggedOut)
     }
 }
