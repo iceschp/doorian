@@ -182,30 +182,30 @@ struct ProfileView: View {
                      .padding(.vertical,20)
                    
                //สำรองไว้ก่อน
-                    VStack{
-                        Button(action: {
-                            let firebaseAuth = Auth.auth()
-                            do {
-                                try firebaseAuth.signOut()
-                                withAnimation {
-                                    userID = ""
-                                }
-                            } catch let signOutError as NSError {
-                                print("Error signing out: %@", signOutError)
-                            }
-                        }) {
-                            Text("ออกจากระบบ")
-                        }
-                    }
-                    .padding(.vertical,30)
-                    
-                }
-                .navigationBarHidden(true)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(
-                    Color("bguser")
-                        .ignoresSafeArea()
-                )
+//                    VStack{
+//                        Button(action: {
+//                            let firebaseAuth = Auth.auth()
+//                            do {
+//                                try firebaseAuth.signOut()
+//                                withAnimation {
+//                                    userID = ""
+//                                }
+//                            } catch let signOutError as NSError {
+//                                print("Error signing out: %@", signOutError)
+//                            }
+//                        }) {
+//                            Text("ออกจากระบบ")
+//                        }
+//                    }
+//                    .padding(.vertical,30)
+//
+//                }
+//                .navigationBarHidden(true)
+//                .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                .background(
+//                    Color("bg")
+//                        .ignoresSafeArea()
+//                )
                 
            
         }
