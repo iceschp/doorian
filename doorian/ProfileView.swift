@@ -15,50 +15,56 @@ struct ProfileView: View {
         
         NavigationView{
             
-            VStack{
-                
-                VStack{
-                    
-                    VStack(spacing: 15){
-                        
-                        Image("profile")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 100, height: 100)
-                            .clipShape(Circle())
-                        Text("อริสา มีสุข")
-                            .font(.custom(
-                                "NotoSans-Bold",
-                                fixedSize: 18))
-                            .fontWeight(.semibold)
-                        
-                        HStack(alignment: .top, spacing: 10){
-                            
-                            Text("@alisa_meesuk")
-                                .font(.custom(
-                                    "NotoSans-Regular",
-                                    fixedSize: 14))
-                        }
-                     
-                      
-                    }
-                    
-                    .padding(.horizontal,30)
-                    .padding(.vertical,10)
-                }
-                .frame(width: getRect().height / 3.5)
-                .padding(.vertical,10)
-                
                 
                 ScrollView(.vertical, showsIndicators: false) {
-                    Spacer()
+                    
                     VStack{
+                        
+                        Text("โปรไฟล์ของฉัน")
+                            .font(.custom(
+                                "NotoSans-Bold",
+                                fixedSize: 28))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        VStack(spacing: 15){
+                            
+                            Image("profile")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 80, height: 80)
+                                .clipShape(Circle())
+                                .offset(y: -40)
+                                .padding(.bottom,-40)
+                            Text("อริสา มีสุข")
+                                .font(.custom(
+                                    "NotoSans-Bold",
+                                    fixedSize: 18))
+                                .fontWeight(.semibold)
+                            
+                            
+                            HStack(alignment: .top, spacing: 10){
+                                
+                                Text("@alisa_meesuk")
+                                    .font(.custom(
+                                        "NotoSans-Regular",
+                                        fixedSize: 14))
+                            }
+                            .frame(maxWidth: .infinity, alignment: .center)
+                        }
+                        .padding([.horizontal,.bottom])
+                        .background(
+                            Color.white
+                            .cornerRadius(12)
+                        )
+                        .padding()
+                        .padding(.top,40)
+                        
                         CustomNavigationLink(title: "บัญชีผู้ใช้"){
                            
                             Text("")
                                 .navigationTitle("บัญชีผู้ใช้")
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                .background(Color("bg").ignoresSafeArea())
+                                .background(Color.white.ignoresSafeArea())
                             
                         }
                         CustomNavigationLink(title: "รหัสผ่าน"){
@@ -66,7 +72,7 @@ struct ProfileView: View {
                             Text("")
                                 .navigationTitle("รหัสผ่าน")
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                .background(Color("bg").ignoresSafeArea())
+                                .background(Color.white.ignoresSafeArea())
                             
                         }
                         CustomNavigationLink(title: "สิ่งที่ฉันถูกใจ"){
@@ -74,7 +80,7 @@ struct ProfileView: View {
                             Text("")
                                 .navigationTitle("สิ่งที่ฉันถูกใจ")
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                .background(Color("bg").ignoresSafeArea())
+                                .background(Color.white.ignoresSafeArea())
                             
                         }
                         CustomNavigationLink(title: "ประวัติการบันทึกโรค"){
@@ -82,11 +88,13 @@ struct ProfileView: View {
                             Text("")
                                 .navigationTitle("ประวัติการบันทึกโรค")
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                .background(Color("bg").ignoresSafeArea())
+                                .background(Color.white.ignoresSafeArea())
                             
                         }
-                    }
-                    Spacer()
+                        
+                    }.padding(.horizontal,22)
+                     .padding(.vertical,20)
+                   
                     
                     VStack{
                         Button(action: {
@@ -109,14 +117,11 @@ struct ProfileView: View {
                 .navigationBarHidden(true)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(
-                    Color.white
-                        .clipShape(CustomCorner(corners: [.topLeft,.topRight], radius: 30))
+                    Color("bg")
                         .ignoresSafeArea()
                 )
                 
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color("bguser"))
+           
         }
     }
     
@@ -140,11 +145,11 @@ struct ProfileView: View {
             .padding()
             .background(
             
-                Color("bg")
+                Color.white
                     .cornerRadius(12)
             )
             .padding(.horizontal)
-            .padding(.top,25)
+            .padding(.top,10)
            
             
         }
