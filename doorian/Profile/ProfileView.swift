@@ -32,7 +32,8 @@ struct ProfileView: View {
                         
                         VStack(spacing: 15){
                             
-                            WebImage(url: URL(string: vm.chatUser?.profileImageUrl ?? ""))
+//                            WebImage(url: URL(string: vm.chatUser?.profileImageUrl ?? ""))
+                            Image(systemName: "person.fill")
                                 .resizable()
                                 .scaledToFit()
                                 .aspectRatio(contentMode: .fill)
@@ -40,6 +41,7 @@ struct ProfileView: View {
                                 .clipShape(Circle())
                                 .offset(y: -40)
                                 .padding(.bottom,-40)
+                            
                             let name = vm.chatUser?.name.replacingOccurrences(of: "", with: "") ?? ""
                             Text(name)
                                 .font(.custom(
