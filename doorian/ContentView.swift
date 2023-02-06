@@ -7,13 +7,16 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    @State private var isUserCurrentlyLoggedOut : Bool = false
     
     init() {
         UITabBar.appearance().backgroundColor = .white
     }
     
     var body: some View {
+        
         VStack {
             TabView {
                 HomeView()
@@ -25,7 +28,7 @@ struct ContentView: View {
                     .tabItem {
                         Image(systemName: "viewfinder")
                     }
-                ProfileView()
+                ProfileView(isUserCurrentlyLoggedOut: $isUserCurrentlyLoggedOut)
                     .tabItem {
                         Image(systemName: "person")
                         Text("โปรไฟล์")

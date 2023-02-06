@@ -15,6 +15,8 @@ struct AuthView: View {
         NavigationView{
             if self.isUserCurrentlyLoggedOut {
                 ContentView()
+//                ProfileView(isUserCurrentlyLoggedOut:  $isUserCurrentlyLoggedOut)
+                
             }else{
                 LoginView(isUserCurrentlyLoggedOut:  $isUserCurrentlyLoggedOut)
             }

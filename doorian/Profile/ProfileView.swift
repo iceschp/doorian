@@ -9,8 +9,11 @@ import SwiftUI
 import FirebaseAuth
 import SDWebImageSwiftUI
 struct ProfileView: View {
+    
     @AppStorage("uid") var userID: String = ""
     @ObservedObject private var vm = MainMessagesView()
+    @State var shouldShowLogoutOption = false
+    @Binding var isUserCurrentlyLoggedOut  : Bool
     
     var body: some View {
         
@@ -148,17 +151,9 @@ struct ProfileView: View {
                         .padding(.top,10)
                         
                         HStack{
-                            Button(action: {
-                                let firebaseAuth = Auth.auth()
-                                do {
-                                    try firebaseAuth.signOut()
-                                    withAnimation {
-                                        userID = ""
-                                    }
-                                } catch let signOutError as NSError {
-                                    print("Error signing out: %@", signOutError)
-                                }
-                            }) {
+                            Button {
+                                shouldShowLogoutOption.toggle()
+                            } label: {
                                     Image(systemName: "rectangle.portrait.and.arrow.forward.fill")
                                         .foregroundColor(Color("dark-pink"))
                                     Text("ออกจากระบบ")
@@ -183,6 +178,16 @@ struct ProfileView: View {
                         
                     }.padding(.horizontal,22)
                      .padding(.vertical,20)
+                     .actionSheet(isPresented: $shouldShowLogoutOption) {
+                         .init(title: Text("Sign out"), message:Text("คณต้องการออกจากสู่ระบบหรือไม่?"), buttons: [
+                            .destructive(Text("ยืนยัน"), action: {
+                                print("handle sign out")
+                                try? Auth.auth().signOut()
+                                self.isUserCurrentlyLoggedOut = false
+                            }),
+                            .cancel(Text("ยกเลิก"))
+                         ])
+                     }
                    
                //สำรองไว้ก่อน
 //                    VStack{
@@ -217,8 +222,9 @@ struct ProfileView: View {
 }
 
 struct ProfileView_Previews: PreviewProvider {
+    @State static var isUserCurrentlyLoggedOut = false
     static var previews: some View {
-        ProfileView()
+        ProfileView(isUserCurrentlyLoggedOut: $isUserCurrentlyLoggedOut)
     }
 }
 
