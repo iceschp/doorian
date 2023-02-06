@@ -21,10 +21,14 @@ struct HomeView: View {
 }
 
 struct Header: View {
+    @ObservedObject private var vm = MainMessagesView()
+    
     var body: some View {
         ZStack (alignment: .top){
             VStack {
-                Text("สวัสดี! คุณวรัญญา")
+                let name = vm.chatUser?.name.replacingOccurrences(of: "", with: "") ?? ""
+                
+                Text("สวัสดี! คุณ\(name)")
                     .bold()
                     .font(.system(size: 24))
                     .padding(.bottom, 5)
