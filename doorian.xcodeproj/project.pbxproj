@@ -26,6 +26,7 @@
 		26F1C9A0298CEEB1001C1DBA /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1C99F298CEEB1001C1DBA /* AccountView.swift */; };
 		26F1C9A2298CF017001C1DBA /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1C9A1298CF017001C1DBA /* FavoriteView.swift */; };
 		26F1C9A5298D14AC001C1DBA /* MainMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1C9A4298D14AC001C1DBA /* MainMessagesView.swift */; };
+		26F1C9A82990A3C8001C1DBA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 26F1C9A72990A3C8001C1DBA /* SDWebImageSwiftUI */; };
 		4809246E29669F3C009EB501 /* doorianApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809246D29669F3C009EB501 /* doorianApp.swift */; };
 		4809247029669F3C009EB501 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809246F29669F3C009EB501 /* ContentView.swift */; };
 		4809247229669F3D009EB501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4809247129669F3D009EB501 /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26F1C9A82990A3C8001C1DBA /* SDWebImageSwiftUI in Frameworks */,
 				26590B7629811BAF0021AE56 /* GoogleSignInSwift in Frameworks */,
 				65736C2F49198F81752F87AE /* Pods_doorian.framework in Frameworks */,
 				26590B7429811BAF0021AE56 /* GoogleSignIn in Frameworks */,
@@ -221,6 +223,7 @@
 			packageProductDependencies = (
 				26590B7329811BAF0021AE56 /* GoogleSignIn */,
 				26590B7529811BAF0021AE56 /* GoogleSignInSwift */,
+				26F1C9A72990A3C8001C1DBA /* SDWebImageSwiftUI */,
 			);
 			productName = doorian;
 			productReference = 4809246A29669F3C009EB501 /* doorian.app */;
@@ -252,6 +255,7 @@
 			mainGroup = 4809246129669F3C009EB501;
 			packageReferences = (
 				26590B7229811BAF0021AE56 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				26F1C9A62990A3C8001C1DBA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 4809246B29669F3C009EB501 /* Products */;
 			projectDirPath = "";
@@ -562,6 +566,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		26F1C9A62990A3C8001C1DBA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -574,6 +586,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 26590B7229811BAF0021AE56 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		26F1C9A72990A3C8001C1DBA /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26F1C9A62990A3C8001C1DBA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

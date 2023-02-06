@@ -7,9 +7,10 @@
 
 import SwiftUI
 import FirebaseAuth
-
+import SDWebImageSwiftUI
 struct ProfileView: View {
     @AppStorage("uid") var userID: String = ""
+    @ObservedObject private var vm = MainMessagesView()
     
     var body: some View {
         
@@ -28,14 +29,16 @@ struct ProfileView: View {
                         
                         VStack(spacing: 15){
                             
-                            Image("profile")
+                            WebImage(url: URL(string: vm.chatUser?.profileImageUrl ?? ""))
                                 .resizable()
+                                .scaledToFit()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 80, height: 80)
                                 .clipShape(Circle())
                                 .offset(y: -40)
                                 .padding(.bottom,-40)
-                            Text("อริสา มีสุข")
+                            let name = vm.chatUser?.name.replacingOccurrences(of: "", with: "") ?? ""
+                            Text(name)
                                 .font(.custom(
                                     "NotoSans-Bold",
                                     fixedSize: 18))
@@ -44,7 +47,7 @@ struct ProfileView: View {
                             
                             HStack(alignment: .top, spacing: 10){
                                 
-                                Text("@alisa_meesuk")
+                                Text("@doorian_อริสา")
                                     .font(.custom(
                                         "NotoSans-Regular",
                                         fixedSize: 14))

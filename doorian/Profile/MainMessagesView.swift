@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 
 struct ChatUser {
-    let uid, email, profileImageUrl: String
+    let uid, email, name, profileImageUrl: String
 }
 
 class MainMessagesView: ObservableObject {
@@ -43,7 +43,12 @@ class MainMessagesView: ObservableObject {
                     return
                 }
                 self.errorMessage = "Data: \(data.description)"
-                let uid = data["uid"] as? String
+                let uid = data["uid"] as? String ?? ""
+                let email =  data["email"] as? String ?? ""
+                let name = data["name"] as? String ?? ""
+                let profileImageUrl = data["profileImageUrl"] as? String ?? ""
+                
+                self.chatUser = ChatUser(uid: uid, email: email, name: name, profileImageUrl: profileImageUrl)
             }
         
     }

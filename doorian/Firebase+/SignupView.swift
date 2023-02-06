@@ -15,6 +15,7 @@ struct SignupView: View {
     @Binding var isUserCurrentlyLoggedOut  : Bool
     @AppStorage("uid") var userID: String = ""
     @State private var name: String = ""
+    @State private var profileImageUrl: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
     @State var visible = false
@@ -37,7 +38,7 @@ struct SignupView: View {
     
     private func storeUserInformation(){
           guard let uid = Auth.auth().currentUser?.uid else { return }
-          let userData = ["name": self.name, "email": self.email, "uid": uid]
+        let userData = ["name": self.name, "email": self.email,"profileImageUrl": self.profileImageUrl, "uid": uid]
           Firestore.firestore().collection("users")
               .document(uid).setData(userData) { error in
                 
