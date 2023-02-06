@@ -28,6 +28,7 @@
 		4809247529669F3D009EB501 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4809247429669F3D009EB501 /* Preview Assets.xcassets */; };
 		484DCF512966A0D0001991AE /* ScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484DCF502966A0D0001991AE /* ScanningView.swift */; };
 		48966CE7296E7A1D00C85696 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48966CE6296E7A1D00C85696 /* ProfileView.swift */; };
+		48A5D2552990E3610088CC29 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5D2542990E3610088CC29 /* CustomTabbar.swift */; };
 		48C59350298A45BC005FE4FD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C5934F298A45BC005FE4FD /* Extension.swift */; };
 		48DDFD56296C37F300EF17FF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DDFD55296C37F300EF17FF /* HomeView.swift */; };
 		65736C2F49198F81752F87AE /* Pods_doorian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A330CFAD0A354EE45591F07F /* Pods_doorian.framework */; };
@@ -55,6 +56,7 @@
 		4809247429669F3D009EB501 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		484DCF502966A0D0001991AE /* ScanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningView.swift; sourceTree = "<group>"; };
 		48966CE6296E7A1D00C85696 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		48A5D2542990E3610088CC29 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
 		48C5934F298A45BC005FE4FD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		48DDFD55296C37F300EF17FF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		51157146CEB249DDBF3742A8 /* Pods-doorian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doorian.debug.xcconfig"; path = "Target Support Files/Pods-doorian/Pods-doorian.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				48C5934E298A459F005FE4FD /* Extension */,
 				4809246D29669F3C009EB501 /* doorianApp.swift */,
 				4809246F29669F3C009EB501 /* ContentView.swift */,
+				48A5D2542990E3610088CC29 /* CustomTabbar.swift */,
 				48DDFD55296C37F300EF17FF /* HomeView.swift */,
 				484DCF502966A0D0001991AE /* ScanningView.swift */,
 				48966CE6296E7A1D00C85696 /* ProfileView.swift */,
@@ -315,6 +318,7 @@
 				484DCF512966A0D0001991AE /* ScanningView.swift in Sources */,
 				48C59350298A45BC005FE4FD /* Extension.swift in Sources */,
 				48966CE7296E7A1D00C85696 /* ProfileView.swift in Sources */,
+				48A5D2552990E3610088CC29 /* CustomTabbar.swift in Sources */,
 				26590B7A2981360D0021AE56 /* FireAuth.swift in Sources */,
 				4809247029669F3C009EB501 /* ContentView.swift in Sources */,
 				26A67CD22982591800E6D735 /* LoginView.swift in Sources */,

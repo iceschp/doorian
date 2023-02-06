@@ -26,7 +26,7 @@ struct Header: View {
             VStack {
                 Text("สวัสดี! คุณวรัญญา")
                     .bold()
-                    .font(.system(size: 24))
+                    .font(.custom("NotoSans", size: 24))
                     .padding(.bottom, 5)
                 
                 Text("อัปเดตข่าวสารทุเรียนวันที่ 1 มกราคม 2566")
