@@ -28,6 +28,7 @@
 		26F1C9A5298D14AC001C1DBA /* MainMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1C9A4298D14AC001C1DBA /* MainMessagesView.swift */; };
 		26F1C9A82990A3C8001C1DBA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 26F1C9A72990A3C8001C1DBA /* SDWebImageSwiftUI */; };
 		26F1C9AA2990F0A9001C1DBA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1C9A92990F0A9001C1DBA /* ImagePicker.swift */; };
+		26F1C9AE29964E28001C1DBA /* UserFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1C9AD29964E28001C1DBA /* UserFirestore.swift */; };
 		4809246E29669F3C009EB501 /* doorianApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809246D29669F3C009EB501 /* doorianApp.swift */; };
 		4809247029669F3C009EB501 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809246F29669F3C009EB501 /* ContentView.swift */; };
 		4809247229669F3D009EB501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4809247129669F3D009EB501 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		26F1C9A1298CF017001C1DBA /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		26F1C9A4298D14AC001C1DBA /* MainMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMessagesView.swift; sourceTree = "<group>"; };
 		26F1C9A92990F0A9001C1DBA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		26F1C9AD29964E28001C1DBA /* UserFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFirestore.swift; sourceTree = "<group>"; };
 		4809246A29669F3C009EB501 /* doorian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = doorian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4809246D29669F3C009EB501 /* doorianApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doorianApp.swift; sourceTree = "<group>"; };
 		4809246F29669F3C009EB501 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				26F1C9A1298CF017001C1DBA /* FavoriteView.swift */,
 				26F1C9A4298D14AC001C1DBA /* MainMessagesView.swift */,
 				26F1C9A92990F0A9001C1DBA /* ImagePicker.swift */,
+				26F1C9AD29964E28001C1DBA /* UserFirestore.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				26F1C9AA2990F0A9001C1DBA /* ImagePicker.swift in Sources */,
 				26A67D01298275F600E6D735 /* String.swift in Sources */,
 				26A67D102983B7D500E6D735 /* ResetPasswordView.swift in Sources */,
+				26F1C9AE29964E28001C1DBA /* UserFirestore.swift in Sources */,
 				26A67D0729827F9D00E6D735 /* AuthView.swift in Sources */,
 				48DDFD56296C37F300EF17FF /* HomeView.swift in Sources */,
 				26A67D162983DEB000E6D735 /* OpeningView.swift in Sources */,

@@ -38,7 +38,7 @@ struct SignupView: View {
     
     private func storeUserInformation(){
           guard let uid = Auth.auth().currentUser?.uid else { return }
-        let userData = ["name": self.name, "email": self.email,"profileImageUrl": self.profileImageUrl, "uid": uid]
+        let userData = ["name": self.name, "email": self.email,"profileImageUrl": "profile", "uid": uid]
           Firestore.firestore().collection("users")
               .document(uid).setData(userData) { error in
                 

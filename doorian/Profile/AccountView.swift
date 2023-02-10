@@ -13,7 +13,10 @@ import SDWebImageSwiftUI
 struct AccountView: View {
     
     @ObservedObject private var vm = MainMessagesView()
+    @AppStorage("uid") var userID: String = ""
     @State var shouldShowImagePicker = false
+    @State private var name: String = ""
+    @State private var email: String = ""
     @State var image: UIImage?
     var body: some View {
         NavigationView{
@@ -83,6 +86,8 @@ struct AccountView: View {
                                     fixedSize: 14))
                         }
                         .frame(maxWidth: .infinity, alignment: .center)
+                        
+                        
                     }
                     .padding([.horizontal,.bottom])
                     .background(
@@ -92,6 +97,44 @@ struct AccountView: View {
                     .padding()
                     .padding(.top,40)
                     
+                    HStack{
+                        Text("ชื่อผู้ใช้")
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    HStack{
+                        let name = vm.chatUser?.name.replacingOccurrences(of: "", with: "") ?? ""
+                        Text(name)
+                    }
+                    .foregroundColor(Color.black)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 18)
+                    .background(
+                        RoundedRectangle(cornerRadius: 50)
+                            .fill(Color("textfield"))
+                    )
+                    .padding(.bottom, 20)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    HStack{
+                        Text("อีเมล์")
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    HStack{
+                        let email = vm.chatUser?.email.replacingOccurrences(of: "", with: "") ?? ""
+                        Text(email)
+                    }
+                    .foregroundColor(Color.black)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 18)
+                    .background(
+                        RoundedRectangle(cornerRadius: 50)
+                            .fill(Color("textfield"))
+                    )
+                    .padding(.bottom, 20)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+ 
                 }
                 .padding(.horizontal,22)
                 .padding(.vertical,20)
