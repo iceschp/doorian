@@ -7,8 +7,8 @@
 
 import SwiftUI
 import FirebaseAuth
-//import FirebaseStorage
-import SDWebImageSwiftUI
+import FirebaseStorage
+//import SDWebImageSwiftUI
 
 struct AccountView: View {
     
@@ -17,12 +17,13 @@ struct AccountView: View {
     @State var shouldShowImagePicker = false
     @State private var name: String = ""
     @State private var email: String = ""
-    @State var image: UIImage?
+    
+    @State var selectedImage: UIImage?
     var body: some View {
         NavigationView{
             
             ScrollView(.vertical, showsIndicators: false) {
-               
+                
                 VStack{
                     
                     Text("บัญชีผู้ใช้")
@@ -37,8 +38,8 @@ struct AccountView: View {
                             shouldShowImagePicker.toggle()
                         } label: {
                             VStack{
-                                if let image = self.image {
-                                    Image(uiImage: image)
+                                if selectedImage != nil {
+                                    Image(uiImage: selectedImage!)
                                         .resizable()
                                         .scaledToFit()
                                         .aspectRatio(contentMode: .fill)
@@ -67,9 +68,21 @@ struct AccountView: View {
                                         .offset(x: 30)
                                         .padding(.bottom,-40)
                                 }
+                                
                             }
-    
+                            
                         }
+                        //ติดปัญหาอยู่
+//                        if selectedImage != nil {
+//                            Button{
+//                                uploadPhoto()
+//                            } label: {
+//                                Text("Upload photo")
+//                                    .padding()
+//                            }
+//
+//                        }
+                        
                         let name = vm.chatUser?.name.replacingOccurrences(of: "", with: "") ?? ""
                         Text(name)
                             .font(.custom(
@@ -92,7 +105,7 @@ struct AccountView: View {
                     .padding([.horizontal,.bottom])
                     .background(
                         Color.white
-                        .cornerRadius(12)
+                            .cornerRadius(12)
                     )
                     .padding()
                     .padding(.top,40)
@@ -134,7 +147,7 @@ struct AccountView: View {
                     )
                     .padding(.bottom, 20)
                     .frame(maxWidth: .infinity, alignment: .leading)
- 
+                    
                 }
                 .padding(.horizontal,22)
                 .padding(.vertical,20)
@@ -142,16 +155,41 @@ struct AccountView: View {
             }
             .navigationBarHidden(true)
             .fullScreenCover(isPresented: $shouldShowImagePicker, onDismiss: nil){
-                ImagePicker(image: $image)
+                ImagePicker(image: $selectedImage)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(
                 Color("bg")
                     .ignoresSafeArea()
             )
-        
+            
         }
+       
     }
+    
+//    func uploadPhoto() {
+//
+//        guard selectedImage != nil else {
+//            return
+//        }
+//        let storageRef = Storage.storage().reference()
+//
+//        let imageData = selectedImage!.jpegData( compressionQuality: 0.8)
+//
+//        guard imageData != nil else{
+//            return
+//        }
+//
+//        let fileRef = storageRef.child("userprofile/\(UUID().uuidString).jpg")
+//
+//        let uploadTask = fileRef.putData(imageData!, metadata: nil){ metadata, error in
+//
+//            if error == nil && metadata != nil {
+//                print("error")
+//            }
+//
+//        }
+//    }
 }
 
 struct AccountView_Previews: PreviewProvider {
