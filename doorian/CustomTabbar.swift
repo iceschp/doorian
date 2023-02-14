@@ -7,13 +7,7 @@
 
 import SwiftUI
 
-//enum Tabs: Int {
-//    case home = 0
-//    case scanning = 1
-//    case profile = 2
-//}
 var tabs = ["house.fill", "viewfinder", "person.fill"]
-var nameTabs = ["หน้าแรก", "", "โปรไฟล์"]
 
 struct TabButton: View {
     var image: String
@@ -23,26 +17,34 @@ struct TabButton: View {
     var body: some View {
         Button(action: {selectedTab = image}) {
             ZStack {
-                if image == "viewfinder"   {
+                if image == "viewfinder" {
                     Circle()
                         .frame(width: 50, height: 50)
                         .foregroundColor(Color("red-button"))
                 }
+                
                 VStack {
                     Image(systemName: image)
-                        .frame(width: 30, height: 30)
+                        .imageScale(.large)
                         .foregroundColor(
                             selectedTab == image ? Color("dark-green") : Color("grey-icon")
                         )
+                        .padding(.bottom, 2)
                     
-//                    if image == "house.fill" {
-//                        Text("หน้าแรก")
-//                            .font(.system(size: 10))
-//                            .foregroundColor(Color("grey-icon"))
-//                    } else if image == "person.fill" {
-//                        Text("โปรไฟล์")
-//                            .font(.system(size: 10))
-//                    }
+                    
+                    if image == "house.fill" {
+                        Text("หน้าแรก")
+                            .font(.system(size: 10))
+                            .foregroundColor(
+                                selectedTab == image ? Color("dark-green") : Color("grey-icon")
+                            )
+                    } else if image == "person.fill" {
+                        Text("โปรไฟล์")
+                            .font(.system(size: 10))
+                            .foregroundColor(
+                                selectedTab == image ? Color("dark-green") : Color("grey-icon")
+                            )
+                    }
                 }
             }
         }
