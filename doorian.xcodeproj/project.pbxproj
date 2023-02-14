@@ -34,6 +34,7 @@
 		48C59350298A45BC005FE4FD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C5934F298A45BC005FE4FD /* Extension.swift */; };
 		48D8721A299B783B00FB781C /* MinimizedViewDiagnose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D87219299B783B00FB781C /* MinimizedViewDiagnose.swift */; };
 		48D8721C299B82D000FB781C /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D8721B299B82D000FB781C /* ResultView.swift */; };
+		48D8721E299B892800FB781C /* ResultFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D8721D299B892800FB781C /* ResultFullView.swift */; };
 		48DDFD56296C37F300EF17FF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DDFD55296C37F300EF17FF /* HomeView.swift */; };
 		65736C2F49198F81752F87AE /* Pods_doorian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A330CFAD0A354EE45591F07F /* Pods_doorian.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		48C5934F298A45BC005FE4FD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		48D87219299B783B00FB781C /* MinimizedViewDiagnose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimizedViewDiagnose.swift; sourceTree = "<group>"; };
 		48D8721B299B82D000FB781C /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		48D8721D299B892800FB781C /* ResultFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultFullView.swift; sourceTree = "<group>"; };
 		48DDFD55296C37F300EF17FF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		51157146CEB249DDBF3742A8 /* Pods-doorian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doorian.debug.xcconfig"; path = "Target Support Files/Pods-doorian/Pods-doorian.debug.xcconfig"; sourceTree = "<group>"; };
 		A330CFAD0A354EE45591F07F /* Pods_doorian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_doorian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				48D87219299B783B00FB781C /* MinimizedViewDiagnose.swift */,
+				48D8721D299B892800FB781C /* ResultFullView.swift */,
 				48D8721B299B82D000FB781C /* ResultView.swift */,
 			);
 			path = Diagnose;
@@ -341,6 +344,7 @@
 				264EDA7B298108DF004C40DB /* View.swift in Sources */,
 				26A67D01298275F600E6D735 /* String.swift in Sources */,
 				48D8721C299B82D000FB781C /* ResultView.swift in Sources */,
+				48D8721E299B892800FB781C /* ResultFullView.swift in Sources */,
 				26A67D102983B7D500E6D735 /* ResetPasswordView.swift in Sources */,
 				26A67D0729827F9D00E6D735 /* AuthView.swift in Sources */,
 				48DDFD56296C37F300EF17FF /* HomeView.swift in Sources */,
