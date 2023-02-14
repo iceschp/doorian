@@ -60,19 +60,35 @@ struct Location: View {
 
 struct ContentDisplay: View {
     var body: some View {
-        VStack (alignment: .leading){
-            Text("ประกาศทั่วไป")
-                .bold()
-                .font(.system(size: 18))
+        VStack(alignment: .leading) {
+            GeneralNews()
             
             Spacer()
             
+            TodayNews()
+        }
+        .padding(.horizontal, 15)
+        .frame(maxWidth: 360)
+    }
+}
+
+struct GeneralNews: View {
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("ประกาศทั่วไป")
+                .bold()
+                .font(.system(size: 18))
+        }
+    }
+}
+
+struct TodayNews: View {
+    var body: some View {
+        VStack(alignment: .leading) {
             Text("ข่าววันนี้")
                 .bold()
                 .font(.system(size: 18))
         }
-        
-        .background(.blue)
     }
 }
 
