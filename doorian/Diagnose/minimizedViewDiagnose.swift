@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct minimizedViewDiagnose: View {
+struct MinimizedViewDiagnose: View {
     var body: some View {
         ZStack {
             VStack {
@@ -51,8 +51,8 @@ struct minimizedViewDiagnose: View {
     }
 }
 
-struct minimizedViewDiagnose_Previews: PreviewProvider {
+struct MinimizedViewDiagnose_Previews: PreviewProvider {
     static var previews: some View {
-        minimizedViewDiagnose()
+        MinimizedViewDiagnose()
     }
 }

@@ -32,7 +32,8 @@
 		48A5D258299106FB0088CC29 /* CameraScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A5D257299106FB0088CC29 /* CameraScreen.storyboard */; };
 		48A5D25A29910A230088CC29 /* CameraViewControllver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5D25929910A230088CC29 /* CameraViewControllver.swift */; };
 		48C59350298A45BC005FE4FD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C5934F298A45BC005FE4FD /* Extension.swift */; };
-		48D8721A299B783B00FB781C /* minimizedViewDiagnose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D87219299B783B00FB781C /* minimizedViewDiagnose.swift */; };
+		48D8721A299B783B00FB781C /* MinimizedViewDiagnose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D87219299B783B00FB781C /* MinimizedViewDiagnose.swift */; };
+		48D8721C299B82D000FB781C /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D8721B299B82D000FB781C /* ResultView.swift */; };
 		48DDFD56296C37F300EF17FF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DDFD55296C37F300EF17FF /* HomeView.swift */; };
 		65736C2F49198F81752F87AE /* Pods_doorian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A330CFAD0A354EE45591F07F /* Pods_doorian.framework */; };
 /* End PBXBuildFile section */
@@ -63,7 +64,8 @@
 		48A5D257299106FB0088CC29 /* CameraScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CameraScreen.storyboard; sourceTree = "<group>"; };
 		48A5D25929910A230088CC29 /* CameraViewControllver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewControllver.swift; sourceTree = "<group>"; };
 		48C5934F298A45BC005FE4FD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		48D87219299B783B00FB781C /* minimizedViewDiagnose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = minimizedViewDiagnose.swift; sourceTree = "<group>"; };
+		48D87219299B783B00FB781C /* MinimizedViewDiagnose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimizedViewDiagnose.swift; sourceTree = "<group>"; };
+		48D8721B299B82D000FB781C /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		48DDFD55296C37F300EF17FF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		51157146CEB249DDBF3742A8 /* Pods-doorian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doorian.debug.xcconfig"; path = "Target Support Files/Pods-doorian/Pods-doorian.debug.xcconfig"; sourceTree = "<group>"; };
 		A330CFAD0A354EE45591F07F /* Pods_doorian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_doorian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,7 +188,8 @@
 		48D87218299B77B700FB781C /* Diagnose */ = {
 			isa = PBXGroup;
 			children = (
-				48D87219299B783B00FB781C /* minimizedViewDiagnose.swift */,
+				48D87219299B783B00FB781C /* MinimizedViewDiagnose.swift */,
+				48D8721B299B82D000FB781C /* ResultView.swift */,
 			);
 			path = Diagnose;
 			sourceTree = "<group>";
@@ -337,11 +340,12 @@
 				26A67D0529827CA800E6D735 /* SignupView.swift in Sources */,
 				264EDA7B298108DF004C40DB /* View.swift in Sources */,
 				26A67D01298275F600E6D735 /* String.swift in Sources */,
+				48D8721C299B82D000FB781C /* ResultView.swift in Sources */,
 				26A67D102983B7D500E6D735 /* ResetPasswordView.swift in Sources */,
 				26A67D0729827F9D00E6D735 /* AuthView.swift in Sources */,
 				48DDFD56296C37F300EF17FF /* HomeView.swift in Sources */,
 				26A67D162983DEB000E6D735 /* OpeningView.swift in Sources */,
-				48D8721A299B783B00FB781C /* minimizedViewDiagnose.swift in Sources */,
+				48D8721A299B783B00FB781C /* MinimizedViewDiagnose.swift in Sources */,
 				264EDA752980DEB2004C40DB /* GoogleSigninBtn.swift in Sources */,
 				484DCF512966A0D0001991AE /* ScanningView.swift in Sources */,
 				48C59350298A45BC005FE4FD /* Extension.swift in Sources */,
