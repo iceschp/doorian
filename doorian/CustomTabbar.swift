@@ -60,7 +60,7 @@ struct CustomTabbar: View {
             TabView(selection: $selectedTab) {
                 HomeView()
                     .tag("house.fill")
-                ScanningView()
+                ResultView()
                     .tag("viewfinder")
                 ProfileView()
                     .tag("person.fill")
