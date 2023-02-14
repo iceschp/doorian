@@ -8,16 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-//    @State var selectedTab: Tabs = .home
-    
     var body: some View {
         VStack {
             CustomTabbar()
         }
-//        VStack {
-//            Spacer()
-//            CustomTabbar(selectedTab: $selectedTab)
-//        }
     }
 }
 
