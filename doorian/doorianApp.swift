@@ -16,8 +16,10 @@ struct doorianApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
-            AuthView()
-//            ContentView()
+//
+//            AuthView()
+            AccountView()
+            
         }
     }
 }

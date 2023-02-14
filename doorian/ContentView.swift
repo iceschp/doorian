@@ -7,10 +7,41 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+<<<<<<< HEAD
+=======
+    @State private var isUserCurrentlyLoggedOut : Bool = false
+    
+    init() {
+        UITabBar.appearance().backgroundColor = .white
+    }
+    
+>>>>>>> main
     var body: some View {
+        
         VStack {
+<<<<<<< HEAD
             CustomTabbar()
+=======
+            TabView {
+                HomeView()
+                    .tabItem {
+                        Image(systemName: "house")
+                        Text("หน้าแรก")
+                    }
+                ScanningView()
+                    .tabItem {
+                        Image(systemName: "viewfinder")
+                    }
+                ProfileView(isUserCurrentlyLoggedOut: $isUserCurrentlyLoggedOut)
+                    .tabItem {
+                        Image(systemName: "person")
+                        Text("โปรไฟล์")
+                    }
+            }
+            .accentColor(Color("dark-green"))
+>>>>>>> main
         }
     }
 }

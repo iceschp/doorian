@@ -22,6 +22,12 @@
 		26A67D102983B7D500E6D735 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A67D0F2983B7D500E6D735 /* ResetPasswordView.swift */; };
 		26A67D122983C3E900E6D735 /* SuccessPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A67D112983C3E900E6D735 /* SuccessPasswordView.swift */; };
 		26A67D162983DEB000E6D735 /* OpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A67D152983DEB000E6D735 /* OpeningView.swift */; };
+		26F1C99E298B9EC1001C1DBA /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26F1C99D298B9EC1001C1DBA /* NotoSans-Regular.ttf */; };
+		26F1C9A0298CEEB1001C1DBA /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1C99F298CEEB1001C1DBA /* AccountView.swift */; };
+		26F1C9A2298CF017001C1DBA /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1C9A1298CF017001C1DBA /* FavoriteView.swift */; };
+		26F1C9A5298D14AC001C1DBA /* MainMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1C9A4298D14AC001C1DBA /* MainMessagesView.swift */; };
+		26F1C9A82990A3C8001C1DBA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 26F1C9A72990A3C8001C1DBA /* SDWebImageSwiftUI */; };
+		26F1C9AA2990F0A9001C1DBA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1C9A92990F0A9001C1DBA /* ImagePicker.swift */; };
 		4809246E29669F3C009EB501 /* doorianApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809246D29669F3C009EB501 /* doorianApp.swift */; };
 		4809247029669F3C009EB501 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809246F29669F3C009EB501 /* ContentView.swift */; };
 		4809247229669F3D009EB501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4809247129669F3D009EB501 /* Assets.xcassets */; };
@@ -54,6 +60,11 @@
 		26A67D0F2983B7D500E6D735 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		26A67D112983C3E900E6D735 /* SuccessPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPasswordView.swift; sourceTree = "<group>"; };
 		26A67D152983DEB000E6D735 /* OpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningView.swift; sourceTree = "<group>"; };
+		26F1C99D298B9EC1001C1DBA /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
+		26F1C99F298CEEB1001C1DBA /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		26F1C9A1298CF017001C1DBA /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		26F1C9A4298D14AC001C1DBA /* MainMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMessagesView.swift; sourceTree = "<group>"; };
+		26F1C9A92990F0A9001C1DBA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		4809246A29669F3C009EB501 /* doorian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = doorian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4809246D29669F3C009EB501 /* doorianApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doorianApp.swift; sourceTree = "<group>"; };
 		4809246F29669F3C009EB501 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26F1C9A82990A3C8001C1DBA /* SDWebImageSwiftUI in Frameworks */,
 				26590B7629811BAF0021AE56 /* GoogleSignInSwift in Frameworks */,
 				65736C2F49198F81752F87AE /* Pods_doorian.framework in Frameworks */,
 				26590B7429811BAF0021AE56 /* GoogleSignIn in Frameworks */,
@@ -101,6 +113,7 @@
 		26A67CD32982617400E6D735 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				26F1C99D298B9EC1001C1DBA /* NotoSans-Regular.ttf */,
 				26A67CFC2982694900E6D735 /* NotoSans-Bold.ttf */,
 			);
 			path = Fonts;
@@ -119,6 +132,18 @@
 				26A67D152983DEB000E6D735 /* OpeningView.swift */,
 			);
 			path = "Firebase+";
+			sourceTree = "<group>";
+		};
+		26F1C9A3298CF030001C1DBA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				48966CE6296E7A1D00C85696 /* ProfileView.swift */,
+				26F1C99F298CEEB1001C1DBA /* AccountView.swift */,
+				26F1C9A1298CF017001C1DBA /* FavoriteView.swift */,
+				26F1C9A4298D14AC001C1DBA /* MainMessagesView.swift */,
+				26F1C9A92990F0A9001C1DBA /* ImagePicker.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		4809246129669F3C009EB501 = {
@@ -153,7 +178,7 @@
 				48A5D2542990E3610088CC29 /* CustomTabbar.swift */,
 				48DDFD55296C37F300EF17FF /* HomeView.swift */,
 				484DCF502966A0D0001991AE /* ScanningView.swift */,
-				48966CE6296E7A1D00C85696 /* ProfileView.swift */,
+				26F1C9A3298CF030001C1DBA /* Profile */,
 				2629276B297E950F0050F555 /* Info.plist */,
 				4809247129669F3D009EB501 /* Assets.xcassets */,
 				26337C632976731800DA8F41 /* GoogleService-Info.plist */,
@@ -235,6 +260,7 @@
 			packageProductDependencies = (
 				26590B7329811BAF0021AE56 /* GoogleSignIn */,
 				26590B7529811BAF0021AE56 /* GoogleSignInSwift */,
+				26F1C9A72990A3C8001C1DBA /* SDWebImageSwiftUI */,
 			);
 			productName = doorian;
 			productReference = 4809246A29669F3C009EB501 /* doorian.app */;
@@ -266,6 +292,7 @@
 			mainGroup = 4809246129669F3C009EB501;
 			packageReferences = (
 				26590B7229811BAF0021AE56 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				26F1C9A62990A3C8001C1DBA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 4809246B29669F3C009EB501 /* Products */;
 			projectDirPath = "";
@@ -284,6 +311,7 @@
 				48A5D258299106FB0088CC29 /* CameraScreen.storyboard in Resources */,
 				26A67CFD2982694900E6D735 /* NotoSans-Bold.ttf in Resources */,
 				4809247529669F3D009EB501 /* Preview Assets.xcassets in Resources */,
+				26F1C99E298B9EC1001C1DBA /* NotoSans-Regular.ttf in Resources */,
 				4809247229669F3D009EB501 /* Assets.xcassets in Resources */,
 				26337C642976731800DA8F41 /* GoogleService-Info.plist in Resources */,
 			);
@@ -342,6 +370,7 @@
 				26A67D122983C3E900E6D735 /* SuccessPasswordView.swift in Sources */,
 				26A67D0529827CA800E6D735 /* SignupView.swift in Sources */,
 				264EDA7B298108DF004C40DB /* View.swift in Sources */,
+				26F1C9AA2990F0A9001C1DBA /* ImagePicker.swift in Sources */,
 				26A67D01298275F600E6D735 /* String.swift in Sources */,
 				48D8721C299B82D000FB781C /* ResultView.swift in Sources */,
 				48D8721E299B892800FB781C /* ResultFullView.swift in Sources */,
@@ -351,14 +380,20 @@
 				26A67D162983DEB000E6D735 /* OpeningView.swift in Sources */,
 				48D8721A299B783B00FB781C /* MinimizedViewDiagnose.swift in Sources */,
 				264EDA752980DEB2004C40DB /* GoogleSigninBtn.swift in Sources */,
+				26F1C9A5298D14AC001C1DBA /* MainMessagesView.swift in Sources */,
 				484DCF512966A0D0001991AE /* ScanningView.swift in Sources */,
 				48C59350298A45BC005FE4FD /* Extension.swift in Sources */,
 				48966CE7296E7A1D00C85696 /* ProfileView.swift in Sources */,
+<<<<<<< HEAD
 				48A5D2552990E3610088CC29 /* CustomTabbar.swift in Sources */,
+=======
+				26F1C9A0298CEEB1001C1DBA /* AccountView.swift in Sources */,
+>>>>>>> main
 				26590B7A2981360D0021AE56 /* FireAuth.swift in Sources */,
 				4809247029669F3C009EB501 /* ContentView.swift in Sources */,
 				26A67CD22982591800E6D735 /* LoginView.swift in Sources */,
 				4809246E29669F3C009EB501 /* doorianApp.swift in Sources */,
+				26F1C9A2298CF017001C1DBA /* FavoriteView.swift in Sources */,
 				26A67D09298289DA00E6D735 /* UserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,6 +528,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = doorian/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Doorian;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -525,6 +561,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = doorian/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Doorian;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -576,6 +613,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		26F1C9A62990A3C8001C1DBA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -588,6 +633,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 26590B7229811BAF0021AE56 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		26F1C9A72990A3C8001C1DBA /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26F1C9A62990A3C8001C1DBA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

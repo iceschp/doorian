@@ -8,12 +8,14 @@
 import SwiftUI
 import Firebase
 import FirebaseAuth
+import FirebaseFirestore
 import GoogleSignIn
 
 struct SignupView: View {
-    @Binding var currentShowingView: String
+    @Binding var isUserCurrentlyLoggedOut  : Bool
     @AppStorage("uid") var userID: String = ""
     @State private var name: String = ""
+    @State private var profileImageUrl: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
     @State var visible = false
@@ -21,6 +23,7 @@ struct SignupView: View {
     @Environment(\.dismiss) var dismiss
     
     @State var error = ""
+    
     
     private func isValidPassword(_ password: String) -> Bool {
         // minimum 8 characters long
@@ -32,6 +35,21 @@ struct SignupView: View {
         
         return passwordRegex.evaluate(with: password)
     }
+    
+    private func storeUserInformation(){
+          guard let uid = Auth.auth().currentUser?.uid else { return }
+        let userData = ["name": self.name, "email": self.email,"profileImageUrl": "profile", "uid": uid]
+          Firestore.firestore().collection("users")
+              .document(uid).setData(userData) { error in
+                
+                  if let error = error {
+                      print(error)
+                      return
+                  }
+                  print("success")
+              }
+      }
+
     
     var body: some View {
         ZStack {
@@ -98,7 +116,7 @@ struct SignupView: View {
                 HStack {
                     
                     Image(systemName: "lock.fill")
-                    SecureField("รหัสผ่าน", text: $password)
+                   
                     VStack{
                         
                         if self.visible{
@@ -108,7 +126,8 @@ struct SignupView: View {
                                 .autocapitalization(.none)
                         }
                         else{
-                            SecureField("รหัสผ่าน", text: self.$password)
+                            SecureField("รหัสผ่าน",text: self.$password)
+                                .font(.system(size: 14))
                                 .disableAutocorrection(true)
                                 .autocapitalization(.none)
                         }
@@ -143,11 +162,12 @@ struct SignupView: View {
                         print(error)
                         return
                     }
-                    
+                    self.storeUserInformation()
                     if let authResult = authResult {
                         print(authResult.user.uid)
                         userID = authResult.user.uid
                     }
+                    self.isUserCurrentlyLoggedOut = true
                 }
                     
                 } label: {
@@ -211,7 +231,8 @@ struct SignupView: View {
 }
 
 struct SignupView_Previews: PreviewProvider {
+    @State static var isUserCurrentlyLoggedOut = false
     static var previews: some View {
-        SignupView(currentShowingView: .constant("true"))
+        SignupView(isUserCurrentlyLoggedOut: $isUserCurrentlyLoggedOut)
     }
 }

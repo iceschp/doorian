@@ -32,7 +32,7 @@ struct GoogleSigninBtn: View {
                 .padding(.horizontal, 10)
                 .background(
                     RoundedRectangle(cornerRadius: 10)
-                    .fill(Color("red-button"))
+                    .fill(Color("dark-pink"))
                 )
             }
         }

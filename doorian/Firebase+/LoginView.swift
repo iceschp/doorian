@@ -11,15 +11,16 @@ import FirebaseAuth
 import GoogleSignIn
 
 struct LoginView: View {
-    @Binding var currentShowingView: String
+//    @Binding var currentShowingView: String
     @AppStorage("uid") var userID: String = ""
     
     @State private var email: String = ""
     @State private var password: String = ""
     @State var visible = false
     @State var error = ""
-    
+    @State private var showLoginAlert: Bool = false
     @State private var showingSheet = false
+    @Binding var isUserCurrentlyLoggedOut  : Bool
     
     private func isValidPassword(_ password: String) -> Bool {
         // minimum 8 characters long
@@ -138,6 +139,7 @@ struct LoginView: View {
                         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                             if let error = error {
                                 print(error)
+                                self.showLoginAlert = true
                                 return
                             }
                             
@@ -147,6 +149,7 @@ struct LoginView: View {
                                     userID = authResult.user.uid
                                 }
                             }
+                            self.isUserCurrentlyLoggedOut = true
                         }
                         
                     } label: {
@@ -164,6 +167,9 @@ struct LoginView: View {
                             )
                     }
                     .padding(.bottom, 20)
+                    .alert(isPresented: $showLoginAlert) {
+                        Alert(title: Text("Email/Password incorrect"))
+                    }
                     
                     
                     Text("หรือ")
@@ -204,19 +210,21 @@ struct LoginView: View {
                 .frame(width: 300, height: 35)
             }
             .sheet(isPresented: $showingSheet) {
-                SignupView(currentShowingView: .constant("true"))
+                SignupView(isUserCurrentlyLoggedOut: $isUserCurrentlyLoggedOut)
                     .presentationDetents([.large])
                     .presentationDragIndicator(.visible)
             }
-        }
-        .onTapGesture {
-            self.hideKeyboard()
+            
+            .onTapGesture {
+                self.hideKeyboard()
+            }
         }
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
+    @State static var isUserCurrentlyLoggedOut = false
     static var previews: some View {
-        LoginView(currentShowingView: .constant("true"))
+        LoginView(isUserCurrentlyLoggedOut: $isUserCurrentlyLoggedOut)
     }
 }
