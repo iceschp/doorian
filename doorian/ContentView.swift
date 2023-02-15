@@ -9,21 +9,20 @@ import SwiftUI
 
 
 struct ContentView: View {
-<<<<<<< HEAD
-=======
+
     @State private var isUserCurrentlyLoggedOut : Bool = false
     
     init() {
         UITabBar.appearance().backgroundColor = .white
     }
     
->>>>>>> main
+
     var body: some View {
         
         VStack {
-<<<<<<< HEAD
+
             CustomTabbar()
-=======
+
             TabView {
                 HomeView()
                     .tabItem {
@@ -41,7 +40,7 @@ struct ContentView: View {
                     }
             }
             .accentColor(Color("dark-green"))
->>>>>>> main
+
         }
     }
 }

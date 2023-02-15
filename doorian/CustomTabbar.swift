@@ -13,6 +13,7 @@ struct TabButton: View {
     var image: String
     
     @Binding var selectedTab : String
+   
     
     var body: some View {
         Button(action: {selectedTab = image}) {
@@ -53,6 +54,7 @@ struct TabButton: View {
 
 struct CustomTabbar: View {
     @State var selectedTab = "house.fill"
+    @State private var isUserCurrentlyLoggedOut : Bool = false
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
@@ -62,7 +64,7 @@ struct CustomTabbar: View {
                     .tag("house.fill")
                 ResultView()
                     .tag("viewfinder")
-                ProfileView()
+                ProfileView(isUserCurrentlyLoggedOut: $isUserCurrentlyLoggedOut)
                     .tag("person.fill")
             }
             
