@@ -72,7 +72,7 @@ struct ContentDisplay: View {
             TodayNews()
         }
         .padding(.horizontal, 15)
-        .frame(maxWidth: 360)
+        .frame(maxWidth: .infinity)
     }
 }
 
@@ -87,12 +87,32 @@ struct GeneralNews: View {
 }
 
 struct TodayNews: View {
+    @State var index = 0
     var body: some View {
         VStack(alignment: .leading) {
             Text("ข่าววันนี้")
                 .bold()
                 .font(.system(size: 18))
+            
+            TabView(selection: self.$index){
+    
+                ForEach(0...4,id: \.self){index in
+                    
+                    Image("d\(index)")
+                        .resizable()
+                        .frame(height: 200)
+                        .frame(maxWidth: .infinity)
+                        .cornerRadius(20)
+                        .tag(index)
+                    
+                }
+            }
+            .frame(height: 200)
+            .frame(maxWidth: .infinity)
+            .padding(.top)
+            .tabViewStyle(PageTabViewStyle())
         }
+        
     }
 }
 
