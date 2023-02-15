@@ -77,42 +77,49 @@ struct ContentDisplay: View {
 }
 
 struct GeneralNews: View {
+    @State var index = 0
+ 
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("ประกาศทั่วไป")
                 .bold()
                 .font(.system(size: 18))
-        }
-    }
-}
-
-struct TodayNews: View {
-    @State var index = 0
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text("ข่าววันนี้")
-                .bold()
-                .font(.system(size: 18))
             
             TabView(selection: self.$index){
-    
                 ForEach(0...4,id: \.self){index in
-                    
-                    Image("d\(index)")
-                        .resizable()
-                        .frame(height: 200)
-                        .frame(maxWidth: .infinity)
-                        .cornerRadius(20)
-                        .tag(index)
-                    
+
+                        
+                        Image("d\(index)")
+                            .resizable()
+                            .frame(height: 200)
+                            .frame(maxWidth: .infinity)
+                            .cornerRadius(20)
+                            .tag(index)
+
                 }
             }
             .frame(height: 200)
             .frame(maxWidth: .infinity)
             .padding(.top)
             .tabViewStyle(PageTabViewStyle())
+            .animation(.easeOut)
         }
-        
+    }
+}
+
+
+struct TodayNews: View {
+   
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("ข่าววันนี้")
+                .bold()
+                .font(.system(size: 18))
+            
+            
+        }
     }
 }
 
