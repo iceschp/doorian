@@ -67,7 +67,7 @@ struct ContentDisplay: View {
         VStack(alignment: .leading) {
             GeneralNews()
             
-            Spacer()
+            .padding(.bottom, 23)
             
             TodayNews()
         }
@@ -82,9 +82,12 @@ struct GeneralNews: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("ประกาศทั่วไป")
-                .bold()
-                .font(.system(size: 18))
+            HStack{
+                Text("ประกาศทั่วไป")
+                    .font(.custom(
+                        "NotoSans-Bold",
+                        fixedSize: 18))
+            }
             
             TabView(selection: self.$index){
                 ForEach(0...4,id: \.self){index in
@@ -109,6 +112,7 @@ struct GeneralNews: View {
                                     .foregroundColor(.black)
                                     .frame(maxWidth: .infinity)
                                     .padding(.top, 60)
+                                    .padding(.leading, -110)
                             
                             }
                             
@@ -132,9 +136,30 @@ struct TodayNews: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("ข่าววันนี้")
-                .bold()
-                .font(.system(size: 18))
+            HStack{
+                Text("ข่าววันนี้")
+                    .bold()
+                    .font(.custom(
+                        "NotoSans-Bold",
+                        fixedSize: 18))
+                Spacer()
+                Text("ดูทั้งหมด")
+                    .font(.custom(
+                        "NotoSans-Regular",
+                        fixedSize: 14))
+                    .foregroundColor(Color("bright-green"))
+                Image(systemName: "arrow.forward")
+                    .foregroundColor(Color("bright-green"))
+            }
+            .padding()
+            Spacer(minLength: 0)
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15){
+                ForEach(items) { item in
+                    
+                    NewsCard(item: item)
+                }
+            }
+            .padding()
             
             
         }

@@ -12,6 +12,7 @@
 		264EDA7B298108DF004C40DB /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264EDA7A298108DF004C40DB /* View.swift */; };
 		26519E04299E00770001FAA9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26519E03299E00770001FAA9 /* Item.swift */; };
 		26519E06299E06DB0001FAA9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26519E05299E06DB0001FAA9 /* CardView.swift */; };
+		26519E09299E2EBB0001FAA9 /* NewsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26519E08299E2EBB0001FAA9 /* NewsCard.swift */; };
 		26590B7429811BAF0021AE56 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 26590B7329811BAF0021AE56 /* GoogleSignIn */; };
 		26590B7629811BAF0021AE56 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 26590B7529811BAF0021AE56 /* GoogleSignInSwift */; };
 		26590B7A2981360D0021AE56 /* FireAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26590B792981360D0021AE56 /* FireAuth.swift */; };
@@ -54,6 +55,7 @@
 		264EDA7A298108DF004C40DB /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		26519E03299E00770001FAA9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		26519E05299E06DB0001FAA9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		26519E08299E2EBB0001FAA9 /* NewsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCard.swift; sourceTree = "<group>"; };
 		26590B792981360D0021AE56 /* FireAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAuth.swift; sourceTree = "<group>"; };
 		26A67CD12982591800E6D735 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		26A67CFC2982694900E6D735 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				48D87218299B77B700FB781C /* Diagnose */,
 				4809246D29669F3C009EB501 /* doorianApp.swift */,
 				4809246F29669F3C009EB501 /* ContentView.swift */,
+				26519E08299E2EBB0001FAA9 /* NewsCard.swift */,
 				48A5D2542990E3610088CC29 /* CustomTabbar.swift */,
 				48DDFD55296C37F300EF17FF /* HomeView.swift */,
 				484DCF502966A0D0001991AE /* ScanningView.swift */,
@@ -404,6 +407,7 @@
 				26F1C9A0298CEEB1001C1DBA /* AccountView.swift in Sources */,
 				26590B7A2981360D0021AE56 /* FireAuth.swift in Sources */,
 				4809247029669F3C009EB501 /* ContentView.swift in Sources */,
+				26519E09299E2EBB0001FAA9 /* NewsCard.swift in Sources */,
 				26A67CD22982591800E6D735 /* LoginView.swift in Sources */,
 				4809246E29669F3C009EB501 /* doorianApp.swift in Sources */,
 				26F1C9A2298CF017001C1DBA /* FavoriteView.swift in Sources */,
