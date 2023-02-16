@@ -111,7 +111,7 @@ struct ProfileView: View {
                         .padding(.top,10)
                         
                         HStack{
-                            NavigationLink(destination: AccountView()) {
+                            NavigationLink(destination: FavoriteView()) {
                                 Image(systemName: "heart.fill")
                                 Text("สิ่งที่ฉันถูกใจ")
                                     .font(.custom("NotoSans-Regular", size: 18))
