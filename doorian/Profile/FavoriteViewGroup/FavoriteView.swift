@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FavoriteView: View {
-//    @State var columns = Array{ repeating: GridItem(.flexible(), spacing: 15), count: 2}
+
     var body: some View {
         ScrollView (.vertical, showsIndicators: true) {
             
@@ -32,35 +32,12 @@ struct FavoriteView: View {
                     }
                 }
                 .padding()
-//                LazyVGrid(columns: self.columns){
-//
-//                    ForEach(data){durian in
-//
-//                        GridView(durian: durian)
-//                    }
-//                }
             }
             Spacer(minLength: 0)
             
         }
     }
 }
-
-//struct GridView : View {
-//    
-//    var durian : DurianContent
-//    
-//    var body: some View{
-//        
-//        VStack{
-//            
-//            Image(durian.image)
-//                .resizable()
-//                .frame(height: 250)
-//                .cornerRadius(20)
-//        }
-//    }
-//}
 
 
 struct FavoriteView_Previews: PreviewProvider {

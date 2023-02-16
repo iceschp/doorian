@@ -94,7 +94,27 @@ struct GeneralNews: View {
                             .frame(height: 200)
                             .frame(maxWidth: .infinity)
                             .cornerRadius(20)
+                            .overlay(alignment: .leading){
+                                Text("กรมวิชาการเกษตรประกาศทุเรียนหมอนทอง")
+                                    .font(.custom(
+                                        "NotoSans-Bold",
+                                        fixedSize: 16))
+                                    .foregroundColor(.black)
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                                Text("ทุเรียนหมอนทองปรับปรุงพันธุ์")
+                                    .font(.custom(
+                                        "NotoSans-Regular",
+                                        fixedSize: 14))
+                                    .foregroundColor(.black)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.top, 60)
+                            
+                            }
+                            
+                            
                             .tag(index)
+                            
 
                 }
             }

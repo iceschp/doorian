@@ -23,24 +23,6 @@ struct ContentView: View {
 
             CustomTabbar()
 
-//            TabView {
-//                HomeView()
-//                    .tabItem {
-//                        Image(systemName: "house")
-//                        Text("หน้าแรก")
-//                    }
-//                ScanningView()
-//                    .tabItem {
-//                        Image(systemName: "viewfinder")
-//                    }
-//                ProfileView(isUserCurrentlyLoggedOut: $isUserCurrentlyLoggedOut)
-//                    .tabItem {
-//                        Image(systemName: "person")
-//                        Text("โปรไฟล์")
-//                    }
-//            }
-//            .accentColor(Color("dark-green"))
-
         }
     }
 }
