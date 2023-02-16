@@ -103,7 +103,6 @@ struct GeneralNews: View {
             .frame(maxWidth: .infinity)
             .padding(.top)
             .tabViewStyle(PageTabViewStyle())
-            .animation(.easeOut)
         }
     }
 }
