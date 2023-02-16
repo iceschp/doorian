@@ -88,8 +88,7 @@ struct GeneralNews: View {
             
             TabView(selection: self.$index){
                 ForEach(0...4,id: \.self){index in
-
-                        
+       
                         Image("d\(index)")
                             .resizable()
                             .frame(height: 200)
