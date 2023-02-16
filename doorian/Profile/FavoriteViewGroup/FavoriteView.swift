@@ -24,7 +24,14 @@ struct FavoriteView: View {
                     
                 }
                 .padding()
-                
+                 
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15){
+                    ForEach(items) { item in
+                        
+                        CardView(item: item)
+                    }
+                }
+                .padding()
 //                LazyVGrid(columns: self.columns){
 //
 //                    ForEach(data){durian in
@@ -33,6 +40,7 @@ struct FavoriteView: View {
 //                    }
 //                }
             }
+            Spacer(minLength: 0)
             
         }
     }
@@ -53,23 +61,7 @@ struct FavoriteView: View {
 //        }
 //    }
 //}
-//struct DurianContent : Identifiable {
-//    var id: Int
-//    var name : String
-//    var image : String
-//    var rating : Int
-//}
-//
-//var data = [
-//
-//    DurianContent(id: 0, name: "โรคใบไหม้ที่ชาวสวนปลูกทุเรียน ต้องระวัง!!",image: "d0", rating: 4),
-//    DurianContent(id: 1, name: "โรคใบไหม้ที่ชาวสวนปลูกทุเรียน ต้องระวัง!!",image: "d1", rating: 3),
-//    DurianContent(id: 2, name: "โรคใบไหม้ที่ชาวสวนปลูกทุเรียน ต้องระวัง!!",image: "d2", rating: 2),
-//    DurianContent(id: 3, name: "โรคใบไหม้ที่ชาวสวนปลูกทุเรียน ต้องระวัง!!",image: "d3", rating: 1),
-//    DurianContent(id: 4, name: "โรคใบไหม้ที่ชาวสวนปลูกทุเรียน ต้องระวัง!!",image: "d4", rating: 3),
-//    DurianContent(id: 5, name: "โรคใบไหม้ที่ชาวสวนปลูกทุเรียน ต้องระวัง!!",image: "d2", rating: 5),
-//    
-//]
+
 
 struct FavoriteView_Previews: PreviewProvider {
     static var previews: some View {

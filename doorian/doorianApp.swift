@@ -18,8 +18,8 @@ struct doorianApp: App {
         WindowGroup {
 
 //            AuthView()
-            ContentView()
-    
+//            ContentView()
+    FavoriteView()
 //            AccountView()
             
         }

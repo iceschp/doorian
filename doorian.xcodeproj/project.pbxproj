@@ -10,6 +10,8 @@
 		26337C642976731800DA8F41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26337C632976731800DA8F41 /* GoogleService-Info.plist */; };
 		264EDA752980DEB2004C40DB /* GoogleSigninBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264EDA742980DEB2004C40DB /* GoogleSigninBtn.swift */; };
 		264EDA7B298108DF004C40DB /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264EDA7A298108DF004C40DB /* View.swift */; };
+		26519E04299E00770001FAA9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26519E03299E00770001FAA9 /* Item.swift */; };
+		26519E06299E06DB0001FAA9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26519E05299E06DB0001FAA9 /* CardView.swift */; };
 		26590B7429811BAF0021AE56 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 26590B7329811BAF0021AE56 /* GoogleSignIn */; };
 		26590B7629811BAF0021AE56 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 26590B7529811BAF0021AE56 /* GoogleSignInSwift */; };
 		26590B7A2981360D0021AE56 /* FireAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26590B792981360D0021AE56 /* FireAuth.swift */; };
@@ -50,6 +52,8 @@
 		26337C632976731800DA8F41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		264EDA742980DEB2004C40DB /* GoogleSigninBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSigninBtn.swift; sourceTree = "<group>"; };
 		264EDA7A298108DF004C40DB /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		26519E03299E00770001FAA9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		26519E05299E06DB0001FAA9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		26590B792981360D0021AE56 /* FireAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAuth.swift; sourceTree = "<group>"; };
 		26A67CD12982591800E6D735 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		26A67CFC2982694900E6D735 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -100,6 +104,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26519E07299E17380001FAA9 /* FavoriteViewGroup */ = {
+			isa = PBXGroup;
+			children = (
+				26F1C9A1298CF017001C1DBA /* FavoriteView.swift */,
+				26519E03299E00770001FAA9 /* Item.swift */,
+				26519E05299E06DB0001FAA9 /* CardView.swift */,
+			);
+			path = FavoriteViewGroup;
+			sourceTree = "<group>";
+		};
 		26590B7B298139D90021AE56 /* Google Firebase  */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,8 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				48966CE6296E7A1D00C85696 /* ProfileView.swift */,
+				26519E07299E17380001FAA9 /* FavoriteViewGroup */,
 				26F1C99F298CEEB1001C1DBA /* AccountView.swift */,
-				26F1C9A1298CF017001C1DBA /* FavoriteView.swift */,
 				26F1C9A4298D14AC001C1DBA /* MainMessagesView.swift */,
 				26F1C9A92990F0A9001C1DBA /* ImagePicker.swift */,
 			);
@@ -376,9 +390,11 @@
 				48D8721E299B892800FB781C /* ResultFullView.swift in Sources */,
 				26A67D102983B7D500E6D735 /* ResetPasswordView.swift in Sources */,
 				26A67D0729827F9D00E6D735 /* AuthView.swift in Sources */,
+				26519E04299E00770001FAA9 /* Item.swift in Sources */,
 				48DDFD56296C37F300EF17FF /* HomeView.swift in Sources */,
 				26A67D162983DEB000E6D735 /* OpeningView.swift in Sources */,
 				48D8721A299B783B00FB781C /* MinimizedViewDiagnose.swift in Sources */,
+				26519E06299E06DB0001FAA9 /* CardView.swift in Sources */,
 				264EDA752980DEB2004C40DB /* GoogleSigninBtn.swift in Sources */,
 				26F1C9A5298D14AC001C1DBA /* MainMessagesView.swift in Sources */,
 				484DCF512966A0D0001991AE /* ScanningView.swift in Sources */,
