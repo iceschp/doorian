@@ -384,11 +384,11 @@
 				484DCF512966A0D0001991AE /* ScanningView.swift in Sources */,
 				48C59350298A45BC005FE4FD /* Extension.swift in Sources */,
 				48966CE7296E7A1D00C85696 /* ProfileView.swift in Sources */,
-<<<<<<< HEAD
+
 				48A5D2552990E3610088CC29 /* CustomTabbar.swift in Sources */,
-=======
+
 				26F1C9A0298CEEB1001C1DBA /* AccountView.swift in Sources */,
->>>>>>> main
+
 				26590B7A2981360D0021AE56 /* FireAuth.swift in Sources */,
 				4809247029669F3C009EB501 /* ContentView.swift in Sources */,
 				26A67CD22982591800E6D735 /* LoginView.swift in Sources */,
