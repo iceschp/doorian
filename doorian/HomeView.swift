@@ -65,11 +65,13 @@ struct Location: View {
 struct ContentDisplay: View {
     var body: some View {
         VStack(alignment: .leading) {
-            GeneralNews()
-            
-            .padding(.bottom, 23)
-            
-            TodayNews()
+            NavigationLink(destination: ContentGeneralNews()) {
+                GeneralNews()
+                    .padding(.bottom, 23)
+            }
+            NavigationLink(destination: ContentTodayNews()) {
+                TodayNews()
+            }
         }
         .padding(.horizontal, 15)
         .frame(maxWidth: .infinity)
@@ -87,6 +89,7 @@ struct GeneralNews: View {
                     .font(.custom(
                         "NotoSans-Bold",
                         fixedSize: 18))
+                    .foregroundColor(.black)
             }
             
             TabView(selection: self.$index){
@@ -142,6 +145,7 @@ struct TodayNews: View {
                     .font(.custom(
                         "NotoSans-Bold",
                         fixedSize: 18))
+                    .foregroundColor(.black)
                 Spacer()
                 Text("ดูทั้งหมด")
                     .font(.custom(
@@ -153,6 +157,7 @@ struct TodayNews: View {
             }
             .padding()
             Spacer(minLength: 0)
+            
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15){
                 ForEach(items) { item in
                     
