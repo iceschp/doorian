@@ -20,7 +20,7 @@ struct doorianApp: App {
 //            AuthView()
 //            ContentView()
 // Content()
-            HomeView()
+          MinimizedViewNotification()
 //    FavoriteView()
 //            AccountView()
             

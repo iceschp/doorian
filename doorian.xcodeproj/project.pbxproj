@@ -10,6 +10,7 @@
 		2607319229AF493600FE1156 /* ContentTodayNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2607319129AF493600FE1156 /* ContentTodayNews.swift */; };
 		2607319429AF4A6B00FE1156 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2607319329AF4A6B00FE1156 /* ContentView.swift */; };
 		2607319629AF4AA400FE1156 /* ContentGeneralNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2607319529AF4AA400FE1156 /* ContentGeneralNews.swift */; };
+		2607319829AF4EBC00FE1156 /* MinimizedViewNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2607319729AF4EBC00FE1156 /* MinimizedViewNotification.swift */; };
 		26337C642976731800DA8F41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26337C632976731800DA8F41 /* GoogleService-Info.plist */; };
 		264EDA752980DEB2004C40DB /* GoogleSigninBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264EDA742980DEB2004C40DB /* GoogleSigninBtn.swift */; };
 		264EDA7B298108DF004C40DB /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264EDA7A298108DF004C40DB /* View.swift */; };
@@ -54,6 +55,7 @@
 		2607319129AF493600FE1156 /* ContentTodayNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTodayNews.swift; sourceTree = "<group>"; };
 		2607319329AF4A6B00FE1156 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = doorian/ContentView.swift; sourceTree = SOURCE_ROOT; };
 		2607319529AF4AA400FE1156 /* ContentGeneralNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentGeneralNews.swift; sourceTree = "<group>"; };
+		2607319729AF4EBC00FE1156 /* MinimizedViewNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimizedViewNotification.swift; sourceTree = "<group>"; };
 		2629276B297E950F0050F555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		26337C632976731800DA8F41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		264EDA742980DEB2004C40DB /* GoogleSigninBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSigninBtn.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				4809246D29669F3C009EB501 /* doorianApp.swift */,
 				2607319129AF493600FE1156 /* ContentTodayNews.swift */,
 				2607319529AF4AA400FE1156 /* ContentGeneralNews.swift */,
+				2607319729AF4EBC00FE1156 /* MinimizedViewNotification.swift */,
 				2607319329AF4A6B00FE1156 /* ContentView.swift */,
 				26519E08299E2EBB0001FAA9 /* NewsCard.swift */,
 				48A5D2542990E3610088CC29 /* CustomTabbar.swift */,
@@ -391,6 +394,7 @@
 			files = (
 				48A5D25A29910A230088CC29 /* CameraViewControllver.swift in Sources */,
 				26A67D122983C3E900E6D735 /* SuccessPasswordView.swift in Sources */,
+				2607319829AF4EBC00FE1156 /* MinimizedViewNotification.swift in Sources */,
 				26A67D0529827CA800E6D735 /* SignupView.swift in Sources */,
 				264EDA7B298108DF004C40DB /* View.swift in Sources */,
 				26F1C9AA2990F0A9001C1DBA /* ImagePicker.swift in Sources */,
