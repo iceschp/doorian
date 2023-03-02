@@ -17,7 +17,7 @@ struct GroupView: View {
             HStack {
                 Image(item2.image)
                     .resizable()
-                    .frame(width: 150, height: 170)
+                    .frame(width: 100, height: 80)
                     .cornerRadius(20)
                
                 VStack{
@@ -25,9 +25,16 @@ struct GroupView: View {
                         Text(item2.date)
                             .font(.system(size: 10))
                             .padding(.bottom, 8)
+                        
+                        Text(",")
+                            .font(.system(size: 10))
+                            .padding(.bottom, 8)
+                            .padding(.leading, -8)
+                        
                         Text(item2.time)
                             .font(.system(size: 10))
                             .padding(.bottom, 8)
+                            .padding(.leading, -6)
                     }
                     Text(item2.disease)
                         .font(.system(size: 12))
@@ -35,21 +42,23 @@ struct GroupView: View {
                         .bold()
                     HStack{
                         Image(systemName: "mappin")
-                            .foregroundColor(Color("4F4F4F"))
+                            .foregroundColor(Color("DE5B6D"))
                             .font(.system(size: 10))
                             .padding(.bottom, 8)
+                        
                         
                         Text(item2.province)
                             .font(.system(size: 10))
                             .padding(.bottom, 8)
+                            .padding(.leading, -4)
                     }
-
+                 
                 }
                 .padding(.leading, 30)
                 .padding(.trailing, 5)
                 .foregroundColor(Color("0B0B0B"))
                
-
+               
             }
             .padding(.horizontal, 5)
             

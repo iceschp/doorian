@@ -18,12 +18,9 @@ struct doorianApp: App {
         WindowGroup {
 
 //            AuthView()
-//            ContentView()
-// Content()
-          MinimizedViewNotification()
-//            HistoryDisease()
-//    FavoriteView()
-//            AccountView()
+
+            HistoryDisease()
+
             
         }
     }

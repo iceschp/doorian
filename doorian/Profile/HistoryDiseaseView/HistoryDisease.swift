@@ -19,16 +19,18 @@ struct HistoryDisease: View {
                         .font(.custom(
                             "NotoSans-Bold",
                             fixedSize: 28))
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .frame(maxWidth: .infinity, alignment: .center)
                     
                 }
                 .padding()
                  
-                VStack{
+                VStack(alignment: .leading, spacing: 20){
                     ForEach(item2) { item2 in
                         
                         GroupView(item2: item2)
+                        Divider()
                     }
+                    
                 }
                 .padding()
                 .padding(.bottom, 5)
