@@ -90,7 +90,7 @@ struct ProfileView: View {
                         .padding(.top,10)
                         
                         HStack{
-                            NavigationLink(destination: AccountView()) {
+                            NavigationLink(destination: ChangePasswordView()) {
                                 Image(systemName: "lock.fill")
                                 Text("รหัสผ่าน")
                                     .font(.custom("NotoSans-Regular", size: 18))
@@ -132,7 +132,7 @@ struct ProfileView: View {
                         .padding(.top,10)
                         
                         HStack{
-                            NavigationLink(destination: AccountView()) {
+                            NavigationLink(destination: HistoryDisease()) {
                                 Image(systemName: "clock.arrow.circlepath")
                                 Text("ประวัติการบันทึกโรค")
                                     .font(.custom("NotoSans-Regular", size: 18))

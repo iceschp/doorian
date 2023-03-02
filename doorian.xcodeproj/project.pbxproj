@@ -14,6 +14,7 @@
 		2607319A29B09B1800FE1156 /* HistoryDisease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2607319929B09B1800FE1156 /* HistoryDisease.swift */; };
 		2607319E29B09D1E00FE1156 /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2607319D29B09D1E00FE1156 /* GroupView.swift */; };
 		260731A029B09D3300FE1156 /* Item2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2607319F29B09D3300FE1156 /* Item2.swift */; };
+		260731A229B0B44700FE1156 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260731A129B0B44600FE1156 /* ChangePasswordView.swift */; };
 		26337C642976731800DA8F41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26337C632976731800DA8F41 /* GoogleService-Info.plist */; };
 		264EDA752980DEB2004C40DB /* GoogleSigninBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264EDA742980DEB2004C40DB /* GoogleSigninBtn.swift */; };
 		264EDA7B298108DF004C40DB /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264EDA7A298108DF004C40DB /* View.swift */; };
@@ -62,6 +63,7 @@
 		2607319929B09B1800FE1156 /* HistoryDisease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDisease.swift; sourceTree = "<group>"; };
 		2607319D29B09D1E00FE1156 /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		2607319F29B09D3300FE1156 /* Item2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item2.swift; sourceTree = "<group>"; };
+		260731A129B0B44600FE1156 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		2629276B297E950F0050F555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		26337C632976731800DA8F41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		264EDA742980DEB2004C40DB /* GoogleSigninBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSigninBtn.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				2607319B29B09CB800FE1156 /* HistoryDiseaseView */,
 				26519E07299E17380001FAA9 /* FavoriteViewGroup */,
 				26F1C99F298CEEB1001C1DBA /* AccountView.swift */,
+				260731A129B0B44600FE1156 /* ChangePasswordView.swift */,
 				26F1C9A4298D14AC001C1DBA /* MainMessagesView.swift */,
 				26F1C9A92990F0A9001C1DBA /* ImagePicker.swift */,
 			);
@@ -440,6 +443,7 @@
 				26519E09299E2EBB0001FAA9 /* NewsCard.swift in Sources */,
 				26A67CD22982591800E6D735 /* LoginView.swift in Sources */,
 				2607319429AF4A6B00FE1156 /* ContentView.swift in Sources */,
+				260731A229B0B44700FE1156 /* ChangePasswordView.swift in Sources */,
 				4809246E29669F3C009EB501 /* doorianApp.swift in Sources */,
 				26F1C9A2298CF017001C1DBA /* FavoriteView.swift in Sources */,
 				260731A029B09D3300FE1156 /* Item2.swift in Sources */,
