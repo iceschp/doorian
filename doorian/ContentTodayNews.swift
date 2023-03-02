@@ -70,7 +70,7 @@ struct DetailUserT: View {
         HStack{
             
                 Group{
-                    
+
                     Image(systemName: "person")
                         .foregroundColor(Color("4F4F4F"))
                         .font(.system(size: 14))
