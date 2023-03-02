@@ -27,44 +27,52 @@ struct MinimizedViewNotification: View {
                                 .cornerRadius(20)
                             
                             VStack(alignment: .leading) {
-                                Text("โรคที่พบ:")
-                                    .font(.system(size: 12))
-                                    .padding(.bottom, 8)
-                                  
-                                Text("ระดับความรุนแรง:")
-                                    .font(.system(size: 12))
-                                    .padding(.bottom, 8)
-                                Text("ระยะเวลาที่เกิดโรค:")
-                                    .font(.system(size: 12))
-                                    .padding(.bottom, 8)
-                                
-                                Text("แนวทางป้องกัน:")
-                                    .font(.system(size: 12))
-                                    .padding(.bottom, 8)
-                                
+                                HStack{
+                                    Text("โรคที่พบ:")
+                                        .font(.system(size: 12))
+                                        .padding(.bottom, 8)
+                                        .bold()
+                                    
+                                    Text("โรคใบใหม้")
+                                        .font(.system(size: 12))
+                                        .padding(.bottom, 8)
+                                    
+                                }
+                                HStack{
+                                    Text("ระดับความรุนแรง:")
+                                        .font(.system(size: 12))
+                                        .padding(.bottom, 8)
+                                        .bold()
+                                    
+                                    Text("8/10 (รุนแรงมาก)")
+                                        .font(.system(size: 12))
+                                        .padding(.bottom, 8)
+                                }
+                                HStack{
+                                    Text("ระยะเวลาที่เกิดโรค:")
+                                        .font(.system(size: 12))
+                                        .padding(.bottom, 8)
+                                        .bold()
+                                    
+                                    Text("วันที่ 1 ธันวาคม 2565")
+                                        .font(.system(size: 12))
+                                        .padding(.bottom, 8)
+                                }
+                                HStack{
+                                    Text("แนวทางป้องกัน:")
+                                        .font(.system(size: 12))
+                                        .padding(.bottom, 50)
+                                        .bold()
+                                    
+                                    Text("ตัดพุ่มให้โปร่ง เพื่อรับแสงแดด และหากพบเจอใบที่เป็น โรคให้นำไปเผาทำลายทิ้ง")
+                                        .font(.system(size: 12))
+                                        .padding(.bottom, 8)
+                                }
                             }
                             .padding(.leading, 5)
                             .padding(.trailing, 5)
-                            .bold()
                             .foregroundColor(Color("0B0B0B"))
-                            
-                            VStack(alignment: .leading) {
-                                Text("โรคใบใหม้")
-                                    .font(.system(size: 12))
-                                    .padding(.bottom, 8)
-                                Text("8/10 (รุนแรงมาก)")
-                                    .font(.system(size: 12))
-                                    .padding(.bottom, 8)
-                                Text("วันที่ 1 ธันวาคม 2565")
-                                    .font(.system(size: 12))
-                                    .padding(.bottom, 8)
-                                Text("ตัดพุ่มให้โปร่ง เพื่อรับแสงแดด และหากพบเจอใบที่เป็น โรคให้นำไปเผาทำลายทิ้ง")
-                                    .font(.system(size: 12))
-                              
-                            }
-                            .foregroundColor(Color("0B0B0B"))
-                            .padding(.leading, -5)
-                            .padding(.bottom, -38)
+                    
                            
                         }
                         .padding(.horizontal, 5)
