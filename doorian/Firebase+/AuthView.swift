@@ -34,6 +34,7 @@ struct AuthView: View {
 }
 
 struct AuthView_Previews: PreviewProvider {
+   
     static var previews: some View {
         AuthView()
     }

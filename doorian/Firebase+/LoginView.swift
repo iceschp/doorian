@@ -22,6 +22,7 @@ struct LoginView: View {
     @State private var showingSheet = false
     @Binding var isUserCurrentlyLoggedOut  : Bool
     
+    
     private func isValidPassword(_ password: String) -> Bool {
         // minimum 8 characters long
         // 1 uppercase character
@@ -224,7 +225,9 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     @State static var isUserCurrentlyLoggedOut = false
+   
     static var previews: some View {
         LoginView(isUserCurrentlyLoggedOut: $isUserCurrentlyLoggedOut)
+        
     }
 }

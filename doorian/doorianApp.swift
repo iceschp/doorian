@@ -13,6 +13,7 @@ import FirebaseCore
 @main
 
 struct doorianApp: App {
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
