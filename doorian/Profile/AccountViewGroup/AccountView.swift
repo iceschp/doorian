@@ -20,7 +20,7 @@ struct AccountView: View {
     
     @State var selectedImage: UIImage?
     var body: some View {
-        NavigationView{
+       
             
             ScrollView(.vertical, showsIndicators: false) {
                 
@@ -116,8 +116,14 @@ struct AccountView: View {
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
                     HStack{
-                        let name = vm.chatUser?.name.replacingOccurrences(of: "", with: "") ?? ""
-                        Text(name)
+                        NavigationLink(destination: NameEditView()){
+                            let name = vm.chatUser?.name.replacingOccurrences(of: "", with: "") ?? ""
+                            Text(name)
+                            
+                            Spacer()
+                            
+                            Image(systemName: "pencil")
+                        }
                     }
                     .foregroundColor(Color.black)
                     .padding(.vertical, 10)
@@ -135,8 +141,14 @@ struct AccountView: View {
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
                     HStack{
-                        let email = vm.chatUser?.email.replacingOccurrences(of: "", with: "") ?? ""
-                        Text(email)
+                        NavigationLink(destination: EmailEditView()){
+                            let email = vm.chatUser?.email.replacingOccurrences(of: "", with: "") ?? ""
+                            Text(email)
+                            
+                            Spacer()
+                            
+                            Image(systemName: "pencil")
+                        }
                     }
                     .foregroundColor(Color.black)
                     .padding(.vertical, 10)
@@ -190,7 +202,7 @@ struct AccountView: View {
 //
 //        }
 //    }
-}
+
 
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {

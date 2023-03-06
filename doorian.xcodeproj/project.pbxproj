@@ -33,6 +33,8 @@
 		26A67D102983B7D500E6D735 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A67D0F2983B7D500E6D735 /* ResetPasswordView.swift */; };
 		26A67D122983C3E900E6D735 /* SuccessPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A67D112983C3E900E6D735 /* SuccessPasswordView.swift */; };
 		26A67D162983DEB000E6D735 /* OpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A67D152983DEB000E6D735 /* OpeningView.swift */; };
+		26AD431229B5E178006E966E /* NameEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD431129B5E178006E966E /* NameEditView.swift */; };
+		26AD431429B5E232006E966E /* EmailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD431329B5E232006E966E /* EmailEditView.swift */; };
 		26F1C99E298B9EC1001C1DBA /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26F1C99D298B9EC1001C1DBA /* NotoSans-Regular.ttf */; };
 		26F1C9A0298CEEB1001C1DBA /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1C99F298CEEB1001C1DBA /* AccountView.swift */; };
 		26F1C9A2298CF017001C1DBA /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1C9A1298CF017001C1DBA /* FavoriteView.swift */; };
@@ -81,6 +83,8 @@
 		26A67D0F2983B7D500E6D735 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		26A67D112983C3E900E6D735 /* SuccessPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPasswordView.swift; sourceTree = "<group>"; };
 		26A67D152983DEB000E6D735 /* OpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningView.swift; sourceTree = "<group>"; };
+		26AD431129B5E178006E966E /* NameEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditView.swift; sourceTree = "<group>"; };
+		26AD431329B5E232006E966E /* EmailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailEditView.swift; sourceTree = "<group>"; };
 		26F1C99D298B9EC1001C1DBA /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		26F1C99F298CEEB1001C1DBA /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		26F1C9A1298CF017001C1DBA /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
@@ -174,16 +178,26 @@
 			path = "Firebase+";
 			sourceTree = "<group>";
 		};
+		26AD431529B5E23E006E966E /* AccountViewGroup */ = {
+			isa = PBXGroup;
+			children = (
+				26F1C99F298CEEB1001C1DBA /* AccountView.swift */,
+				26AD431329B5E232006E966E /* EmailEditView.swift */,
+				26AD431129B5E178006E966E /* NameEditView.swift */,
+			);
+			path = AccountViewGroup;
+			sourceTree = "<group>";
+		};
 		26F1C9A3298CF030001C1DBA /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				48966CE6296E7A1D00C85696 /* ProfileView.swift */,
 				2607319B29B09CB800FE1156 /* HistoryDiseaseView */,
 				26519E07299E17380001FAA9 /* FavoriteViewGroup */,
-				26F1C99F298CEEB1001C1DBA /* AccountView.swift */,
+				26AD431529B5E23E006E966E /* AccountViewGroup */,
 				260731A129B0B44600FE1156 /* ChangePasswordView.swift */,
-				26F1C9A4298D14AC001C1DBA /* MainMessagesView.swift */,
 				26F1C9A92990F0A9001C1DBA /* ImagePicker.swift */,
+				26F1C9A4298D14AC001C1DBA /* MainMessagesView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -433,8 +447,10 @@
 				2607319E29B09D1E00FE1156 /* GroupView.swift in Sources */,
 				264EDA752980DEB2004C40DB /* GoogleSigninBtn.swift in Sources */,
 				26F1C9A5298D14AC001C1DBA /* MainMessagesView.swift in Sources */,
+				26AD431429B5E232006E966E /* EmailEditView.swift in Sources */,
 				484DCF512966A0D0001991AE /* ScanningView.swift in Sources */,
 				48C59350298A45BC005FE4FD /* Extension.swift in Sources */,
+				26AD431229B5E178006E966E /* NameEditView.swift in Sources */,
 				48966CE7296E7A1D00C85696 /* ProfileView.swift in Sources */,
 				48A5D2552990E3610088CC29 /* CustomTabbar.swift in Sources */,
 				2607319629AF4AA400FE1156 /* ContentGeneralNews.swift in Sources */,
