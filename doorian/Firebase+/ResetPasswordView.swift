@@ -14,6 +14,7 @@ struct ResetPasswordView: View {
     @AppStorage("uid") var userID: String = ""
     @Environment(\.presentationMode) var presentationMode
     @State private var showAlert = false
+    @State private var showView = false
     @State private var errString: String?
     
     var body: some View {
@@ -96,7 +97,9 @@ struct ResetPasswordView: View {
                                     .fill(Color("dark-green"))
                             )
                             .padding(.horizontal)
+                            
                     }
+                    
                     
                 }
             }
@@ -104,8 +107,13 @@ struct ResetPasswordView: View {
                 Alert(title: Text("Password Reset"),
                       message: Text(self.errString ?? "Success! Reset email sent successfully"), dismissButton: .default(Text("OK")) {
                     self.presentationMode.wrappedValue.dismiss()
+                    
+//                    self.showView = true
+
+
                 })
             }
+            
         }
     }
 }
