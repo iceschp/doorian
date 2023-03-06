@@ -230,8 +230,8 @@ struct ChangePasswordView: View {
                                 .padding()
                             
                                 .background(
-                                    RoundedRectangle(cornerRadius: 50)
-                                        .fill(Color("dark-green"))
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(Color("E0E0E0"))
                                 )
                                 .padding(.horizontal)
                             
