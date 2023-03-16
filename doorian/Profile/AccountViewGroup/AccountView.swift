@@ -17,10 +17,13 @@ struct AccountView: View {
     @State var shouldShowImagePicker = false
     @State private var name: String = ""
     @State private var email: String = ""
+  
+    
     
     @State var selectedImage: UIImage?
     var body: some View {
-       
+        
+        NavigationView{
             
             ScrollView(.vertical, showsIndicators: false) {
                 
@@ -73,15 +76,15 @@ struct AccountView: View {
                             
                         }
                         //ติดปัญหาอยู่
-//                        if selectedImage != nil {
-//                            Button{
-//                                uploadPhoto()
-//                            } label: {
-//                                Text("Upload photo")
-//                                    .padding()
-//                            }
-//
-//                        }
+                        //                        if selectedImage != nil {
+                        //                            Button{
+                        //                                uploadPhoto()
+                        //                            } label: {
+                        //                                Text("Upload photo")
+                        //                                    .padding()
+                        //                            }
+                        //
+                        //                        }
                         
                         let name = vm.chatUser?.name.replacingOccurrences(of: "", with: "") ?? ""
                         Text(name)
@@ -176,8 +179,9 @@ struct AccountView: View {
             )
             
         }
-       
+        
     }
+}
     
 //    func uploadPhoto() {
 //

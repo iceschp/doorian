@@ -19,7 +19,7 @@ struct doorianApp: App {
         WindowGroup {
 
             AuthView()
-//        ChangePasswordView()
+           
 //            AccountView()
           
 //            HistoryDisease()
