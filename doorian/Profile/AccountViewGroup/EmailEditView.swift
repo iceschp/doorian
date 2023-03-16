@@ -18,7 +18,7 @@ struct EmailEditView: View {
     @ObservedObject private var vm = MainMessagesView()
     
     
-    private func updateInformation(){
+    private func updateEmailUser(){
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let userEmail = Auth.auth().currentUser?.email
         let currentUser = Auth.auth().currentUser
@@ -26,9 +26,9 @@ struct EmailEditView: View {
     Firestore.firestore().collection("users").document(uid)
         .updateData(userData){ err in
             if let err = err {
-                print("Error updating document: \(err)")
+                print("Error updating document email: \(err)")
             } else {
-                print("Document successfully updated")
+                print("Document email successfully updated")
             }
         }
         if email != userEmail{
@@ -36,7 +36,7 @@ struct EmailEditView: View {
                 if let err = err {
                     print("Error updating email in firebase: \(err)")
                 } else {
-                    print("Document successfully updated!")
+                    print("Document email successfully updated!")
                 }
                 
             }
@@ -73,6 +73,14 @@ struct EmailEditView: View {
                         .font(.system(size: 14))
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
+                    
+                    Spacer()
+                    
+                    if(email.count != 0) {
+                        
+                        Image(systemName: email.isValidEmail() ? "checkmark" : "xmark")
+                            .foregroundColor(email.isValidEmail() ? .green : .red)
+                    }
                 }
                 .foregroundColor(Color("bright-green"))
                 .padding(.vertical, 10)
@@ -85,9 +93,9 @@ struct EmailEditView: View {
                 
                 
                 Button(action: {
-                    self.updateInformation()
+                    self.updateEmailUser()
                 }) {
-                    Text("อัพเดท")
+                    Text("บันทึก")
                         .foregroundColor(.white)
                         .font(.system(size: 14))
                         .bold()
