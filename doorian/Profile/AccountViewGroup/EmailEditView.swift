@@ -15,7 +15,11 @@ struct EmailEditView: View {
     @AppStorage("uid") var userID: String = ""
     @State private var name: String = ""
     @State private var email: String = ""
+    @Environment(\.presentationMode) var presentationMode
+    @State private var errString: String?
     @ObservedObject private var vm = MainMessagesView()
+    @State private var showUpdateEmailAlert: Bool = false
+    
     
     
     private func updateEmailUser(){
@@ -23,22 +27,25 @@ struct EmailEditView: View {
         let userEmail = Auth.auth().currentUser?.email
         let currentUser = Auth.auth().currentUser
         let userData = ["email":self.email, "uid": uid]
-    Firestore.firestore().collection("users").document(uid)
-        .updateData(userData){ err in
-            if let err = err {
-                print("Error updating document email: \(err)")
-            } else {
-                print("Document email successfully updated")
-            }
-        }
-        if email != userEmail{
-            currentUser?.updateEmail(to: email){ err in
-                if let err = err {
-                    print("Error updating email in firebase: \(err)")
-                } else {
-                    print("Document email successfully updated!")
+        if email != ""{
+            Firestore.firestore().collection("users").document(uid)
+                .updateData(userData){ err in
+                    if let err = err {
+                        print("Error updating document email: \(err)")
+                    } else {
+                        self.showUpdateEmailAlert = true
+                        print("Document email successfully updated")
+                    }
                 }
-                
+            if email != userEmail{
+                currentUser?.updateEmail(to: email){ err in
+                    if let err = err {
+                        print("Error updating email in firebase: \(err)")
+                    } else {
+                        print("Document email successfully updated!")
+                    }
+                    
+                }
             }
         }
      
@@ -109,7 +116,14 @@ struct EmailEditView: View {
                         )
                 }
                 .padding(.bottom, 20)
-               
+                .alert(isPresented: $showUpdateEmailAlert) {
+                    Alert(title: Text("Password Reset"),
+                          message: Text(self.errString ?? "Success! Email update successfully"), dismissButton: .default(Text("OK")) {
+                        self.presentationMode.wrappedValue.dismiss()
+                        
+                    })
+                }
+                
             }
         }
         

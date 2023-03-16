@@ -15,19 +15,24 @@ struct NameEditView: View {
     @State private var name: String = ""
     @State private var email: String = ""
     @ObservedObject private var vm = MainMessagesView()
+    @Environment(\.presentationMode) var presentationMode
+    @State private var errString: String?
+    @State private var showUpdateNameAlert: Bool = false
     
     
     private func updateNameUser(){
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        let currentUser = Auth.auth().currentUser
         let userData = ["name":self.name, "uid": uid]
-    Firestore.firestore().collection("users").document(uid)
-        .updateData(userData){ err in
-            if let err = err {
-                print("Error updating document name: \(err)")
-            } else {
-                print("Document name successfully updated")
-            }
+        if name != ""{
+            Firestore.firestore().collection("users").document(uid)
+                .updateData(userData){ err in
+                    if let err = err {
+                        print("Error updating document name: \(err)")
+                    } else {
+                        self.showUpdateNameAlert = true
+                        print("Document name successfully updated")
+                    }
+                }
         }
 
       }
@@ -72,6 +77,8 @@ struct NameEditView: View {
                 
                 Button(action: {
                     self.updateNameUser()
+                    self.showUpdateNameAlert = true
+                
                 }) {
                     Text("บันทึก")
                         .foregroundColor(.white)
@@ -87,6 +94,13 @@ struct NameEditView: View {
                         )
                 }
                 .padding(.bottom, 20)
+                .alert(isPresented: $showUpdateNameAlert) {
+                    Alert(title: Text("Password Reset"),
+                          message: Text(self.errString ?? "Success! Name update successfully"), dismissButton: .default(Text("OK")) {
+                        self.presentationMode.wrappedValue.dismiss()
+                        
+                    })
+                }
                
             }
         }
