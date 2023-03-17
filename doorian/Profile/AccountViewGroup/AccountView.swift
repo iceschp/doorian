@@ -50,6 +50,8 @@ struct AccountView: View {
                                         .clipShape(Circle())
                                         .offset(y: -40)
                                         .padding(.bottom,-40)
+                                        .padding()
+                                    
                                 }else{
                                     
                                     
@@ -85,24 +87,21 @@ struct AccountView: View {
                         //                            }
                         //
                         //                        }
-                        
+                        HStack(alignment: .top, spacing: 10){
+
                         let name = vm.chatUser?.name.replacingOccurrences(of: "", with: "") ?? ""
-                        Text(name)
+                        Text("@\(name)")
                             .font(.custom(
                                 "NotoSans-Bold",
                                 fixedSize: 18))
                             .fontWeight(.semibold)
-                        
-                        
-                        HStack(alignment: .top, spacing: 10){
-                            
-                            Text("@doorian_อริสา")
-                                .font(.custom(
-                                    "NotoSans-Regular",
-                                    fixedSize: 14))
+                           
+                         
+                    
                         }
                         .frame(maxWidth: .infinity, alignment: .center)
-                        
+                        .padding(.top,-20)
+                        Spacer()
                         
                     }
                     .padding([.horizontal,.bottom])
@@ -112,6 +111,7 @@ struct AccountView: View {
                     )
                     .padding()
                     .padding(.top,40)
+            
                     
                     HStack{
                         Text("ชื่อผู้ใช้")
