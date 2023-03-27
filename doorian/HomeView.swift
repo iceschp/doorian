@@ -136,7 +136,7 @@ struct GeneralNews: View {
 
 struct TodayNews: View {
    
-    
+//    @ObservedObject private var vm = MainMessagesView()
     var body: some View {
         VStack(alignment: .leading) {
             HStack{

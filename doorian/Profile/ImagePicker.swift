@@ -29,8 +29,12 @@ struct ImagePicker: UIViewControllerRepresentable {
             parent.image = info[.originalImage] as? UIImage
             picker.dismiss(animated: true)
         }
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
+            picker.dismiss(animated: true)
+        }
     }
     
+   
     func makeUIViewController(context: Context) -> some UIViewController {
         controller.delegate = context.coordinator
         return controller
@@ -42,8 +46,4 @@ struct ImagePicker: UIViewControllerRepresentable {
     
 }
 
-//struct ImagePicker_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ImagePicker()
-//    }
-//}
+

@@ -9,6 +9,7 @@ import SwiftUI
 import Firebase
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseStorage
 import GoogleSignIn
 
 struct SignupView: View {
@@ -19,7 +20,10 @@ struct SignupView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State var visible = false
-    
+    @State var shouldShowImagePicker = false
+    @State var image: UIImage?
+    @State private var StatusMessage : String = ""
+    @State private var handle : String = ""
     @Environment(\.dismiss) var dismiss
     
     @State var error = ""
@@ -55,14 +59,32 @@ struct SignupView: View {
         ZStack {
             Color(.white).edgesIgnoringSafeArea(.all)
             VStack {
-                HStack {
-                    Image("doorian_logo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200, height: 200)
-                        .padding()
+                Button{
+                    shouldShowImagePicker.toggle()
+                } label: {
+                    
+                    HStack {
+                        
+                        if let image = self.image {
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 128, height: 128)
+                                .cornerRadius(64)
+                        }else{
+                            
+                            Image(systemName: "person.fill")
+                                .font(.system(size: 64))
+                                .padding()
+                                .foregroundColor(Color("bright-green"))
+                        }
+                    }
+                    .overlay(RoundedRectangle(cornerRadius: 64)
+                        .stroke(Color("bright-green"), lineWidth: 3)
+                    )
+                    .padding(.bottom, 20)
                 }
-                .padding(.top)
                 HStack{
                     Text("สร้างบัญชีใหม่!")
                         .font(.custom(
@@ -162,11 +184,13 @@ struct SignupView: View {
                         print(error)
                         return
                     }
+                   
                     self.storeUserInformation()
                     if let authResult = authResult {
                         print(authResult.user.uid)
                         userID = authResult.user.uid
                     }
+//                    persisImageToStorage()
                     self.isUserCurrentlyLoggedOut = true
                 }
                     
@@ -224,10 +248,36 @@ struct SignupView: View {
             }
             .frame(width: 300, height: 35)
         }
+        .fullScreenCover(isPresented: $shouldShowImagePicker, onDismiss: nil) {
+            ImagePicker(image: $image)
+        }
         .onTapGesture {
             self.hideKeyboard()
         }
     }
+   
+//    private func persisImageToStorage() {
+//        guard let uid = Auth.auth().currentUser?.uid else {return}
+//        let ref = Storage.storage().reference().child("/userprofile/\(uid).jpg")
+//        guard let imageData = self.image?.jpegData(compressionQuality: 0.5) else { return }
+//        ref.putData(imageData, metadata: nil) { metadata, error in
+//            if let error = error {
+//                self.StatusMessage = "Failed to push image to Storage: \(error)"
+//                return
+//            }
+//            ref.downloadURL { url, error in
+//                if let error = error {
+//                    self.StatusMessage = "Failed to retrieve downloadURL: \(error)"
+//                    return
+//                }
+//
+//                self.StatusMessage = "Successfully stored image with url: \(url?.absoluteString ?? "")"
+//                print("success")
+//            }
+//        }
+//    }
+    
+      
 }
 
 struct SignupView_Previews: PreviewProvider {

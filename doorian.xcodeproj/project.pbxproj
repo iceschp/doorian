@@ -35,6 +35,7 @@
 		26A67D162983DEB000E6D735 /* OpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A67D152983DEB000E6D735 /* OpeningView.swift */; };
 		26AD431229B5E178006E966E /* NameEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD431129B5E178006E966E /* NameEditView.swift */; };
 		26AD431429B5E232006E966E /* EmailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD431329B5E232006E966E /* EmailEditView.swift */; };
+		26AD431C29C99372006E966E /* ImageEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD431B29C99372006E966E /* ImageEditView.swift */; };
 		26F1C99E298B9EC1001C1DBA /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26F1C99D298B9EC1001C1DBA /* NotoSans-Regular.ttf */; };
 		26F1C9A0298CEEB1001C1DBA /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1C99F298CEEB1001C1DBA /* AccountView.swift */; };
 		26F1C9A2298CF017001C1DBA /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1C9A1298CF017001C1DBA /* FavoriteView.swift */; };
@@ -85,6 +86,7 @@
 		26A67D152983DEB000E6D735 /* OpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningView.swift; sourceTree = "<group>"; };
 		26AD431129B5E178006E966E /* NameEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditView.swift; sourceTree = "<group>"; };
 		26AD431329B5E232006E966E /* EmailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailEditView.swift; sourceTree = "<group>"; };
+		26AD431B29C99372006E966E /* ImageEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditView.swift; sourceTree = "<group>"; };
 		26F1C99D298B9EC1001C1DBA /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		26F1C99F298CEEB1001C1DBA /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		26F1C9A1298CF017001C1DBA /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				26F1C99F298CEEB1001C1DBA /* AccountView.swift */,
+				26AD431B29C99372006E966E /* ImageEditView.swift */,
 				26AD431329B5E232006E966E /* EmailEditView.swift */,
 				26AD431129B5E178006E966E /* NameEditView.swift */,
 			);
@@ -446,6 +449,7 @@
 				26519E06299E06DB0001FAA9 /* CardView.swift in Sources */,
 				2607319E29B09D1E00FE1156 /* GroupView.swift in Sources */,
 				264EDA752980DEB2004C40DB /* GoogleSigninBtn.swift in Sources */,
+				26AD431C29C99372006E966E /* ImageEditView.swift in Sources */,
 				26F1C9A5298D14AC001C1DBA /* MainMessagesView.swift in Sources */,
 				26AD431429B5E232006E966E /* EmailEditView.swift in Sources */,
 				484DCF512966A0D0001991AE /* ScanningView.swift in Sources */,

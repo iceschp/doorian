@@ -14,16 +14,16 @@ struct AccountView: View {
     
     @ObservedObject private var vm = MainMessagesView()
     @AppStorage("uid") var userID: String = ""
-    @State var shouldShowImagePicker = false
+//    @State var shouldShowImagePicker = false
     @State private var name: String = ""
     @State private var email: String = ""
   
     
     
-    @State var selectedImage: UIImage?
+//    @State var selectedImage: UIImage?
     var body: some View {
         
-        NavigationView{
+        
             
             ScrollView(.vertical, showsIndicators: false) {
                 
@@ -37,56 +37,29 @@ struct AccountView: View {
                     
                     VStack(spacing: 15){
                         
-                        Button{
-                            shouldShowImagePicker.toggle()
-                        } label: {
-                            VStack{
-                                if selectedImage != nil {
-                                    Image(uiImage: selectedImage!)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 80, height: 80)
-                                        .clipShape(Circle())
-                                        .offset(y: -40)
-                                        .padding(.bottom,-40)
-                                        .padding()
-                                    
-                                }else{
-                                    
-                                    
-                                    //                        WebImage(url: URL(string: vm.chatUser?.profileImageUrl ?? ""))
-                                    Image("doorian_profile")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 80, height: 80)
-                                        .clipShape(Circle())
-                                        .offset(y: -40)
-                                        .padding(.bottom,-40)
-                                    Image(systemName: "camera.fill")
-                                        .foregroundColor(Color.black)
-                                        .background(Color.red)
-                                        .frame(width: 70, height: 70)
-                                        .clipShape(Circle())
-                                        .offset(y: -70)
-                                        .offset(x: 30)
-                                        .padding(.bottom,-40)
-                                }
+                        VStack{
+                            NavigationLink(destination: NameEditView()){
+                                Image("doorian_profile")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 90, height: 90)
+                                    .clipShape(Circle())
+                                    .offset(y: -40)
+                                    .padding(.bottom,-40)
+                                    .padding(.leading, 75)
                                 
+                                Image(systemName: "camera.fill")
+                                    .foregroundColor(Color.black)
+                                    .background(Color.gray)
+                                    .frame(width: 70, height: 70)
+                                    .clipShape(Circle())
+                                    .offset(y: -10)
+                                    .offset(x: -50)
+                                    .padding(.bottom,-40)
                             }
-                            
                         }
-                        //ติดปัญหาอยู่
-                        //                        if selectedImage != nil {
-                        //                            Button{
-                        //                                uploadPhoto()
-                        //                            } label: {
-                        //                                Text("Upload photo")
-                        //                                    .padding()
-                        //                            }
-                        //
-                        //                        }
+                               
                         HStack(alignment: .top, spacing: 10){
 
                         let name = vm.chatUser?.name.replacingOccurrences(of: "", with: "") ?? ""
@@ -95,15 +68,15 @@ struct AccountView: View {
                                 "NotoSans-Bold",
                                 fixedSize: 18))
                             .fontWeight(.semibold)
-                           
+                            .padding(.top,15)
                          
                     
                         }
                         .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.top,-20)
+                        
                         Spacer()
                         
-                    }
+                    } // Vstack 15
                     .padding([.horizontal,.bottom])
                     .background(
                         Color.white
@@ -168,10 +141,7 @@ struct AccountView: View {
                 .padding(.vertical,20)
                 
             }
-            .navigationBarHidden(true)
-            .fullScreenCover(isPresented: $shouldShowImagePicker, onDismiss: nil){
-                ImagePicker(image: $selectedImage)
-            }
+            
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(
                 Color("bg")
@@ -180,7 +150,7 @@ struct AccountView: View {
             
         }
         
-    }
+    
 }
     
 //    func uploadPhoto() {
