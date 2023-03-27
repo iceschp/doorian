@@ -38,41 +38,61 @@ struct NameEditView: View {
       }
     
     var body: some View {
-        ZStack {
-            Color(.white).edgesIgnoringSafeArea(.all)
+        
+        ScrollView(.vertical, showsIndicators: false) {
             VStack {
-                HStack{
-                        let name = vm.chatUser?.name.replacingOccurrences(of: "", with: "") ?? ""
-                        Text(name)
+                
+                VStack(spacing: 15){
+                
+                    HStack{
+                        Image("fono")
+                            .resizable()
+                            .scaledToFit()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 100, height: 100)
+                            .clipShape(Circle())
+                            .offset(y: -40)
+                            .padding(.bottom,-40)
                         
-                        Spacer()
-                   
+                    }
+                    
+                    HStack(alignment: .top, spacing: 10){
+                        
+                        Text("แก้ไขชื่อผู้ใช้")
+                            .font(.custom(
+                                "NotoSans-Bold",
+                                fixedSize: 18))
+                            
+                    }
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .foregroundColor(.white)
                 }
-                .foregroundColor(Color.black)
-                .padding(.vertical, 10)
-                .padding(.horizontal, 18)
+                .padding([.horizontal,.bottom])
                 .background(
-                    RoundedRectangle(cornerRadius: 50)
-                        .fill(Color("textfield"))
+                    Color("4F704B")
+                    .cornerRadius(12)
                 )
-                .padding(.bottom, 20)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                .padding(.top,40)
                 
                 HStack {
                     Image(systemName: "person.fill")
                     TextField("ชื่อผู้ใช้", text: self.$name)
-                        .font(.system(size: 14))
+                        .font(.custom(
+                            "NotoSans-Regular",
+                            fixedSize: 14))
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                 }
-                .foregroundColor(Color("bright-green"))
+                .foregroundColor(Color("4F704B"))
                 .padding(.vertical, 10)
                 .padding(.horizontal, 18)
                 .background(
                     RoundedRectangle(cornerRadius: 50)
-                        .fill(Color("textfield"))
+                        .fill(Color("gray-white"))
                 )
-                .padding(.bottom, 20)
+                .padding()
+                .padding(.top, 10)
                 
                 
                 Button(action: {
@@ -81,19 +101,20 @@ struct NameEditView: View {
                 
                 }) {
                     Text("บันทึก")
-                        .foregroundColor(.white)
-                        .font(.system(size: 14))
-                        .bold()
+                        .foregroundColor(Color("FFEA9A"))
+                        .font(.custom(
+                            "NotoSans-Bold",
+                            fixedSize: 14))
                     
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 10)
                     
                         .background(
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(Color("dark-green"))
+                                .fill(Color("4F704B"))
                         )
                 }
-                .padding(.bottom, 20)
+                .padding()
                 .alert(isPresented: $showUpdateNameAlert) {
                     Alert(title: Text("Password Reset"),
                           message: Text(self.errString ?? "Success! Name update successfully"), dismissButton: .default(Text("OK")) {
@@ -104,6 +125,11 @@ struct NameEditView: View {
                
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(
+            Color(.white)
+                .ignoresSafeArea()
+        )
     }
 }
 

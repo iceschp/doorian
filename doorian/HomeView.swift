@@ -88,7 +88,7 @@ struct GeneralNews: View {
                 Text("ประกาศทั่วไป")
                     .font(.custom(
                         "NotoSans-Bold",
-                        fixedSize: 18))
+                        fixedSize: 14))
                     .foregroundColor(.black)
             }
             
@@ -144,7 +144,7 @@ struct TodayNews: View {
                     .bold()
                     .font(.custom(
                         "NotoSans-Bold",
-                        fixedSize: 18))
+                        fixedSize: 14))
                     .foregroundColor(.black)
                 Spacer()
                 Text("ดูทั้งหมด")

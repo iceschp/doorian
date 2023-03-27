@@ -20,7 +20,7 @@ struct GroupView: View {
                     .frame(width: 100, height: 80)
                     .cornerRadius(20)
                
-                VStack{
+                VStack(alignment: .leading){
                     HStack{
                         Text(item2.date)
                             .font(.system(size: 10))

@@ -18,7 +18,7 @@ struct HistoryDisease: View {
                     Text("ประวัติ")
                         .font(.custom(
                             "NotoSans-Bold",
-                            fixedSize: 28))
+                            fixedSize: 24))
                         .frame(maxWidth: .infinity, alignment: .center)
                     
                 }

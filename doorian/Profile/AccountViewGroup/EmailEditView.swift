@@ -54,30 +54,49 @@ struct EmailEditView: View {
    
     var body: some View {
         
-        ZStack {
-            Color(.white).edgesIgnoringSafeArea(.all)
+        ScrollView(.vertical, showsIndicators: false) {
+            
             VStack {
-                HStack{
-                        let email = vm.chatUser?.email.replacingOccurrences(of: "", with: "") ?? ""
-                        Text(email)
+                
+                VStack(spacing: 15){
+                
+                    HStack{
+                        Image("fono")
+                            .resizable()
+                            .scaledToFit()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 100, height: 100)
+                            .clipShape(Circle())
+                            .offset(y: -40)
+                            .padding(.bottom,-40)
                         
-                        Spacer()
-                   
+                    }
+                    
+                    HStack(alignment: .top, spacing: 10){
+                        
+                        Text("แก้ไขอีเมล")
+                            .font(.custom(
+                                "NotoSans-Bold",
+                                fixedSize: 18))
+                            
+                    }
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .foregroundColor(.white)
                 }
-                .foregroundColor(Color.black)
-                .padding(.vertical, 10)
-                .padding(.horizontal, 18)
+                .padding([.horizontal,.bottom])
                 .background(
-                    RoundedRectangle(cornerRadius: 50)
-                        .fill(Color("textfield"))
+                    Color("4F704B")
+                    .cornerRadius(12)
                 )
-                .padding(.bottom, 20)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                .padding(.top,40)
                 
                 HStack {
                     Image(systemName: "envelope.fill")
                     TextField("อีเมล", text: self.$email)
-                        .font(.system(size: 14))
+                        .font(.custom(
+                            "NotoSans-Regular",
+                            fixedSize: 14))
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                     
@@ -89,33 +108,36 @@ struct EmailEditView: View {
                             .foregroundColor(email.isValidEmail() ? .green : .red)
                     }
                 }
-                .foregroundColor(Color("bright-green"))
+                .foregroundColor(Color("4F704B"))
                 .padding(.vertical, 10)
                 .padding(.horizontal, 18)
                 .background(
                     RoundedRectangle(cornerRadius: 50)
-                        .fill(Color("textfield"))
+                        .fill(Color("gray-white"))
                 )
-                .padding(.bottom, 20)
+                .padding()
+                .padding(.top, 10)
+                
                 
                 
                 Button(action: {
                     self.updateEmailUser()
                 }) {
                     Text("บันทึก")
-                        .foregroundColor(.white)
-                        .font(.system(size: 14))
-                        .bold()
+                        .foregroundColor(Color("FFEA9A"))
+                        .font(.custom(
+                            "NotoSans-Bold",
+                            fixedSize: 14))
                     
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 10)
                     
                         .background(
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(Color("dark-green"))
+                                .fill(Color("4F704B"))
                         )
                 }
-                .padding(.bottom, 20)
+                .padding()
                 .alert(isPresented: $showUpdateEmailAlert) {
                     Alert(title: Text("Password Reset"),
                           message: Text(self.errString ?? "Success! Email update successfully"), dismissButton: .default(Text("OK")) {
@@ -126,6 +148,11 @@ struct EmailEditView: View {
                 
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(
+            Color(.white)
+                .ignoresSafeArea()
+        )
         
     }
 }

@@ -15,16 +15,17 @@ struct FavoriteView: View {
             VStack(alignment: .leading) {
                 
                 HStack{
-                    
+
                     Text("สิ่งที่ฉันถูกใจ")
                         .font(.custom(
                             "NotoSans-Bold",
-                            fixedSize: 28))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
+                            fixedSize: 24))
+                        .frame(maxWidth: .infinity, alignment: .center)
+                   
                 }
-                .padding()
-                 
+                Divider()
+                    .padding(.top,-10)
+                
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15){
                     ForEach(items) { item in
                         
@@ -32,6 +33,7 @@ struct FavoriteView: View {
                     }
                 }
                 .padding()
+                .padding(.top,-10)
             }
             Spacer(minLength: 0)
             

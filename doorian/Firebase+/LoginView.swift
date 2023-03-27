@@ -121,9 +121,7 @@ struct LoginView: View {
                     .padding(.bottom, 20)
                     
                     HStack {
-                        Image(systemName: "checkmark.square")
-                        Text("จดจำรหัสผ่าน")
-                            .bold()
+                        
                         Spacer()
                         VStack{
                             NavigationLink(destination: ResetPasswordView()) {
@@ -209,6 +207,7 @@ struct LoginView: View {
                     
                 }
                 .frame(width: 300, height: 35)
+                .padding(.top,-30)
             }
             .sheet(isPresented: $showingSheet) {
                 SignupView(isUserCurrentlyLoggedOut: $isUserCurrentlyLoggedOut)

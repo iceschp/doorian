@@ -20,7 +20,7 @@ struct ResetPasswordView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                Color("bg").edgesIgnoringSafeArea(.all)
+                Color(.white).edgesIgnoringSafeArea(.all)
                 VStack{
                     HStack{
                         Image("doorian_logo")
@@ -35,6 +35,7 @@ struct ResetPasswordView: View {
                             .font(.custom(
                                 "NotoSans-Bold",
                                 fixedSize: 24))
+                        
                     }
                     .padding()
                     HStack{
@@ -42,12 +43,14 @@ struct ResetPasswordView: View {
                             .font(.custom(
                                 "NotoSans-Bold",
                                 fixedSize: 14))
+                            .foregroundColor(Color("4F704B"))
                     }
                     HStack{
                         Text("เราจะทำการส่งอีเมลตั้งรหัสผ่านใหม่ให้แก่คุณ!")
                             .font(.custom(
                                 "NotoSans-Bold",
                                 fixedSize: 14))
+                            .foregroundColor(Color("4F704B"))
                     }
                     
                     HStack{
@@ -55,6 +58,9 @@ struct ResetPasswordView: View {
                         TextField("อีเมล", text: $email)
                             .disableAutocorrection(true)
                             .autocapitalization(.none)
+                            .font(.custom(
+                                "NotoSans-Regular",
+                                fixedSize: 14))
                         
                         
                         Spacer()
@@ -65,9 +71,10 @@ struct ResetPasswordView: View {
                         
                     }
                     .padding()
+                    .foregroundColor(Color("4F704B"))
                     .background(
                         RoundedRectangle(cornerRadius: 50)
-                            .fill(Color("textfield"))
+                            .fill(Color("gray-white"))
                     )
                     .padding()
                     
@@ -85,16 +92,17 @@ struct ResetPasswordView: View {
                     }
                 ){
                         Text("ยืนยัน")
-                            .foregroundColor(.white)
-                            .font(.title3)
-                            .bold()
+                            .foregroundColor(Color("FFEA9A"))
+                            .font(.custom(
+                                "NotoSans-Bold",
+                                fixedSize: 14))
                         
                             .frame(maxWidth: .infinity)
                             .padding()
                         
                             .background(
                                 RoundedRectangle(cornerRadius: 50)
-                                    .fill(Color("dark-green"))
+                                    .fill(Color("4F704B"))
                             )
                             .padding(.horizontal)
                             
@@ -104,8 +112,8 @@ struct ResetPasswordView: View {
                 }
             }
             .alert(isPresented: $showAlert) {
-                Alert(title: Text("Password Reset"),
-                      message: Text(self.errString ?? "Success! Reset email sent successfully"), dismissButton: .default(Text("OK")) {
+                Alert(title: Text("การเปลี่ยนรหัสผ่าน"),
+                      message: Text(self.errString ?? "สำเร็จ! เราทำการส่งอีเมลตั้งรหัสผ่านใหม่แก่คุณแล้ว"), dismissButton: .default(Text("ตกลง")) {
                     self.presentationMode.wrappedValue.dismiss()
                     
 //                    self.showView = true

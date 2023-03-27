@@ -39,23 +39,49 @@ struct ChangePasswordView: View {
                 ZStack{
                     VStack {
                         
-                        HStack {
-                            Text("เปลี่ยนรหัสผ่านใหม่")
-                                .font(.custom(
-                                    "NotoSans-Bold",
-                                    fixedSize: 24))
+                        VStack(spacing: 15){
+                        
+                            HStack{
+                                Image("fono")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 100, height: 100)
+                                    .clipShape(Circle())
+                                    .offset(y: -40)
+                                    .padding(.bottom,-40)
+                                
+                            }
+                            
+                            HStack(alignment: .top, spacing: 10){
+                                
+                                Text("เปลี่ยนรหัสผ่าน")
+                                    .font(.custom(
+                                        "NotoSans-Bold",
+                                        fixedSize: 18))
+                                    
+                            }
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .foregroundColor(.white)
                         }
-                        .padding(.bottom, 10)
+                        .padding([.horizontal,.bottom])
+                        .background(
+                            Color("4F704B")
+                            .cornerRadius(12)
+                        )
+                        .padding()
+                        .padding(.top,40)
                         
                         VStack{
                             HStack {
                                 Text("รหัสผ่านปัจจุบัน")
                                     .font(.custom(
                                         "NotoSans-Bold",
-                                        fixedSize: 18))
+                                        fixedSize: 16))
                                     .frame(maxWidth: .infinity, alignment: .leading)
                             }
                             .padding(.leading, 20)
+                            .foregroundColor(Color("4F704B"))
                             
                             HStack {
                                 Image(systemName: "lock.fill")
@@ -88,12 +114,12 @@ struct ChangePasswordView: View {
                                 }
                                 
                             }
-                            .foregroundColor(Color("bright-green"))
+                            .foregroundColor(Color("4F704B"))
                             .padding(.vertical, 10)
                             .padding(.horizontal, 18)
                             .background(
                                 RoundedRectangle(cornerRadius: 50)
-                                    .fill(Color("textfield"))
+                                    .fill(Color("gray-white"))
                             )
                             .padding(.bottom, 20)
                             .padding()
@@ -105,10 +131,11 @@ struct ChangePasswordView: View {
                                 Text("รหัสผ่านใหม่")
                                     .font(.custom(
                                         "NotoSans-Bold",
-                                        fixedSize: 18))
+                                        fixedSize: 16))
                                     .frame(maxWidth: .infinity, alignment: .leading)
                             }
                             .padding(.leading, 20)
+                            .foregroundColor(Color("4F704B"))
                             
                             HStack {
                                 Image(systemName: "lock.fill")
@@ -141,12 +168,12 @@ struct ChangePasswordView: View {
                                 }
                                 
                             }
-                            .foregroundColor(Color("bright-green"))
+                            .foregroundColor(Color("4F704B"))
                             .padding(.vertical, 10)
                             .padding(.horizontal, 18)
                             .background(
                                 RoundedRectangle(cornerRadius: 50)
-                                    .fill(Color("textfield"))
+                                    .fill(Color("gray-white"))
                             )
                             .padding(.bottom, 20)
                             .padding()
@@ -159,7 +186,8 @@ struct ChangePasswordView: View {
                                 Text("ยืนยันรหัสผ่านใหม่")
                                     .font(.custom(
                                         "NotoSans-Bold",
-                                        fixedSize: 18))
+                                        fixedSize: 16))
+                                    .foregroundColor(Color("4F704B"))
                                     .frame(maxWidth: .infinity, alignment: .leading)
                             }
                             .padding(.leading, 20)
@@ -195,12 +223,12 @@ struct ChangePasswordView: View {
                                 }
                                 
                             }
-                            .foregroundColor(Color("bright-green"))
+                            .foregroundColor(Color("4F704B"))
                             .padding(.vertical, 10)
                             .padding(.horizontal, 18)
                             .background(
                                 RoundedRectangle(cornerRadius: 50)
-                                    .fill(Color("textfield"))
+                                    .fill(Color("gray-white"))
                             )
                             .padding(.bottom, 20)
                             .padding()
@@ -222,16 +250,17 @@ struct ChangePasswordView: View {
                         }
                         ){
                             Text("ยืนยัน")
-                                .foregroundColor(.white)
-                                .font(.title3)
-                                .bold()
+                                .foregroundColor(Color("FFEA9A"))
+                                .font(.custom(
+                                    "NotoSans-Bold",
+                                    fixedSize: 14))
                             
                                 .frame(maxWidth: .infinity)
                                 .padding()
                             
                                 .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .fill(Color("E0E0E0"))
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .fill(Color("4F704B"))
                                 )
                                 .padding(.horizontal)
                             
@@ -242,8 +271,8 @@ struct ChangePasswordView: View {
                 }
             }
             .alert(isPresented: $showAlert) {
-                Alert(title: Text("Password Reset"),
-                      message: Text(self.errString ?? "Success! Reset email sent successfully"), dismissButton: .default(Text("OK")) {
+                Alert(title: Text("การเปลี่ยนรัหสผ่าน"),
+                      message: Text(self.errString ?? "สำเร็จ! รหัสผ่านของคุณถูกเปลี่ยนแปลงเรียบร้อย"), dismissButton: .default(Text("ตกลง")) {
                     self.presentationMode.wrappedValue.dismiss()
                     
                     //                    self.showView = true

@@ -23,23 +23,15 @@ struct AccountView: View {
 //    @State var selectedImage: UIImage?
     var body: some View {
         
-        
-            
             ScrollView(.vertical, showsIndicators: false) {
                 
                 VStack{
-                    
-                    Text("บัญชีผู้ใช้")
-                        .font(.custom(
-                            "NotoSans-Bold",
-                            fixedSize: 28))
-                        .frame(maxWidth: .infinity, alignment: .leading)
                     
                     VStack(spacing: 15){
                         
                         VStack{
                             NavigationLink(destination: NameEditView()){
-                                Image("doorian_profile")
+                                Image("fono")
                                     .resizable()
                                     .scaledToFit()
                                     .aspectRatio(contentMode: .fill)
@@ -50,36 +42,36 @@ struct AccountView: View {
                                     .padding(.leading, 75)
                                 
                                 Image(systemName: "camera.fill")
-                                    .foregroundColor(Color.black)
-                                    .background(Color.gray)
-                                    .frame(width: 70, height: 70)
+                                    .foregroundColor(Color.white)
+                                    .background(Color("dark-pink"))
+                                    .frame(width: 75, height: 75)
                                     .clipShape(Circle())
                                     .offset(y: -10)
                                     .offset(x: -50)
                                     .padding(.bottom,-40)
                             }
                         }
+                        
                                
                         HStack(alignment: .top, spacing: 10){
 
                         let name = vm.chatUser?.name.replacingOccurrences(of: "", with: "") ?? ""
-                        Text("@\(name)")
+                        Text(name)
                             .font(.custom(
                                 "NotoSans-Bold",
                                 fixedSize: 18))
-                            .fontWeight(.semibold)
-                            .padding(.top,15)
-                         
+                            .foregroundColor(.white)
                     
                         }
                         .frame(maxWidth: .infinity, alignment: .center)
+                      
                         
                         Spacer()
                         
                     } // Vstack 15
                     .padding([.horizontal,.bottom])
                     .background(
-                        Color.white
+                        Color("4F704B")
                             .cornerRadius(12)
                     )
                     .padding()
@@ -88,6 +80,8 @@ struct AccountView: View {
                     
                     HStack{
                         Text("ชื่อผู้ใช้")
+                            .font(.custom("NotoSans-Bold", size: 16))
+                            .foregroundColor(Color("4F704B"))
                     }
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -95,7 +89,10 @@ struct AccountView: View {
                         NavigationLink(destination: NameEditView()){
                             let name = vm.chatUser?.name.replacingOccurrences(of: "", with: "") ?? ""
                             Text(name)
-                            
+                                .font(.custom(
+                                    "NotoSans-Regular",
+                                    fixedSize: 14))
+                                .foregroundColor(Color("4F704B"))
                             Spacer()
                             
                             Image(systemName: "pencil")
@@ -106,13 +103,15 @@ struct AccountView: View {
                     .padding(.horizontal, 18)
                     .background(
                         RoundedRectangle(cornerRadius: 50)
-                            .fill(Color("textfield"))
+                            .fill(Color("gray-white"))
                     )
                     .padding(.bottom, 20)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
                     HStack{
                         Text("อีเมล์")
+                            .font(.custom("NotoSans-Bold", size: 16))
+                            .foregroundColor(Color("4F704B"))
                     }
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -120,7 +119,10 @@ struct AccountView: View {
                         NavigationLink(destination: EmailEditView()){
                             let email = vm.chatUser?.email.replacingOccurrences(of: "", with: "") ?? ""
                             Text(email)
-                            
+                                .font(.custom(
+                                    "NotoSans-Regular",
+                                    fixedSize: 14))
+                                .foregroundColor(Color("4F704B"))
                             Spacer()
                             
                             Image(systemName: "pencil")
@@ -131,7 +133,7 @@ struct AccountView: View {
                     .padding(.horizontal, 18)
                     .background(
                         RoundedRectangle(cornerRadius: 50)
-                            .fill(Color("textfield"))
+                            .fill(Color("gray-white"))
                     )
                     .padding(.bottom, 20)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -144,7 +146,7 @@ struct AccountView: View {
             
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(
-                Color("bg")
+                Color(.white)
                     .ignoresSafeArea()
             )
             

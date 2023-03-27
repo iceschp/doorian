@@ -24,44 +24,37 @@ struct ProfileView: View {
                     
                     VStack{
                         
-                        Text("โปรไฟล์ของฉัน")
-                            .font(.custom(
-                                "NotoSans-Bold",
-                                fixedSize: 28))
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        
                         VStack(spacing: 15){
                             
 //                            WebImage(url: URL(string: vm.chatUser?.profileImageUrl ?? ""))
-                            Image(systemName: "person.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 80, height: 80)
-                                .clipShape(Circle())
-                                .offset(y: -40)
-                                .padding(.bottom,-40)
-                            
-                            let name = vm.chatUser?.name.replacingOccurrences(of: "", with: "") ?? ""
-                            Text(name)
-                                .font(.custom(
-                                    "NotoSans-Bold",
-                                    fixedSize: 18))
-                                .fontWeight(.semibold)
-                            
+                            HStack{
+                                Image("fono")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 100, height: 100)
+                                    .clipShape(Circle())
+                                    .offset(y: -40)
+                                    .padding(.bottom,-40)
+                                
+                            }
                             
                             HStack(alignment: .top, spacing: 10){
                                 
-                                Text("@doorian_อริสา")
+                                let name = vm.chatUser?.name.replacingOccurrences(of: "", with: "") ?? ""
+                                Text(name)
                                     .font(.custom(
-                                        "NotoSans-Regular",
-                                        fixedSize: 14))
+                                        "NotoSans-Bold",
+                                        fixedSize: 18))
+                                    .fontWeight(.semibold)
+                                
                             }
                             .frame(maxWidth: .infinity, alignment: .center)
+                            .foregroundColor(.white)
                         }
                         .padding([.horizontal,.bottom])
                         .background(
-                            Color.white
+                            Color("4F704B")
                             .cornerRadius(12)
                         )
                         .padding()
@@ -72,18 +65,21 @@ struct ProfileView: View {
                             NavigationLink(destination: AccountView()) {
                                 Image(systemName: "person.fill")
                                 Text("บัญชีผู้ใช้")
-                                    .font(.custom("NotoSans-Regular", size: 18))
+                                    .font(.custom("NotoSans-Bold", size: 16))
+                                   
                                     
                                 Spacer()
                                 
                                 Image(systemName: "chevron.right")
+                                    .font(.custom("NotoSans-Bold", size: 16))
+                                    
                             }
                         }
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("4F704B"))
                         .padding()
                         .background(
                         
-                            Color.white
+                            Color("gray-white")
                                 .cornerRadius(12)
                         )
                         .padding(.horizontal)
@@ -93,18 +89,20 @@ struct ProfileView: View {
                             NavigationLink(destination: ChangePasswordView()) {
                                 Image(systemName: "lock.fill")
                                 Text("รหัสผ่าน")
-                                    .font(.custom("NotoSans-Regular", size: 18))
+                                    .font(.custom("NotoSans-Bold", size: 16))
                                     
                                 Spacer()
                                 
                                 Image(systemName: "chevron.right")
+                                    .font(.custom("NotoSans-Bold", size: 16))
+                                    
                             }
                         }
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("4F704B"))
                         .padding()
                         .background(
                         
-                            Color.white
+                            Color("gray-white")
                                 .cornerRadius(12)
                         )
                         .padding(.horizontal)
@@ -114,18 +112,20 @@ struct ProfileView: View {
                             NavigationLink(destination: FavoriteView()) {
                                 Image(systemName: "heart.fill")
                                 Text("สิ่งที่ฉันถูกใจ")
-                                    .font(.custom("NotoSans-Regular", size: 18))
-                                    
+                                    .font(.custom("NotoSans-Bold", size: 16))
+                                   
                                 Spacer()
                                 
                                 Image(systemName: "chevron.right")
+                                    .font(.custom("NotoSans-Bold", size: 16))
+                                    
                             }
                         }
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("4F704B"))
                         .padding()
                         .background(
                         
-                            Color.white
+                            Color("gray-white")
                                 .cornerRadius(12)
                         )
                         .padding(.horizontal)
@@ -135,18 +135,20 @@ struct ProfileView: View {
                             NavigationLink(destination: HistoryDisease()) {
                                 Image(systemName: "clock.arrow.circlepath")
                                 Text("ประวัติการบันทึกโรค")
-                                    .font(.custom("NotoSans-Regular", size: 18))
+                                    .font(.custom("NotoSans-Bold", size: 16))
                                     
                                 Spacer()
                                 
                                 Image(systemName: "chevron.right")
+                                    .font(.custom("NotoSans-Bold", size: 16))
+                                    
                             }
                         }
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("4F704B"))
                         .padding()
                         .background(
                         
-                            Color.white
+                            Color("gray-white")
                                 .cornerRadius(12)
                         )
                         .padding(.horizontal)
@@ -159,7 +161,7 @@ struct ProfileView: View {
                                     Image(systemName: "rectangle.portrait.and.arrow.forward.fill")
                                         .foregroundColor(Color("dark-pink"))
                                     Text("ออกจากระบบ")
-                                        .font(.custom("NotoSans-Regular", size: 18))
+                                        .font(.custom("NotoSans-Bold", size: 16))
                                         .foregroundColor(Color("dark-pink"))
                                     
                                     Spacer()
@@ -172,7 +174,7 @@ struct ProfileView: View {
                         .padding()
                         .background(
                         
-                            Color.white
+                            Color("gray-white")
                                 .cornerRadius(12)
                         )
                         .padding(.horizontal)
@@ -213,7 +215,7 @@ struct ProfileView: View {
                 .navigationBarHidden(true)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(
-                    Color("bg")
+                    Color(.white)
                         .ignoresSafeArea()
                 )
                 
